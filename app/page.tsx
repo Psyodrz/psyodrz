@@ -26,7 +26,7 @@ function Section({
   return (
     <section id={id} className="mx-auto max-w-6xl px-4 py-12 sm:py-16 md:py-20 lg:py-24">
       <header className="mb-6 sm:mb-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-balance">{title}</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-balance hollow-font-primary">{title}</h2>
         {description ? <p className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed text-pretty">{description}</p> : null}
       </header>
       {children}
@@ -59,7 +59,7 @@ function ProjectCard({
 }) {
   return (
     <article className={`group rounded-xl border bg-card p-5 transition-colors hover:border-primary/40 ${className}`}>
-      <h3 className="text-xl font-medium">{title}</h3>
+      <h3 className="text-xl font-medium hollow-font-accent">{title}</h3>
       <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{blurb}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {tags.map((t) => (
@@ -121,9 +121,9 @@ export default function Page() {
         {/* Hero Content Overlay */}
         <div className="absolute inset-0 z-10 flex items-center justify-center px-4">
           <div className="hero-content text-center max-w-4xl mx-auto">
-            <h1 className="hero-title text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 sci-fi-text">
-              <span className="block">Aditya Srivastava</span>
-              <span className="hero-subtitle block text-base sm:text-lg md:text-xl lg:text-2xl font-normal mt-2 sci-fi-muted">
+            <h1 className="hero-title text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
+              <span className="block hollow-font-animated">Aditya Srivastava</span>
+              <span className="hero-subtitle block text-base sm:text-lg md:text-xl lg:text-2xl font-normal mt-2 hollow-font-secondary">
                 Computer Science Engineer
               </span>
             </h1>

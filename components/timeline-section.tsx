@@ -91,7 +91,7 @@ export const TimelineSection = memo(function TimelineSection() {
               {/* Content card */}
               <div className={`flex-1 sci-fi-card p-6 ${getTypeColor(item.type)} transition-all duration-300 hover:scale-[1.02]`}>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                  <h3 className="text-lg font-semibold sci-fi-text">{item.title}</h3>
+                  <h3 className="text-lg font-semibold hollow-font-accent">{item.title}</h3>
                   <span className="text-sm sci-fi-muted flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
                     {item.period}

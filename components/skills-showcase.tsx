@@ -127,7 +127,7 @@ export function SkillsShowcase() {
         {activeSkills.map((skill) => (
           <div key={skill.name} className="sci-fi-card p-6 group hover:scale-105 transition-all duration-300">
             <div className="flex items-center justify-between mb-3">
-              <h4 className="font-semibold sci-fi-text">{skill.name}</h4>
+              <h4 className="font-semibold hollow-font-accent">{skill.name}</h4>
               <span className="text-sm sci-fi-accent font-medium">{skill.level}%</span>
             </div>
             
