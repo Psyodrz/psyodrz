@@ -124,21 +124,6 @@ export function EnhancedContact() {
 
         </div>
 
-        {/* Resume Download */}
-        <div className="sci-fi-card p-6 text-center">
-          <h3 className="text-xl font-semibold sci-fi-text mb-3">Download Resume</h3>
-          <p className="sci-fi-muted mb-4">
-            Get a detailed overview of my experience, skills, and achievements.
-          </p>
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 px-8 py-3"
-            onClick={() => window.open('/Resume.pdf', '_blank')}
-          >
-            <Download className="w-5 h-5 mr-2" />
-            Download Resume
-          </Button>
-        </div>
 
         {/* Contact Form */}
         <div className="sci-fi-card p-6">
