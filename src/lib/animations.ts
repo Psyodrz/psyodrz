@@ -65,17 +65,23 @@ export function useAnimations() {
     initAnimations();
     
     // Refresh animations on component mount
-    AOS.refresh();
+    if (typeof window !== 'undefined') {
+      AOS.refresh();
+    }
     
     // Setup window resize handler to refresh animations
     const handleResize = () => {
       AOS.refresh();
     };
     
-    window.addEventListener('resize', handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+    }
     
     return () => {
-      window.removeEventListener('resize', handleResize);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
     };
   }, []);
 }

@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   distDir: '.next',
+  output: 'standalone',
   images: {
     unoptimized: true,
     domains: ['localhost'],
@@ -14,6 +15,9 @@ const nextConfig = {
   },
   devIndicators: {
     position: 'bottom-right'
+  },
+  experimental: {
+    esmExternals: 'loose',
   },
 };
 

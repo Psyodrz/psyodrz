@@ -1,6 +1,9 @@
 'use client';
 
 import Navbar from '@/components/Navbar';
+
+// Force dynamic rendering to avoid SSG issues with window object
+export const dynamic = 'force-dynamic';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';

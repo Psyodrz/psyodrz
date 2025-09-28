@@ -1,146 +1,83 @@
-# Modern Portfolio Website
+# Sci-Fi Portfolio
 
-A responsive and modern personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.
-
-> **Note**: This is the portfolio website repository. For my GitHub profile README, visit [Psyodrz/psyodrz](https://github.com/Psyodrz/psyodrz)
+A modern, sci-fi themed portfolio website built with Next.js, featuring 3D animations, particle effects, and interactive elements.
 
 ## Features
 
-- 📱 Fully responsive design
-- 🌓 Dark mode support
-- 🎨 Modern UI with smooth animations
-- 📊 Skills visualization
-- 📝 Contact form with validation
-- 🚀 Optimized performance
-- ✨ SEO friendly
-- 🖥️ Flexible server options (local, network, admin panel)
-- 🔗 **Updated with comprehensive GitHub projects showcase**
+- **3D Hero Section**: Interactive 3D scene with Three.js
+- **Particle Background**: Dynamic particle system with tsparticles
+- **Smooth Animations**: GSAP, AOS, and ScrollReveal animations
+- **Contact Integration**: Direct email and WhatsApp integration (no database required)
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Modern UI**: Radix UI components with custom styling
+- **Theme Support**: Dark/light mode with next-themes
 
-## Sections
+## Tech Stack
 
-- Hero Section with call-to-action
-- About Me with education and background
-- Skills categorized into Frontend, Backend, and Tools
-- **Projects showcase with all 11 GitHub repositories**
-- Resume with download option
-- Contact form with social links
-- Footer with copyright and quick navigation
-
-## Featured Projects
-
-This portfolio now showcases all your GitHub projects including:
-
-- **3D Maze Game** - Three.js and Rapier physics
-- **AI Code Generator** - Browser extension for HackerRank
-- **Face Detection Mobile** - Ionic/Capacitor app
-- **Flappy Bird Game** - HTML5/JavaScript game
-- **Horror Hunter Arena** - 3D horror game
-- **Nature Explorer** - React/TypeScript app
-- **Trecab App** - Full-stack application
-- **Cloud Security Analyzer** - Security analysis tool
-- **Library Management** - Full-stack system
-- **Flippy Floppy** - Arcade game
-- **Portfolio Website** - This website
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS
+- **3D Graphics**: Three.js, @react-three/fiber, @react-three/drei
+- **Animations**: GSAP, AOS, ScrollReveal, Framer Motion
+- **UI Components**: Radix UI
+- **Particles**: tsparticles
+- **Icons**: Lucide React, React Icons
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js (v18 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository
-   ```bash
-   git clone https://github.com/Psyodrz/psyodrz.git
-   cd psyodrz
-   ```
-
-2. Install dependencies
+1. **Install dependencies**:
    ```bash
    npm install
    # or
-   yarn install
+   pnpm install
    ```
 
-### Running the Server
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   # or
+   pnpm dev
+   ```
 
-The portfolio comes with a flexible server that can run in different modes:
+3. **Open [http://localhost:7000](http://localhost:7000)** in your browser.
 
-#### Option 1: Use the interactive batch file (Windows)
-```bash
-# Run the interactive batch file and select your preferred mode
-start-server.bat
+## Contact Integration
+
+The portfolio includes a contact form that redirects users to either:
+- **Email**: Opens default email client with pre-filled message
+- **WhatsApp**: Opens WhatsApp Web/App with pre-filled message
+
+No backend or database is required - all contact handling is done client-side.
+
+## Project Structure
+
 ```
-
-#### Option 2: Use npm scripts
-```bash
-# Local mode (localhost only)
-npm run server
-
-# Network mode (accessible from other devices on your network)
-npm run server:network
-
-# Admin mode (includes admin panel on port 7001)
-npm run server:admin
-
-# All features (network access + admin panel)
-npm run server:all
+sci-fi-portfolio/
+├── app/                    # Next.js app directory
+├── components/             # React components
+│   ├── ui/                # Radix UI components
+│   └── legacy/            # Migrated components from original project
+├── data/                   # Static data files
+├── lib/                    # Utility functions
+├── models/                 # TypeScript interfaces
+├── public/                 # Static assets
+└── styles/                 # Global styles
 ```
-
-#### Server Features
-- **Local Mode**: Runs on localhost:7000
-- **Network Mode**: Accessible from other devices on your network
-- **Admin Mode**: Provides access to the admin panel at /admin
-- **Interactive Controls**:
-  - `Ctrl+C`: Stop the server
-  - `r+Enter`: Restart the server
-  - `c+Enter`: Clear the console
-  - `h+Enter`: Show help information
-
-#### Admin Panel
-When running with admin mode enabled, you can access the admin panel at:
-```
-http://localhost:7001/admin  # Local access
-http://<your-ip>:7001/admin  # Network access (if using --network flag)
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Customization
 
-1. Replace placeholder content in components with your personal information
-2. Add your own images in the `public` directory
-3. Modify colors in `tailwind.config.js` to match your personal brand
-4. Update projects in `src/data/projects.json` with your own work
-5. Replace `resume.pdf` with your actual resume
+- Update contact information in `lib/contact.ts`
+- Modify project data in `data/projects.json`
+- Customize animations in `lib/animations.ts`
+- Update styling in `app/globals.css`
 
 ## Deployment
 
-Deploy to Vercel:
-```bash
-npm run build
-vercel --prod
-```
+The project is ready for deployment on Vercel, Netlify, or any other Next.js-compatible platform.
 
-Or deploy to Netlify, GitHub Pages, or any other hosting service that supports Next.js applications.
+## Migration Notes
 
-## Technologies Used
-
-- Next.js 14
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- React Icons
-
-## License
-
-MIT
-
-## Acknowledgements
-
-- [NextJS](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [React Icons](https://react-icons.github.io/react-icons/)
+This project was migrated from the original portfolio with the following changes:
+- Removed MongoDB dependencies
+- Added email/WhatsApp contact integration
+- Updated to use modern UI components
+- Enhanced with 3D elements and animations
