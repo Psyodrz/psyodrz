@@ -15,7 +15,7 @@ export function MobileOptimizer() {
       // Check for low-end device indicators
       const isLowEndDevice = 
         navigator.hardwareConcurrency <= 2 || // Low CPU cores
-        navigator.deviceMemory <= 2 || // Low RAM (if available)
+        (navigator as any).deviceMemory <= 2 || // Low RAM (if available)
         /android.*[0-4]\.[0-9]|iphone.*os [0-9]_[0-3]/i.test(userAgent) // Old OS versions
 
       setIsMobile(isMobileDevice)

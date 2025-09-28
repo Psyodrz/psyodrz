@@ -8,7 +8,7 @@ import * as THREE from "three"
 import { useMemo, useRef, useState, useEffect } from "react"
 
 function WireScene({ animate = true }: { animate?: boolean }) {
-  const group = useRef<THREE.Group>(null)
+  const group = useRef<any>(null)
   const material = useMemo(
     () =>
       new THREE.MeshBasicMaterial({
