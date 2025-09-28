@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
+import { getAssetUrl } from "@/lib/utils-client"
 import { Menu, X, ChevronDown } from "lucide-react"
 
 export function NavbarFloating() {
@@ -96,7 +97,7 @@ export function NavbarFloating() {
               Contact
             </Link>
             <a 
-              href="/Resume.pdf" 
+              href={typeof window !== 'undefined' ? getAssetUrl('/Resume.pdf') : '/Resume.pdf'} 
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 text-sm font-medium rounded-xl bg-gradient-to-r from-primary to-secondary text-white hover:from-primary/90 hover:to-secondary/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary shadow-lg hover:shadow-primary/25"
