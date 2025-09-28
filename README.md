@@ -1,83 +1,83 @@
-# Sci-Fi Portfolio
+<!-- Psyodrz GitHub Profile README -->
 
-A modern, sci-fi themed portfolio website built with Next.js, featuring 3D animations, particle effects, and interactive elements.
+<h1 align="center">✨ Welcome, I'm <a href="https://github.com/Psyodrz">Psyodrz</a> 👋</h1>
 
-## Features
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF61F6&center=true&vCenter=true&width=700&lines=Full+Stack+Developer;Open+Source+Enthusiast;Engineering+Student;Always+Learning+New+Things" alt="Typing SVG" />
+</p>
 
-- **3D Hero Section**: Interactive 3D scene with Three.js
-- **Particle Background**: Dynamic particle system with tsparticles
-- **Smooth Animations**: GSAP, AOS, and ScrollReveal animations
-- **Contact Integration**: Direct email and WhatsApp integration (no database required)
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Modern UI**: Radix UI components with custom styling
-- **Theme Support**: Dark/light mode with next-themes
+---
 
-## Tech Stack
+## 🚀 About Me  
 
-- **Framework**: Next.js 14
-- **Styling**: Tailwind CSS
-- **3D Graphics**: Three.js, @react-three/fiber, @react-three/drei
-- **Animations**: GSAP, AOS, ScrollReveal, Framer Motion
-- **UI Components**: Radix UI
-- **Particles**: tsparticles
-- **Icons**: Lucide React, React Icons
+- 🎓 B.Tech CSE Student | Passionate about **Tech & Open Source**  
+- 💻 Exploring **Full Stack Development** with **TypeScript, Next.js, and JavaScript**  
+- 🔐 Interested in **Cybersecurity & System Design**  
+- 🎯 Goal: **Contribute to impactful open-source projects**  
+- ⚡ Fun fact: I **code with music on repeat 🎧**  
 
-## Getting Started
+---
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   # or
-   pnpm install
-   ```
+## 📊 GitHub Stats & Activity  
 
-2. **Run the development server**:
-   ```bash
-   npm run dev
-   # or
-   pnpm dev
-   ```
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Psyodrz&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=FF61F6&icon_color=79ff97" height="180" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Psyodrz&theme=tokyonight&hide_border=true&background=0d1117&fire=FF61F6&ring=79ff97" height="180" />
+</p>
 
-3. **Open [http://localhost:7000](http://localhost:7000)** in your browser.
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Psyodrz&theme=tokyonight" alt="Profile Details" />
+</p>
 
-## Contact Integration
+---
 
-The portfolio includes a contact form that redirects users to either:
-- **Email**: Opens default email client with pre-filled message
-- **WhatsApp**: Opens WhatsApp Web/App with pre-filled message
+## 🏆 Achievements  
 
-No backend or database is required - all contact handling is done client-side.
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Psyodrz&theme=onedark&no-frame=true&no-bg=false&margin-w=10&row=1&column=6" />
+</p>
 
-## Project Structure
+---
 
-```
-sci-fi-portfolio/
-├── app/                    # Next.js app directory
-├── components/             # React components
-│   ├── ui/                # Radix UI components
-│   └── legacy/            # Migrated components from original project
-├── data/                   # Static data files
-├── lib/                    # Utility functions
-├── models/                 # TypeScript interfaces
-├── public/                 # Static assets
-└── styles/                 # Global styles
-```
+## 🐍 Contribution Snake  
 
-## Customization
+<p align="center">
+  <img src="https://github.com/Psyodrz/Psyodrz/blob/output/github-contribution-grid-snake.svg" alt="Snake animation" />
+</p>
 
-- Update contact information in `lib/contact.ts`
-- Modify project data in `data/projects.json`
-- Customize animations in `lib/animations.ts`
-- Update styling in `app/globals.css`
+---
 
-## Deployment
+## 📂 Featured Repositories  
 
-The project is ready for deployment on Vercel, Netlify, or any other Next.js-compatible platform.
+### 🌟 [Portfolio](https://github.com/Psyodrz/portfolio)  
+⚡ TypeScript | Personal Portfolio Website  
 
-## Migration Notes
+### 📚 [Library-Management](https://github.com/Psyodrz/Library-Management)  
+📖 JavaScript | Full Stack Library Management Project | Apache License 2.0  
 
-This project was migrated from the original portfolio with the following changes:
-- Removed MongoDB dependencies
-- Added email/WhatsApp contact integration
-- Updated to use modern UI components
-- Enhanced with 3D elements and animations
+### 🎮 [Flippy-Floppy](https://github.com/Psyodrz/flippy-Floppy)  
+🎲 JavaScript | Fun Game Project | MIT License  
+
+---
+
+## ✨ Profile Badges  
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Psyodrz&label=Profile%20Views&color=brightgreen&style=for-the-badge" />
+  <img src="https://img.shields.io/github/followers/Psyodrz?style=for-the-badge&color=blue" />
+  <img src="https://img.shields.io/github/stars/Psyodrz?style=for-the-badge&color=yellow" />
+</p>
+
+---
+
+<h2 align="center">💡 Let's Connect!</h2>
+
+<p align="center">
+  <a href="https://github.com/Psyodrz"><img src="https://img.icons8.com/fluency/48/github.png" alt="GitHub"/></a>
+  <a href="mailto:psyodrz@example.com"><img src="https://img.icons8.com/fluency/48/gmail.png" alt="Email"/></a>
+  <a href="https://www.linkedin.com"><img src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn"/></a>
+</p>
+
+---
+
+<h3 align="center">🚀 Thanks for visiting my profile! 🚀</h3>
