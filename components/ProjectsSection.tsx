@@ -156,17 +156,6 @@ export default function ProjectsSection() {
 
   return (
     <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-semibold text-balance mb-4">
-          <span className="sci-fi-text">Featured Projects</span>
-        </h2>
-        <p className="text-muted-foreground leading-relaxed text-pretty max-w-2xl mx-auto">
-          <span className="sci-fi-muted">
-            A showcase of my best work across web development, AI, mobile apps, and game development. 
-            Each project demonstrates different skills and technologies I've mastered.
-          </span>
-        </p>
-      </div>
 
       {projects.length > 0 ? (
         <>
