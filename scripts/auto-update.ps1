@@ -1,5 +1,5 @@
 # Auto-update script for GitHub repository
-# This script automatically adds, commits, and pushes changes to GitHub
+# This script syncs with GitHub, then adds, commits, and pushes local changes
 
 param(
     [string]$Message = ""
@@ -11,6 +11,68 @@ Write-Host "Starting auto-update process..." -ForegroundColor Cyan
 if (-not (Test-Path ".git")) {
     Write-Host "Error: Not in a git repository!" -ForegroundColor Red
     exit 1
+}
+
+# Get current branch name
+$branch = git rev-parse --abbrev-ref HEAD
+
+# First, sync with GitHub to get latest changes
+Write-Host "Syncing with GitHub repository..." -ForegroundColor Blue
+Write-Host "Fetching latest changes from origin/$branch..." -ForegroundColor Yellow
+
+# Fetch latest changes from remote
+git fetch origin $branch
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Warning: Failed to fetch from remote. Continuing with local changes..." -ForegroundColor Yellow
+} else {
+    # Check if there are remote changes to pull
+    $localCommit = git rev-parse HEAD
+    $remoteCommit = git rev-parse "origin/$branch"
+    
+    if ($localCommit -ne $remoteCommit) {
+        Write-Host "Remote changes detected. Pulling latest changes..." -ForegroundColor Yellow
+        
+        # Stash any local changes temporarily
+        $hasLocalChanges = git status --porcelain
+        if ($hasLocalChanges) {
+            Write-Host "Stashing local changes temporarily..." -ForegroundColor Yellow
+            git stash push -m "Auto-stash before sync - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+            $stashCreated = $true
+        } else {
+            $stashCreated = $false
+        }
+        
+        # Pull latest changes
+        git pull origin $branch
+        
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "Successfully synced with remote repository!" -ForegroundColor Green
+            
+            # Restore stashed changes if any
+            if ($stashCreated) {
+                Write-Host "Restoring local changes..." -ForegroundColor Yellow
+                git stash pop
+                
+                if ($LASTEXITCODE -ne 0) {
+                    Write-Host "Warning: Merge conflicts detected after restoring local changes!" -ForegroundColor Red
+                    Write-Host "Please resolve conflicts manually and run the script again." -ForegroundColor Yellow
+                    exit 1
+                }
+            }
+        } else {
+            Write-Host "Error: Failed to pull from remote!" -ForegroundColor Red
+            
+            # Restore stashed changes if any
+            if ($stashCreated) {
+                Write-Host "Restoring local changes..." -ForegroundColor Yellow
+                git stash pop
+            }
+            exit 1
+        }
+    } else {
+        Write-Host "Local repository is up to date with remote." -ForegroundColor Green
+    }
 }
 
 # Check if there are any changes
@@ -52,9 +114,6 @@ if ($LASTEXITCODE -ne 0) {
     Write-Host "Error: Failed to commit changes!" -ForegroundColor Red
     exit 1
 }
-
-# Get current branch name
-$branch = git rev-parse --abbrev-ref HEAD
 
 # Push to GitHub
 Write-Host "Pushing to GitHub (origin/$branch)..." -ForegroundColor Blue
