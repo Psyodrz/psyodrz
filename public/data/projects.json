@@ -20,26 +20,6 @@
     "order": 2
   },
   {
-    "title": "Face Detection Mobile",
-    "description": "Ionic/Capacitor mobile app for real-time face detection with computer vision and machine learning capabilities.",
-    "color": "from-orange-500 to-red-600",
-    "tags": ["Ionic", "Capacitor", "Computer Vision", "Mobile"],
-    "github": "https://github.com/Psyodrz/face-detection-mobile",
-    "demo": "https://github.com/Psyodrz/face-detection-mobile",
-    "featured": true,
-    "order": 3
-  },
-  {
-    "title": "Flappy Bird Game",
-    "description": "Flappy Bird-style game built with HTML5 and JavaScript featuring smooth gameplay and responsive design.",
-    "color": "from-yellow-500 to-orange-600",
-    "tags": ["HTML5", "JavaScript", "Game Development", "Canvas"],
-    "github": "https://github.com/Psyodrz/floppy-bird-game",
-    "demo": "https://github.com/Psyodrz/floppy-bird-game",
-    "featured": true,
-    "order": 4
-  },
-  {
     "title": "Horror Hunter Arena",
     "description": "Horror-themed arena game project with immersive gameplay and atmospheric design elements.",
     "color": "from-purple-500 to-indigo-600",
@@ -47,7 +27,7 @@
     "github": "https://github.com/Psyodrz/horror-hunter-arena",
     "demo": "https://github.com/Psyodrz/horror-hunter-arena",
     "featured": true,
-    "order": 5
+    "order": 3
   },
   {
     "title": "Nature Explorer",
@@ -57,7 +37,7 @@
     "github": "https://github.com/Psyodrz/nature-explorer",
     "demo": "https://github.com/Psyodrz/nature-explorer",
     "featured": true,
-    "order": 6
+    "order": 4
   },
   {
     "title": "Trecab App",
@@ -67,7 +47,7 @@
     "github": "https://github.com/Psyodrz/trecab-app",
     "demo": "https://github.com/Psyodrz/trecab-app",
     "featured": true,
-    "order": 7
+    "order": 5
   },
   {
     "title": "Cloud Security Analyzer",
@@ -77,7 +57,7 @@
     "github": "https://github.com/Psyodrz/cloud-security-analyzer",
     "demo": "https://github.com/Psyodrz/cloud-security-analyzer",
     "featured": true,
-    "order": 8
+    "order": 6
   },
   {
     "title": "Library Management System",
@@ -87,7 +67,7 @@
     "github": "https://github.com/Psyodrz/Library-Management",
     "demo": "https://github.com/Psyodrz/Library-Management",
     "featured": false,
-    "order": 9
+    "order": 7
   },
   {
     "title": "Flippy Floppy",
@@ -97,6 +77,6 @@
     "github": "https://github.com/Psyodrz/flippy-Floppy",
     "demo": "https://psyodrz.github.io/flippy-Floppy/",
     "featured": false,
-    "order": 10
+    "order": 8
   }
 ]

@@ -39,26 +39,6 @@ const projectsData: Project[] = [
     order: 2
   },
   {
-    title: "Face Detection Mobile",
-    description: "Ionic/Capacitor mobile app for real-time face detection with computer vision and machine learning capabilities.",
-    color: "from-orange-500 to-red-600",
-    tags: ["Ionic", "Capacitor", "Computer Vision", "Mobile"],
-    github: "https://github.com/Psyodrz/face-detection-mobile",
-    demo: "https://github.com/Psyodrz/face-detection-mobile",
-    featured: true,
-    order: 3
-  },
-  {
-    title: "Flappy Bird Game",
-    description: "Flappy Bird-style game built with HTML5 and JavaScript featuring smooth gameplay and responsive design.",
-    color: "from-yellow-500 to-orange-600",
-    tags: ["HTML5", "JavaScript", "Game Development", "Canvas"],
-    github: "https://github.com/Psyodrz/floppy-bird-game",
-    demo: "https://github.com/Psyodrz/floppy-bird-game",
-    featured: true,
-    order: 4
-  },
-  {
     title: "Horror Hunter Arena",
     description: "Horror-themed arena game project with immersive gameplay and atmospheric design elements.",
     color: "from-purple-500 to-indigo-600",
@@ -66,7 +46,7 @@ const projectsData: Project[] = [
     github: "https://github.com/Psyodrz/horror-hunter-arena",
     demo: "https://github.com/Psyodrz/horror-hunter-arena",
     featured: true,
-    order: 5
+    order: 3
   },
   {
     title: "Nature Explorer",
@@ -76,7 +56,37 @@ const projectsData: Project[] = [
     github: "https://github.com/Psyodrz/nature-explorer",
     demo: "https://github.com/Psyodrz/nature-explorer",
     featured: true,
+    order: 4
+  },
+  {
+    title: "Trecab App",
+    description: "Full-stack application with separate frontend and backend featuring modern architecture and scalable design.",
+    color: "from-indigo-500 to-blue-600",
+    tags: ["Full Stack", "Frontend", "Backend", "Architecture"],
+    github: "https://github.com/Psyodrz/trecab-app",
+    demo: "https://github.com/Psyodrz/trecab-app",
+    featured: true,
+    order: 5
+  },
+  {
+    title: "Cloud Security Analyzer",
+    description: "Security analysis tool for cloud credentials and network vulnerabilities with comprehensive reporting.",
+    color: "from-red-500 to-pink-600",
+    tags: ["Security", "Cloud", "Analysis", "Python"],
+    github: "https://github.com/Psyodrz/cloud-security-analyzer",
+    demo: "https://github.com/Psyodrz/cloud-security-analyzer",
+    featured: true,
     order: 6
+  },
+  {
+    title: "Library Management System",
+    description: "Full Stack Library Management System with complete CRUD operations and user management features.",
+    color: "from-teal-500 to-cyan-600",
+    tags: ["Full Stack", "CRUD", "Management", "Database"],
+    github: "https://github.com/Psyodrz/Library-Management",
+    demo: "https://github.com/Psyodrz/Library-Management",
+    featured: true,
+    order: 7
   },
   {
     title: "Flippy Floppy",
@@ -86,7 +96,7 @@ const projectsData: Project[] = [
     github: "https://github.com/Psyodrz/flippy-Floppy",
     demo: "https://psyodrz.github.io/flippy-Floppy/",
     featured: true,
-    order: 7
+    order: 8
   }
 ];
 
