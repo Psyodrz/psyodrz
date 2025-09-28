@@ -1,0 +1,52 @@
+[
+  {
+    "title": "3D Maze Game",
+    "description": "A 3D maze game with procedural generation, interactive elements and pathfinding algorithms.",
+    "color": "from-blue-500 to-purple-600",
+    "tags": ["JavaScript", "Three.js", "WebGL", "Algorithms"],
+    "github": "https://github.com/username/3d-maze",
+    "demo": "https://3d-maze-demo.com",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "title": "AI Face Detection",
+    "description": "A real-time face detection application using computer vision algorithms that can identify facial features and track expressions.",
+    "color": "from-green-500 to-teal-600",
+    "tags": ["Python", "OpenCV", "TensorFlow", "Machine Learning"],
+    "github": "https://github.com/username/face-detection",
+    "demo": "https://face-detection-demo.com",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "title": "Flippy Floppy",
+    "description": "A casual arcade game with flipping mechanics, colorful aesthetics and increasing difficulty levels.",
+    "color": "from-red-500 to-orange-600",
+    "tags": ["JavaScript", "CSS", "Game Development", "UI/UX"],
+    "github": "https://github.com/psyodrz/flippy-floppy",
+    "demo": "https://psyodrz.github.io/flippy-Floppy/",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "title": "Haunted Hunter Arena",
+    "description": "A thrilling multiplayer arena game where players hunt supernatural creatures in a haunted environment.",
+    "color": "from-purple-500 to-indigo-600",
+    "tags": ["Unity", "C#", "Game Development", "Multiplayer"],
+    "github": "https://github.com/username/haunted-hunter",
+    "demo": "https://haunted-hunter-demo.com",
+    "featured": true,
+    "order": 4
+  },
+  {
+    "title": "Portfolio Website",
+    "description": "A responsive personal portfolio website built with Next.js, showcasing projects and skills with a modern design.",
+    "color": "from-green-400 to-emerald-600",
+    "tags": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    "github": "https://github.com/username/portfolio",
+    "demo": "https://portfolio-demo.com",
+    "featured": true,
+    "order": 5
+  }
+] 
