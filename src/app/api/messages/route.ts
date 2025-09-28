@@ -12,7 +12,79 @@ interface FallbackMessage {
   name: string;
   email: string;
   subject?: string;
-{{ ... }}
+  message: string;
+  read?: boolean;
+  _id: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+// Load fallback data from JSON file
+function loadFallbackMessages(): FallbackMessage[] {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'messages.json');
+    const fileData = fs.readFileSync(filePath, 'utf8');
+    const messages = JSON.parse(fileData);
+    
+    return messages.map((message: Omit<FallbackMessage, '_id' | 'createdAt' | 'updatedAt'>, index: number) => {
+      const now = new Date();
+      const daysAgo = Math.floor(Math.random() * 7);
+      const date = new Date(now);
+      date.setDate(date.getDate() - daysAgo);
+      
+      return {
+        ...message,
+        _id: `fallback-${index + 1}`,
+        createdAt: date.toISOString(),
+        updatedAt: date.toISOString()
+      };
+    });
+  } catch (error) {
+    console.error('Error loading fallback messages:', error);
+    return [];
+  }
+}
+
+// Function to load messages from files
+function loadFileMessages(): FallbackMessage[] {
+  try {
+    const messagesDir = path.join(process.cwd(), 'messages');
+    
+    if (!fs.existsSync(messagesDir)) {
+      return [];
+    }
+    
+    const files = fs.readdirSync(messagesDir);
+    
+    const messages = files
+      .filter(file => file.endsWith('.json'))
+      .map(file => {
+        try {
+          const filePath = path.join(messagesDir, file);
+          const content = fs.readFileSync(filePath, 'utf-8');
+          const data = JSON.parse(content);
+          
+          const message: FallbackMessage = {
+            _id: `file-${file.replace(/[^a-zA-Z0-9]/g, '-')}`,
+            name: data.name,
+            email: data.email,
+            subject: data.subject || 'Message from Portfolio Contact Form',
+            message: data.message,
+            read: false,
+            createdAt: data.receivedAt || new Date().toISOString(),
+            updatedAt: data.receivedAt || new Date().toISOString()
+          };
+          
+          return message;
+        } catch (err) {
+          console.error(`Error reading file ${file}:`, err);
+          return null;
+        }
+      })
+      .filter((msg): msg is NonNullable<typeof msg> => msg !== null);
+    
+    return messages;
+  } catch (error) {
     console.error('Error loading file messages:', error);
     return [];
   }
@@ -29,15 +101,6 @@ export async function POST(req: NextRequest) {
       console.log('Validation error: Missing required fields');
       return NextResponse.json(
         { error: 'All fields are required' },
-{{ ... }}
-      );
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(body.email)) {
-      console.log('Validation error: Invalid email format');
-      return NextResponse.json(
-        { error: 'Invalid email format' },
         { status: 400 }
       );
     }
