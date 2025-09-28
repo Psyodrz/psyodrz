@@ -2,6 +2,8 @@
 
 A responsive and modern personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
+> **Note**: This is the portfolio website repository. For my GitHub profile README, visit [Psyodrz/psyodrz](https://github.com/Psyodrz/psyodrz)
+
 ## Features
 
 - 📱 Fully responsive design
@@ -12,16 +14,33 @@ A responsive and modern personal portfolio website built with Next.js, TypeScrip
 - 🚀 Optimized performance
 - ✨ SEO friendly
 - 🖥️ Flexible server options (local, network, admin panel)
+- 🔗 **Updated with comprehensive GitHub projects showcase**
 
 ## Sections
 
 - Hero Section with call-to-action
 - About Me with education and background
 - Skills categorized into Frontend, Backend, and Tools
-- Projects showcase with links to live demo and GitHub
+- **Projects showcase with all 11 GitHub repositories**
 - Resume with download option
 - Contact form with social links
 - Footer with copyright and quick navigation
+
+## Featured Projects
+
+This portfolio now showcases all your GitHub projects including:
+
+- **3D Maze Game** - Three.js and Rapier physics
+- **AI Code Generator** - Browser extension for HackerRank
+- **Face Detection Mobile** - Ionic/Capacitor app
+- **Flappy Bird Game** - HTML5/JavaScript game
+- **Horror Hunter Arena** - 3D horror game
+- **Nature Explorer** - React/TypeScript app
+- **Trecab App** - Full-stack application
+- **Cloud Security Analyzer** - Security analysis tool
+- **Library Management** - Full-stack system
+- **Flippy Floppy** - Arcade game
+- **Portfolio Website** - This website
 
 ## Getting Started
 
@@ -34,8 +53,8 @@ A responsive and modern personal portfolio website built with Next.js, TypeScrip
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
-   cd portfolio
+   git clone https://github.com/Psyodrz/psyodrz.git
+   cd psyodrz
    ```
 
 2. Install dependencies
@@ -94,7 +113,7 @@ http://<your-ip>:7001/admin  # Network access (if using --network flag)
 1. Replace placeholder content in components with your personal information
 2. Add your own images in the `public` directory
 3. Modify colors in `tailwind.config.js` to match your personal brand
-4. Update projects in `ProjectsSection.tsx` with your own work
+4. Update projects in `src/data/projects.json` with your own work
 5. Replace `resume.pdf` with your actual resume
 
 ## Deployment
@@ -124,4 +143,4 @@ MIT
 - [NextJS](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
-- [React Icons](https://react-icons.github.io/react-icons/) 
+- [React Icons](https://react-icons.github.io/react-icons/)
