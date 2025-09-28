@@ -29,6 +29,12 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
   const [animationId, setAnimationId] = useState<number | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const autoPlayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  
+  // Visual feedback states
+  const [swipeDirection, setSwipeDirection] = useState<'left' | 'right' | null>(null);
+  const [swipeProgress, setSwipeProgress] = useState(0);
+  const [isSwipeThresholdReached, setIsSwipeThresholdReached] = useState(false);
+  const [showSwipeFeedback, setShowSwipeFeedback] = useState(false);
 
   // Auto-play functionality
   useEffect(() => {
@@ -110,6 +116,10 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
     
     setIsDragging(true);
     setStartPos({ x, y });
+    setShowSwipeFeedback(true);
+    setSwipeProgress(0);
+    setSwipeDirection(null);
+    setIsSwipeThresholdReached(false);
     stopAutoPlay();
     
     // Prevent default behavior for mouse events to avoid text selection
@@ -130,6 +140,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
     // Check if this is more of a vertical scroll (prevent interference with page scroll)
     if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 10) {
       setIsDragging(false);
+      setShowSwipeFeedback(false);
       return;
     }
     
@@ -140,6 +151,16 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
     
     const movePercentage = (diffX / (carouselRef.current?.offsetWidth || 1)) * 100;
     const newTranslate = prevTranslate + movePercentage;
+    
+    // Update visual feedback
+    const containerWidth = carouselRef.current?.offsetWidth || 1;
+    const swipeDistance = Math.abs(diffX);
+    const progress = Math.min((swipeDistance / containerWidth) * 100, 100);
+    const threshold = 25; // 25% of container width
+    
+    setSwipeProgress(progress);
+    setSwipeDirection(diffX < 0 ? 'left' : 'right');
+    setIsSwipeThresholdReached(progress > threshold);
     
     // Add resistance at boundaries
     const maxTranslate = 0;
@@ -163,19 +184,35 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
     const movedBy = currentTranslate - prevTranslate;
     const threshold = 25; // Percentage of container width needed to trigger slide change
     
+    // Add visual feedback for successful swipe
     if (Math.abs(movedBy) > threshold) {
       if (movedBy < -threshold && currentIndex < projects.length - 1) {
         setCurrentIndex(currentIndex + 1);
+        // Show success feedback
+        setTimeout(() => setShowSwipeFeedback(false), 300);
       } else if (movedBy > threshold && currentIndex > 0) {
         setCurrentIndex(currentIndex - 1);
+        // Show success feedback
+        setTimeout(() => setShowSwipeFeedback(false), 300);
       } else {
         // Snap back to current slide
         setCurrentTranslate(prevTranslate);
+        // Hide feedback immediately for failed swipe
+        setShowSwipeFeedback(false);
       }
     } else {
       // Snap back to current slide
       setCurrentTranslate(prevTranslate);
+      // Hide feedback immediately for failed swipe
+      setShowSwipeFeedback(false);
     }
+    
+    // Reset visual feedback states
+    setTimeout(() => {
+      setSwipeDirection(null);
+      setSwipeProgress(0);
+      setIsSwipeThresholdReached(false);
+    }, 300);
   };
 
   const goToSlide = (index: number) => {
@@ -248,6 +285,58 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
           ))}
         </div>
 
+        {/* Swipe Visual Feedback */}
+        {showSwipeFeedback && (
+          <>
+            {/* Swipe Direction Indicator */}
+            <div className={`absolute top-1/2 -translate-y-1/2 z-20 transition-all duration-200 ${
+              swipeDirection === 'left' ? 'right-4' : 'left-4'
+            }`}>
+              <div className={`flex items-center justify-center w-12 h-12 rounded-full transition-all duration-200 ${
+                isSwipeThresholdReached 
+                  ? 'bg-primary/20 border-2 border-primary scale-110' 
+                  : 'bg-muted/20 border border-muted'
+              }`}>
+                {swipeDirection === 'left' ? (
+                  <ChevronRight className={`w-6 h-6 transition-colors duration-200 ${
+                    isSwipeThresholdReached ? 'text-primary' : 'text-muted-foreground'
+                  }`} />
+                ) : (
+                  <ChevronLeft className={`w-6 h-6 transition-colors duration-200 ${
+                    isSwipeThresholdReached ? 'text-primary' : 'text-muted-foreground'
+                  }`} />
+                )}
+              </div>
+            </div>
+
+            {/* Swipe Progress Bar */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20">
+              <div className="flex items-center gap-2 px-4 py-2 bg-background/80 backdrop-blur-sm rounded-full border border-border/50">
+                <div className="w-20 h-1 bg-muted rounded-full overflow-hidden">
+                  <div 
+                    className={`h-full transition-all duration-200 ${
+                      isSwipeThresholdReached ? 'bg-primary' : 'bg-muted-foreground'
+                    }`}
+                    style={{ width: `${Math.min(swipeProgress, 100)}%` }}
+                  />
+                </div>
+                <span className={`text-xs font-medium transition-colors duration-200 ${
+                  isSwipeThresholdReached ? 'text-primary' : 'text-muted-foreground'
+                }`}>
+                  {isSwipeThresholdReached ? '✓' : Math.round(swipeProgress)}%
+                </span>
+              </div>
+            </div>
+
+            {/* Haptic-style Visual Pulse */}
+            {isSwipeThresholdReached && (
+              <div className="absolute inset-0 z-10 pointer-events-none">
+                <div className="absolute inset-0 bg-primary/5 animate-pulse rounded-xl" />
+              </div>
+            )}
+          </>
+        )}
+
         {/* Navigation Arrows - Hidden on mobile */}
         {projects.length > 1 && (
           <>
@@ -294,7 +383,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
       <div className="sm:hidden text-center mt-4">
         <p className="text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1">
-            👆 Swipe to explore projects
+            👆 Swipe to explore projects • Watch for visual feedback
           </span>
         </p>
       </div>
