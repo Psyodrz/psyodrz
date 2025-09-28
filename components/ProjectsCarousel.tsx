@@ -288,9 +288,11 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
         {/* Swipe Visual Feedback */}
         {showSwipeFeedback && (
           <>
-            {/* Swipe Direction Indicator */}
+            {/* Swipe Direction Indicator - Positioned to avoid navigation buttons */}
             <div className={`absolute top-1/2 -translate-y-1/2 z-20 transition-all duration-200 ${
-              swipeDirection === 'left' ? 'right-4' : 'left-4'
+              swipeDirection === 'left' 
+                ? 'right-16 sm:right-4' // Move further right on mobile to avoid button area
+                : 'left-16 sm:left-4'   // Move further left on mobile to avoid button area
             }`}>
               <div className={`flex items-center justify-center w-12 h-12 rounded-full transition-all duration-200 ${
                 isSwipeThresholdReached 
@@ -311,7 +313,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
 
             {/* Swipe Progress Bar */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20">
-              <div className="flex items-center gap-2 px-4 py-2 bg-background/80 backdrop-blur-sm rounded-full border border-border/50">
+              <div className="flex items-center gap-2 px-4 py-2 bg-background/90 backdrop-blur-sm rounded-full border border-border/50 shadow-lg">
                 <div className="w-20 h-1 bg-muted rounded-full overflow-hidden">
                   <div 
                     className={`h-full transition-all duration-200 ${
@@ -328,21 +330,21 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
               </div>
             </div>
 
-            {/* Haptic-style Visual Pulse */}
+            {/* Haptic-style Visual Pulse - Lower z-index to stay behind buttons */}
             {isSwipeThresholdReached && (
-              <div className="absolute inset-0 z-10 pointer-events-none">
+              <div className="absolute inset-0 z-5 pointer-events-none">
                 <div className="absolute inset-0 bg-primary/5 animate-pulse rounded-xl" />
               </div>
             )}
           </>
         )}
 
-        {/* Navigation Arrows - Hidden on mobile */}
+        {/* Navigation Arrows - Always visible with highest z-index */}
         {projects.length > 1 && (
           <>
             <button
               onClick={goToPrevious}
-              className="hidden sm:flex absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background border rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-background/90 hover:bg-background border rounded-full p-3 shadow-xl transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed backdrop-blur-sm"
               disabled={isDragging}
               aria-label="Previous project"
             >
@@ -350,7 +352,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
             </button>
             <button
               onClick={goToNext}
-              className="hidden sm:flex absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background border rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-background/90 hover:bg-background border rounded-full p-3 shadow-xl transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed backdrop-blur-sm"
               disabled={isDragging}
               aria-label="Next project"
             >
