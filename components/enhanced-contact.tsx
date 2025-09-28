@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react"
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, MessageCircle, Send, CheckCircle, Download } from "lucide-react"
+import { validateContactForm, createEmailLink } from "@/lib/contact"
 import { Button } from "@/components/ui/button"
 
 interface ContactMethod {
@@ -66,25 +67,41 @@ export function EnhancedContact() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: "", email: "", subject: "", message: "" })
-    }, 3000)
+    try {
+      // Validate form data
+      const { isValid, errors } = validateContactForm(formData)
+      
+      if (!isValid) {
+        alert(`Please fix the following errors:\n${errors.join('\n')}`)
+        setIsSubmitting(false)
+        return
+      }
+      
+      // Create email link and open it
+      const emailLink = createEmailLink(formData)
+      window.open(emailLink, '_blank')
+      
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      }, 3000)
+    } catch (error) {
+      console.error('Error handling form submission:', error)
+      alert('There was an error processing your message. Please try again.')
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
     return (
       <div className="w-full max-w-2xl mx-auto text-center sci-fi-card p-12">
         <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold sci-fi-text mb-2">Message Sent!</h3>
-        <p className="sci-fi-muted">Thank you for reaching out. I'll get back to you soon!</p>
+        <h3 className="text-2xl font-bold sci-fi-text mb-2">Email Opened!</h3>
+        <p className="sci-fi-muted">Your default email client should have opened with a pre-filled message. Please send it to complete your contact request!</p>
       </div>
     )
   }
@@ -191,12 +208,12 @@ export function EnhancedContact() {
               {isSubmitting ? (
                 <div className="flex items-center gap-2">
                   <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  Sending...
+                  Opening Email...
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
                   <Send className="w-4 h-4" />
-                  Send Message
+                  Open Email Client
                 </div>
               )}
             </Button>
