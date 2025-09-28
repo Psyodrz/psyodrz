@@ -1,7 +1,7 @@
 <!-- Psyodrz Enhanced GitHub Profile README -->
 <p align="center">
 <a href="https://github.com/Psyodrz">
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&pause=1000&color=FF61F6&center=true&vCenter=true&width=700&lines=Hi+there%2C+I'm+Psyodrz+✨;Full+Stack+Developer;Open+Source+Enthusiast;Engineering+Student;Cybersecurity+Enthusiast;Always+Learning+New+Things+🚀" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&pause=1000&color=5227FF&center=true&vCenter=true&width=700&lines=Hi+there%2C+I'm+Aditya+Srivastava+✨;Computer+Science+Engineer;Full+Stack+Developer;Game+Development+Enthusiast;AI+%26+Machine+Learning;Always+Building+Something+Cool+🚀" alt="Typing SVG" />
 </a>
 </p>
 
@@ -9,14 +9,14 @@
 <a href="https://github.com/Psyodrz" target="_blank">
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
 </a>
-<a href="mailto:psyodrz@example.com">
+<a href="mailto:Adisrivastav23@gmail.com">
 <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
 </a>
-<a href="https://www.linkedin.com" target="_blank">
+<a href="https://linkedin.com/in/adisrivastav23" target="_blank">
 <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
-<a href="https://psyodrz.github.io/portfolio/" target="_blank">
-<img src="https://img.shields.io/badge/Portfolio-FF61F6?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Portfolio" />
+<a href="https://psyodrz.github.io/psyodrz/" target="_blank">
+<img src="https://img.shields.io/badge/Portfolio-5227FF?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Portfolio" />
 </a>
 </p>
 
@@ -26,20 +26,20 @@
 
 ## 👨‍💻 About Me
 
-I'm a passionate B.Tech CSE student who thrives on creating innovative digital solutions and contributing to the open-source community. My journey spans across full-stack development, cybersecurity, and system design, always seeking to build impactful and user-centric applications.
+I'm a passionate Computer Science Engineering student at Maharishi University of Information Technology who loves creating innovative digital experiences. My work spans across web development, AI applications, mobile apps, and game development. I thrive on solving complex problems and delivering high-quality, user-centered solutions.
 
-- 🎓 **B.Tech Computer Science Engineering Student** | Tech enthusiast with a drive for innovation
-- 🚀 **Full Stack Development**: Building scalable applications with TypeScript, Next.js, and modern JavaScript frameworks
-- 🔐 **Cybersecurity & System Design**: Exploring security architectures and robust system implementations  
-- 🌍 **Open Source Advocate**: Contributing to meaningful projects that make a difference
-- 🎧 **Code Philosophy**: Best code is written with music on repeat and endless curiosity
-- 🎯 **Current Goal**: Building a strong portfolio while contributing to impactful open-source initiatives
+- 🎓 **B.Tech CSE Student** | Maharishi University of Information Technology (2023-2027)
+- 🌐 **Full Stack Development**: Building modern web applications with React, Next.js, TypeScript, and Node.js
+- 🎮 **Game Development**: Creating immersive experiences with Unity, Three.js, and WebGL
+- 🤖 **AI & Machine Learning**: Developing intelligent applications with TensorFlow and computer vision
+- 📱 **Mobile Development**: Cross-platform apps using Ionic, Capacitor, and React Native
+- 🎯 **Current Focus**: Building a diverse portfolio showcasing skills across multiple domains
 
 ## 🛠️ My Tech Arsenal
 
 <p align="center">
 <a href="https://skillicons.dev">
-<img src="https://skillicons.dev/icons?i=javascript,typescript,react,nextjs,nodejs,python,html,css,tailwind,git,github,vscode,linux,docker" />
+<img src="https://skillicons.dev/icons?i=javascript,typescript,react,nextjs,nodejs,python,html,css,tailwind,unity,threejs,cs,cpp,ionic,git,github,vscode" />
 </a>
 </p>
 
@@ -47,30 +47,27 @@ I'm a passionate B.Tech CSE student who thrives on creating innovative digital s
 
 Here are some of the projects I'm most proud of:
 
-### 💼 **Professional & Portfolio**
+### 🎮 **Game Development**
 
 | Project | Description | Tech Stack | Status |
 |---------|-------------|------------|--------|
-| **[Portfolio](https://github.com/Psyodrz/portfolio)** | Personal portfolio showcasing my skills, projects, and journey as a developer | TypeScript, React, Modern CSS | 🚀 Live |
+| **[3D Maze Game](https://github.com/Psyodrz/3DMaze)** | Procedurally generated 3D maze with interactive elements and pathfinding algorithms | Node.js, JavaScript, 3D Graphics | 🚀 Live |
+| **[Flippy Floppy](https://github.com/Psyodrz/flippy-Floppy)** | Enhanced Flappy Bird-style game with smooth gameplay and responsive design | JavaScript, HTML5 Canvas, CSS3 | 🚀 Live |
+| **[Horror Hunter Arena](https://github.com/Psyodrz/horror-hunter-arena)** | Horror-themed arena game with immersive gameplay and atmospheric design | Game Development, Interactive Design | 🔨 In Progress |
 
-### 📚 **Full Stack Applications**
+### 🤖 **AI & Machine Learning**
 
-| Project | Description | Tech Stack | License |
-|---------|-------------|------------|---------|
-| **[Library Management System](https://github.com/Psyodrz/Library-Management)** | Complete full-stack library management solution with user authentication, book cataloging, and borrowing system | JavaScript, Node.js, Database Integration | Apache 2.0 |
+| Project | Description | Tech Stack | Status |
+|---------|-------------|------------|--------|
+| **[AI Code Generator](https://github.com/Psyodrz/ai-code-generator)** | AI-powered browser extension for HackerRank problem solving with intelligent code generation | AI, Browser Extension, JavaScript, ML | 🚀 Live |
+| **[Face Detection Mobile](https://github.com/Psyodrz/face-detection-mobile)** | Real-time face detection mobile app with computer vision capabilities | Ionic, Capacitor, Computer Vision | 🚀 Live |
 
-### 🎮 **Interactive & Fun Projects**
+### 🌐 **Web Applications**
 
-| Project | Description | Tech Stack | License |
-|---------|-------------|------------|---------|
-| **[Flippy Floppy Game](https://github.com/Psyodrz/flippy-Floppy)** | An engaging interactive game with smooth animations and responsive controls | JavaScript, HTML5 Canvas, CSS3 | MIT |
-
-### 🔧 **Development Tools & Utilities**
-
-| Project | Description | Tech Stack |
-|---------|-------------|------------|
-| **Web Development Utilities** | Collection of helpful tools and components for modern web development | TypeScript, React Components |
-| **Cybersecurity Tools** | Security-focused utilities and learning resources | Python, Security Frameworks |
+| Project | Description | Tech Stack | Status |
+|---------|-------------|------------|--------|
+| **[Sci-Fi Portfolio](https://psyodrz.github.io/psyodrz/)** | Modern portfolio with liquid ether background, interactive components, and smooth swipe functionality | Next.js, TypeScript, Tailwind CSS, Three.js | 🚀 Live |
+| **[Nature Explorer](https://github.com/Psyodrz/nature-explorer)** | Nature exploration app with interactive maps and educational content | React, TypeScript, Interactive Maps | 🔨 In Progress |
 
 ## 📊 GitHub Analytics & Performance
 
@@ -122,13 +119,13 @@ I'm always excited to collaborate on innovative projects, contribute to open-sou
 <a href="https://github.com/Psyodrz">
 <img src="https://img.icons8.com/fluency/48/github.png" alt="GitHub" />
 </a>
-<a href="mailto:psyodrz@example.com">
+<a href="mailto:Adisrivastav23@gmail.com">
 <img src="https://img.icons8.com/fluency/48/gmail.png" alt="Email" />
 </a>
-<a href="https://www.linkedin.com">
+<a href="https://linkedin.com/in/adisrivastav23">
 <img src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn" />
 </a>
-<a href="https://psyodrz.github.io/portfolio/">
+<a href="https://psyodrz.github.io/psyodrz/">
 <img src="https://img.icons8.com/fluency/48/domain.png" alt="Portfolio" />
 </a>
 </p>
@@ -136,9 +133,13 @@ I'm always excited to collaborate on innovative projects, contribute to open-sou
 ---
 
 <p align="center">
-<i>"Code is poetry written in logic, and every bug is just a plot twist waiting to be resolved."</i>
+<i>"Building functional, user-centered applications across the stack - one project at a time."</i>
 </p>
 
 <p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=FF61F6&height=100&section=footer&text=Thanks%20for%20visiting!&fontSize=24&fontColor=ffffff&animation=twinkling" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=5227FF&height=100&section=footer&text=Thanks%20for%20visiting!&fontSize=24&fontColor=ffffff&animation=twinkling" />
+</p>
+
+<p align="center">
+<img src="https://komarev.com/ghpvc/?username=Psyodrz&color=5227FF&style=for-the-badge" alt="Profile Views" />
 </p>
