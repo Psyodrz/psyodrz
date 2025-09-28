@@ -1,5 +1,6 @@
 [
   {
+    "_id": "1",
     "title": "3D Maze Game",
     "description": "A 3D maze game with procedural generation, interactive elements and pathfinding algorithms built with Three.js and Rapier physics.",
     "color": "from-blue-500 to-purple-600",
@@ -7,9 +8,12 @@
     "github": "https://github.com/Psyodrz/3DMaze",
     "demo": "https://psyodrz.github.io/3DMaze",
     "featured": true,
-    "order": 1
+    "order": 1,
+    "createdAt": "2024-01-15T00:00:00.000Z",
+    "updatedAt": "2024-01-15T00:00:00.000Z"
   },
   {
+    "_id": "2",
     "title": "AI Code Generator",
     "description": "AI-powered browser extension for HackerRank problem solving with automated code generation and solution suggestions.",
     "color": "from-green-500 to-teal-600",
@@ -17,9 +21,12 @@
     "github": "https://github.com/Psyodrz/ai-code-generator",
     "demo": "https://chrome.google.com/webstore",
     "featured": true,
-    "order": 2
+    "order": 2,
+    "createdAt": "2024-01-16T00:00:00.000Z",
+    "updatedAt": "2024-01-16T00:00:00.000Z"
   },
   {
+    "_id": "3",
     "title": "Face Detection Mobile",
     "description": "Ionic/Capacitor mobile app for real-time face detection with camera integration and cross-platform compatibility.",
     "color": "from-pink-500 to-rose-600",
@@ -27,9 +34,12 @@
     "github": "https://github.com/Psyodrz/face-detection-mobile",
     "demo": "https://psyodrz.github.io/face-detection-mobile",
     "featured": true,
-    "order": 3
+    "order": 3,
+    "createdAt": "2024-01-17T00:00:00.000Z",
+    "updatedAt": "2024-01-17T00:00:00.000Z"
   },
   {
+    "_id": "4",
     "title": "Flappy Bird Game",
     "description": "Flappy Bird-style game built with HTML5 and JavaScript featuring smooth animations and responsive gameplay.",
     "color": "from-yellow-500 to-orange-600",
@@ -37,9 +47,12 @@
     "github": "https://github.com/Psyodrz/floppy-bird-game",
     "demo": "https://psyodrz.github.io/floppy-bird-game",
     "featured": true,
-    "order": 4
+    "order": 4,
+    "createdAt": "2024-01-18T00:00:00.000Z",
+    "updatedAt": "2024-01-18T00:00:00.000Z"
   },
   {
+    "_id": "5",
     "title": "Horror Hunter Arena",
     "description": "Horror-themed arena game project with immersive 3D environments and thrilling gameplay mechanics.",
     "color": "from-purple-500 to-indigo-600",
@@ -47,9 +60,12 @@
     "github": "https://github.com/Psyodrz/horror-hunter-arena",
     "demo": "https://psyodrz.github.io/horror-hunter-arena",
     "featured": true,
-    "order": 5
+    "order": 5,
+    "createdAt": "2024-01-19T00:00:00.000Z",
+    "updatedAt": "2024-01-19T00:00:00.000Z"
   },
   {
+    "_id": "6",
     "title": "Nature Explorer",
     "description": "Nature exploration app built with React and TypeScript featuring interactive maps and environmental data visualization.",
     "color": "from-emerald-500 to-green-600",
@@ -57,9 +73,12 @@
     "github": "https://github.com/Psyodrz/nature-explorer",
     "demo": "https://psyodrz.github.io/nature-explorer",
     "featured": true,
-    "order": 6
+    "order": 6,
+    "createdAt": "2024-01-20T00:00:00.000Z",
+    "updatedAt": "2024-01-20T00:00:00.000Z"
   },
   {
+    "_id": "7",
     "title": "Trecab App",
     "description": "Full-stack application with separate frontend and backend featuring real-time communication and modern web technologies.",
     "color": "from-cyan-500 to-blue-600",
@@ -67,9 +86,12 @@
     "github": "https://github.com/Psyodrz/trecab-app",
     "demo": "https://trecab-app.vercel.app",
     "featured": true,
-    "order": 7
+    "order": 7,
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "updatedAt": "2024-01-21T00:00:00.000Z"
   },
   {
+    "_id": "8",
     "title": "Cloud Security Analyzer",
     "description": "Security analysis tool for cloud credentials and network vulnerabilities with comprehensive scanning capabilities.",
     "color": "from-red-500 to-pink-600",
@@ -77,9 +99,12 @@
     "github": "https://github.com/Psyodrz/cloud-security-analyzer",
     "demo": "https://psyodrz.github.io/cloud-security-analyzer",
     "featured": false,
-    "order": 8
+    "order": 8,
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "updatedAt": "2024-01-22T00:00:00.000Z"
   },
   {
+    "_id": "9",
     "title": "Library Management System",
     "description": "Full Stack Library Management System with user authentication, book tracking, and administrative features.",
     "color": "from-indigo-500 to-purple-600",
@@ -87,9 +112,12 @@
     "github": "https://github.com/Psyodrz/Library-Management",
     "demo": "https://psyodrz.github.io/Library-Management",
     "featured": false,
-    "order": 9
+    "order": 9,
+    "createdAt": "2024-01-23T00:00:00.000Z",
+    "updatedAt": "2024-01-23T00:00:00.000Z"
   },
   {
+    "_id": "10",
     "title": "Flippy Floppy",
     "description": "A casual arcade game with flipping mechanics, colorful aesthetics and increasing difficulty levels.",
     "color": "from-orange-500 to-red-600",
@@ -97,9 +125,12 @@
     "github": "https://github.com/Psyodrz/flippy-Floppy",
     "demo": "https://psyodrz.github.io/flippy-Floppy/",
     "featured": false,
-    "order": 10
+    "order": 10,
+    "createdAt": "2024-01-24T00:00:00.000Z",
+    "updatedAt": "2024-01-24T00:00:00.000Z"
   },
   {
+    "_id": "11",
     "title": "Portfolio Website",
     "description": "A responsive personal portfolio website built with Next.js, showcasing projects and skills with a modern design.",
     "color": "from-teal-500 to-cyan-600",
@@ -107,6 +138,8 @@
     "github": "https://github.com/Psyodrz/psyodrz",
     "demo": "https://psyodrz.vercel.app",
     "featured": false,
-    "order": 11
+    "order": 11,
+    "createdAt": "2024-01-25T00:00:00.000Z",
+    "updatedAt": "2024-01-25T00:00:00.000Z"
   }
 ] 
