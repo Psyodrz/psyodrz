@@ -122,8 +122,12 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
     setIsSwipeThresholdReached(false);
     stopAutoPlay();
     
-    // Prevent default behavior for mouse events to avoid text selection
-    if ('preventDefault' in event) {
+    // Only prevent default for mouse events, not touch events
+    if ('touches' in event) {
+      // For touch events, we'll handle preventDefault in handleMove when needed
+      return;
+    } else {
+      // For mouse events, prevent text selection
       event.preventDefault();
     }
   };
@@ -144,9 +148,19 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
       return;
     }
     
-    // Prevent page scrolling when swiping horizontally
+    // Only try to prevent default if it's a significant horizontal movement
+    // and only for mouse events (touch events are handled differently)
     if (Math.abs(diffX) > 10) {
-      event.preventDefault();
+      try {
+        if (!('touches' in event)) {
+          // Safe to preventDefault for mouse events
+          event.preventDefault();
+        }
+        // For touch events, we don't preventDefault here to avoid the passive listener error
+      } catch (e) {
+        // Silently handle any preventDefault errors
+        console.debug('preventDefault not available:', e);
+      }
     }
     
     const movePercentage = (diffX / (carouselRef.current?.offsetWidth || 1)) * 100;
@@ -257,6 +271,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
           style={{
             transform: `translateX(${currentTranslate}%)`,
             transition: isDragging ? 'none' : 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+            touchAction: 'pan-y pinch-zoom', // Allow vertical scrolling but handle horizontal ourselves
           }}
           onTouchStart={handleStart}
           onTouchMove={handleMove}
