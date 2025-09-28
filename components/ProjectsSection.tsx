@@ -156,14 +156,33 @@ export default function ProjectsSection() {
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         {/* Download Resume */}
-        <a
-          href="/Resume.pdf"
-          download="Aditya_Srivastava_Resume.pdf"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium shadow-lg"
+        <button
+          onClick={() => {
+            // Create a temporary link element for better mobile support
+            const link = document.createElement('a');
+            link.href = '/Resume.pdf';
+            link.download = 'Aditya_Srivastava_Resume.pdf';
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            
+            // For mobile devices, open in new tab instead of download
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+              // On mobile, open the PDF in a new tab
+              window.open('/Resume.pdf', '_blank');
+            } else {
+              // On desktop, trigger download
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }
+          }}
+          className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium shadow-lg cursor-pointer"
         >
           <Download className="w-4 h-4" />
-          Download Resume
-        </a>
+          {typeof window !== 'undefined' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'View Resume' : 'Download Resume'}
+        </button>
 
         {/* View GitHub */}
         <a
