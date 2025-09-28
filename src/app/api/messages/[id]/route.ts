@@ -1,8 +1,11 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/db';
 import Message from '@/models/Message';
 import fs from 'fs';
 import path from 'path';
+
+// This route uses Node.js APIs (fs/path), ensure Node.js runtime on Vercel/Next.js
+export const runtime = 'nodejs';
 
 interface FallbackMessage {
   name: string;
@@ -131,7 +134,7 @@ function deleteFileMessage(filePath: string): { success: boolean; error?: any } 
 }
 
 export async function PATCH(
-  request: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
@@ -142,7 +145,7 @@ export async function PATCH(
       );
     }
 
-    const body = await request.json();
+    const body = await req.json();
     
     if (!body || typeof body.read !== 'boolean') {
       return NextResponse.json(
@@ -233,7 +236,7 @@ export async function PATCH(
 }
 
 export async function DELETE(
-  request: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {

@@ -1,7 +1,10 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import fs from 'fs';
 import path from 'path';
+
+// Uses Node.js APIs (fs/path, nodemailer); ensure Node runtime on Vercel/Next.js
+export const runtime = 'nodejs';
 
 // Function to save messages to a local file
 async function saveMessageToFile(message: any) {
@@ -33,11 +36,11 @@ async function saveMessageToFile(message: any) {
   }
 }
 
-export async function POST(request: Request) {
+export async function POST(req: NextRequest) {
   console.log('POST /api/contact - Request received');
   
   try {
-    const body = await request.json();
+    const body = await req.json();
     console.log('Request body:', JSON.stringify(body));
 
     // Input validation
