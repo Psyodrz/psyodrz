@@ -2,8 +2,9 @@
 
 import { useState, useCallback } from "react"
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, MessageCircle, Send, CheckCircle, Download } from "lucide-react"
-import { validateContactForm, createEmailLink } from "@/lib/contact"
+import { validateContactForm } from "@/lib/contact"
 import { Button } from "@/components/ui/button"
+import { sendContactEmail } from "@/lib/email-service"
 
 interface ContactMethod {
   id: string
@@ -54,6 +55,7 @@ export function EnhancedContact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState("")
   const [selectedMethod, setSelectedMethod] = useState("email")
 
   const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -66,32 +68,48 @@ export function EnhancedContact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitMessage("")
     
     try {
       // Validate form data
       const { isValid, errors } = validateContactForm(formData)
       
       if (!isValid) {
-        alert(`Please fix the following errors:\n${errors.join('\n')}`)
+        setSubmitMessage(`Please fix the following errors:\n${errors.join('\n')}`)
         setIsSubmitting(false)
         return
       }
       
-      // Create email link and open it
-      const emailLink = createEmailLink(formData)
-      window.open(emailLink, '_blank')
+      // Send email using our email service
+      const result = await sendContactEmail({
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'Adisrivastav23@gmail.com'
+      })
+      
+      if (result.success) {
+        setSubmitMessage(result.message)
+        setIsSubmitted(true)
+        
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false)
+          setSubmitMessage("")
+          setFormData({ name: "", email: "", subject: "", message: "" })
+        }, 5000)
+      } else {
+        setSubmitMessage(result.message)
+      }
+      
+      // Log for debugging
+      console.log('Contact form result:', result)
       
       setIsSubmitting(false)
-      setIsSubmitted(true)
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setIsSubmitted(false)
-        setFormData({ name: "", email: "", subject: "", message: "" })
-      }, 3000)
     } catch (error) {
-      console.error('Error handling form submission:', error)
-      alert('There was an error processing your message. Please try again.')
+      console.error('Error sending email:', error)
+      setSubmitMessage('There was an error sending your message. Please try again.')
       setIsSubmitting(false)
     }
   }
@@ -100,8 +118,9 @@ export function EnhancedContact() {
     return (
       <div className="w-full max-w-2xl mx-auto text-center sci-fi-card p-12">
         <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold sci-fi-text mb-2">Email Opened!</h3>
-        <p className="sci-fi-muted">Your default email client should have opened with a pre-filled message. Please send it to complete your contact request!</p>
+        <h3 className="text-2xl font-bold sci-fi-text mb-2">Message Sent!</h3>
+        <p className="sci-fi-muted">{submitMessage}</p>
+        <p className="text-sm sci-fi-accent mt-2">You should also receive an auto-reply confirmation email.</p>
       </div>
     )
   }
@@ -200,6 +219,17 @@ export function EnhancedContact() {
               />
             </div>
             
+            {/* Error/Success Message */}
+            {submitMessage && !isSubmitted && (
+              <div className={`p-3 rounded-lg text-sm ${
+                submitMessage.includes('error') || submitMessage.includes('fix') 
+                  ? 'bg-red-500/10 text-red-400 border border-red-500/20' 
+                  : 'bg-green-500/10 text-green-400 border border-green-500/20'
+              }`}>
+                {submitMessage}
+              </div>
+            )}
+            
             <Button 
               type="submit" 
               disabled={isSubmitting}
@@ -208,12 +238,12 @@ export function EnhancedContact() {
               {isSubmitting ? (
                 <div className="flex items-center gap-2">
                   <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  Opening Email...
+                  Sending Message...
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
                   <Send className="w-4 h-4" />
-                  Open Email Client
+                  Send Message
                 </div>
               )}
             </Button>
