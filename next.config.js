@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  distDir: '.next',
-  output: 'standalone',
+  output: 'export',
+  distDir: 'out',
+  basePath: process.env.NODE_ENV === 'production' ? '/psyodrz' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/psyodrz/' : '',
   images: {
     unoptimized: true,
     domains: ['localhost'],
@@ -19,6 +21,7 @@ const nextConfig = {
   experimental: {
     esmExternals: 'loose',
   },
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
