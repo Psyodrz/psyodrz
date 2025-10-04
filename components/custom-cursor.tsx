@@ -23,7 +23,7 @@ export function CustomCursor() {
     trail: []
   })
   
-  const lastPosition = useRef({ x: 0, y: 0 })
+  const lastPosition = useRef({ x: 0, y: 0, timestamp: 0 })
   const animationFrame = useRef<number>()
   const trailRef = useRef<Array<{ x: number; y: number; opacity: number }>>([])
   const isMobile = useRef(false)
@@ -37,7 +37,7 @@ export function CustomCursor() {
   // Update cursor position with smooth interpolation
   const updatePosition = useCallback((clientX: number, clientY: number) => {
     const now = Date.now()
-    const deltaTime = now - (lastPosition.current as any).timestamp || 16
+    const deltaTime = now - lastPosition.current.timestamp || 16
     const deltaX = clientX - lastPosition.current.x
     const deltaY = clientY - lastPosition.current.y
     
