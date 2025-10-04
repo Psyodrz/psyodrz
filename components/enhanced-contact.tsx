@@ -118,9 +118,9 @@ export function EnhancedContact() {
     return (
       <div className="w-full max-w-2xl mx-auto text-center sci-fi-card p-12">
         <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold sci-fi-text mb-2">Message Sent!</h3>
-        <p className="sci-fi-muted">{submitMessage}</p>
-        <p className="text-sm sci-fi-accent mt-2">You should also receive an auto-reply confirmation email.</p>
+        <h3 className="text-2xl font-bold sci-fi-text mb-2" style={{ fontFamily: 'Times New Roman, serif' }}>Message Sent!</h3>
+        <p className="sci-fi-muted" style={{ fontFamily: 'Poppins, sans-serif' }}>{submitMessage}</p>
+        <p className="text-sm sci-fi-accent mt-2" style={{ fontFamily: 'Poppins, sans-serif' }}>You should also receive an auto-reply confirmation email.</p>
       </div>
     )
   }
@@ -130,7 +130,7 @@ export function EnhancedContact() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Contact Methods */}
         <div className="space-y-6">
-          <h3 className="text-2xl font-bold sci-fi-text mb-6">Get In Touch</h3>
+          <h3 className="text-2xl font-bold sci-fi-text mb-6" style={{ fontFamily: 'Times New Roman, serif' }}>Get In Touch</h3>
           
           <div className="grid gap-4">
             {contactMethods.map((method) => (
@@ -149,9 +149,9 @@ export function EnhancedContact() {
                     {method.icon}
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold sci-fi-text mb-1">{method.name}</h4>
-                    <p className="text-sm sci-fi-accent mb-2">{method.value}</p>
-                    <p className="text-xs sci-fi-muted">{method.description}</p>
+                    <h4 className="font-semibold sci-fi-text mb-1" style={{ fontFamily: 'Times New Roman, serif' }}>{method.name}</h4>
+                    <p className="text-sm sci-fi-accent mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>{method.value}</p>
+                    <p className="text-xs sci-fi-muted" style={{ fontFamily: 'Poppins, sans-serif' }}>{method.description}</p>
                   </div>
                 </div>
               </a>
@@ -163,12 +163,12 @@ export function EnhancedContact() {
 
         {/* Contact Form */}
         <div className="sci-fi-card p-6">
-          <h3 className="text-2xl font-bold sci-fi-text mb-6">Send a Message</h3>
+          <h3 className="text-2xl font-bold sci-fi-text mb-6" style={{ fontFamily: 'Times New Roman, serif' }}>Send a Message</h3>
           
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium sci-fi-muted mb-2">Name</label>
+                 <label className="block text-sm font-medium sci-fi-muted mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>Name</label>
                 <input
                   type="text"
                   name="name"
@@ -180,7 +180,7 @@ export function EnhancedContact() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium sci-fi-muted mb-2">Email</label>
+                 <label className="block text-sm font-medium sci-fi-muted mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>Email</label>
                 <input
                   type="email"
                   name="email"
@@ -194,7 +194,7 @@ export function EnhancedContact() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium sci-fi-muted mb-2">Subject</label>
+               <label className="block text-sm font-medium sci-fi-muted mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>Subject</label>
               <input
                 type="text"
                 name="subject"
@@ -207,7 +207,7 @@ export function EnhancedContact() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium sci-fi-muted mb-2">Message</label>
+               <label className="block text-sm font-medium sci-fi-muted mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>Message</label>
               <textarea
                 name="message"
                 value={formData.message}

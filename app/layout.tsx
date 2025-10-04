@@ -1,12 +1,20 @@
-import type React from "react"
+﻿import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
+import { Poppins } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
 import { NavbarFloating } from "@/components/navbar-floating"
 import { MobileOptimizer } from "@/components/mobile-optimizer"
+import { PerformanceMonitor } from "@/components/performance-monitor"
+import { CustomCursor } from "@/components/custom-cursor"
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "Aditya Srivastava — Portfolio",
@@ -21,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark antialiased">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={`font-sans ${poppins.variable}`}>
+        <CustomCursor />
+        <PerformanceMonitor />
         <MobileOptimizer />
         <NavbarFloating />
         <Suspense fallback={null}>{children}</Suspense>

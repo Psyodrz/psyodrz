@@ -91,8 +91,8 @@ export const TimelineSection = memo(function TimelineSection() {
               {/* Content card */}
               <div className={`flex-1 sci-fi-card p-6 ${getTypeColor(item.type)} transition-all duration-300 hover:scale-[1.02]`}>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                  <h3 className="text-lg font-semibold hollow-font-accent">{item.title}</h3>
-                  <span className="text-sm sci-fi-muted flex items-center gap-1">
+                  <h3 className="text-lg font-semibold hollow-font-accent" style={{ fontFamily: 'Times New Roman, serif' }}>{item.title}</h3>
+                  <span className="text-sm sci-fi-muted flex items-center gap-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
                     <Calendar className="w-4 h-4" />
                     {item.period}
                   </span>
@@ -100,19 +100,19 @@ export const TimelineSection = memo(function TimelineSection() {
                 
                 <div className="flex items-center gap-2 mb-2">
                   <Building className="w-4 h-4 text-muted-foreground" />
-                  <span className="font-medium sci-fi-accent">{item.company}</span>
+                  <span className="font-medium sci-fi-accent" style={{ fontFamily: 'Poppins, sans-serif' }}>{item.company}</span>
                 </div>
                 
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm sci-fi-muted">{item.location}</span>
+                  <span className="text-sm sci-fi-muted" style={{ fontFamily: 'Poppins, sans-serif' }}>{item.location}</span>
                 </div>
                 
-                <p className="text-sm sci-fi-muted mb-4 leading-relaxed">{item.description}</p>
+                <p className="text-sm sci-fi-muted mb-4 leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>{item.description}</p>
                 
                 <div className="flex flex-wrap gap-2">
                   {item.skills.map((skill) => (
-                    <span key={skill} className="px-2 py-1 text-xs bg-card/60 text-foreground/80 rounded-md border border-border/50">
+                    <span key={skill} className="px-2 py-1 text-xs bg-card/60 text-foreground/80 rounded-md border border-border/50" style={{ fontFamily: 'Poppins, sans-serif' }}>
                       {skill}
                     </span>
                   ))}

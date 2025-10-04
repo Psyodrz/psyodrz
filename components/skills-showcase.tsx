@@ -117,7 +117,7 @@ export function SkillsShowcase() {
             }`}
           >
             {category.icon}
-            <span className="text-sm font-medium">{category.name}</span>
+            <span className="text-sm font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>{category.name}</span>
           </button>
         ))}
       </div>
@@ -127,8 +127,8 @@ export function SkillsShowcase() {
         {activeSkills.map((skill) => (
           <div key={skill.name} className="sci-fi-card p-6 group hover:scale-105 transition-all duration-300">
             <div className="flex items-center justify-between mb-3">
-              <h4 className="font-semibold hollow-font-accent">{skill.name}</h4>
-              <span className="text-sm sci-fi-accent font-medium">{skill.level}%</span>
+              <h4 className="font-semibold hollow-font-accent" style={{ fontFamily: 'Times New Roman, serif' }}>{skill.name}</h4>
+              <span className="text-sm sci-fi-accent font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>{skill.level}%</span>
             </div>
             
             {/* Progress Bar */}
@@ -139,7 +139,7 @@ export function SkillsShowcase() {
               />
             </div>
             
-            <p className="text-sm sci-fi-muted leading-relaxed">{skill.description}</p>
+            <p className="text-sm sci-fi-muted leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>{skill.description}</p>
           </div>
         ))}
       </div>
@@ -153,9 +153,9 @@ export function SkillsShowcase() {
           return (
             <div key={category.id} className="text-center sci-fi-card p-4">
               <div className="mb-2">{category.icon}</div>
-              <h5 className="text-sm font-medium sci-fi-text mb-1">{category.name}</h5>
-              <div className="text-2xl font-bold sci-fi-accent">{avgLevel}%</div>
-              <div className="text-xs sci-fi-muted">Average</div>
+              <h5 className="text-sm font-medium sci-fi-text mb-1" style={{ fontFamily: 'Times New Roman, serif' }}>{category.name}</h5>
+              <div className="text-2xl font-bold sci-fi-accent" style={{ fontFamily: 'Poppins, sans-serif' }}>{avgLevel}%</div>
+              <div className="text-xs sci-fi-muted" style={{ fontFamily: 'Poppins, sans-serif' }}>Average</div>
             </div>
           )
         })}

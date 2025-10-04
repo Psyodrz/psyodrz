@@ -131,7 +131,7 @@ export function ProjectsCarousel() {
                     Featured
                   </span>
                 )}
-                <span className="text-sm text-muted-foreground">
+                <span className="text-sm text-muted-foreground" style={{ fontFamily: 'Poppins, sans-serif' }}>
                   {currentIndex + 1} of {projects.length}
                 </span>
               </div>
@@ -140,7 +140,7 @@ export function ProjectsCarousel() {
                 {currentProject.title}
               </h3>
               
-              <p className="text-sm md:text-base mb-4 sci-fi-muted leading-relaxed">
+              <p className="text-sm md:text-base mb-4 sci-fi-muted leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 {currentProject.description}
               </p>
 
@@ -150,6 +150,7 @@ export function ProjectsCarousel() {
                   <span 
                     key={tag}
                     className="px-3 py-1 text-xs font-medium bg-card/60 text-foreground/80 rounded-full border border-border/50"
+                    style={{ fontFamily: 'Poppins, sans-serif' }}
                   >
                     {tag}
                   </span>
@@ -220,7 +221,7 @@ export function ProjectsCarousel() {
 
       {/* Mobile Grid View */}
       <div className="mt-8 md:hidden">
-        <h4 className="text-lg font-semibold mb-4 sci-fi-text">All Projects</h4>
+        <h4 className="text-lg font-semibold mb-4 sci-fi-text" style={{ fontFamily: 'Times New Roman, serif' }}>All Projects</h4>
         <div className="grid grid-cols-1 gap-4">
           {projects.slice(0, 3).map((project) => (
             <div key={project.id} className="sci-fi-card p-4">
@@ -230,8 +231,8 @@ export function ProjectsCarousel() {
                   style={{ backgroundImage: `url(${project.image})` }}
                 />
                 <div className="flex-1 min-w-0">
-                  <h5 className="font-semibold sci-fi-text truncate">{project.title}</h5>
-                  <p className="text-sm sci-fi-muted line-clamp-2 mt-1">{project.description}</p>
+                  <h5 className="font-semibold sci-fi-text truncate" style={{ fontFamily: 'Times New Roman, serif' }}>{project.title}</h5>
+                  <p className="text-sm sci-fi-muted line-clamp-2 mt-1" style={{ fontFamily: 'Poppins, sans-serif' }}>{project.description}</p>
                   <div className="flex gap-2 mt-2">
                     {project.code && (
                       <Button size="sm" variant="outline" className="text-xs px-2 py-1">

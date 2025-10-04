@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { memo } from "react"
 
 import { Mail, Github, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -10,6 +11,8 @@ import ProjectsSection from '@/components/ProjectsSection'
 import { TimelineSection } from '@/components/timeline-section'
 import { SkillsShowcase } from '@/components/skills-showcase'
 import { EnhancedContact } from '@/components/enhanced-contact'
+import { ProfilePhotoSection } from '@/components/profile-photo-section'
+import { CursorParticles } from '@/components/cursor-particles'
 import { useResponsiveResolution } from '@/hooks/use-responsive-resolution';
 
 function Section({
@@ -26,8 +29,8 @@ function Section({
   return (
     <section id={id} className="mx-auto max-w-6xl px-4 py-12 sm:py-16 md:py-20 lg:py-24">
       <header className="mb-6 sm:mb-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-balance hollow-font-primary">{title}</h2>
-        {description ? <p className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed text-pretty">{description}</p> : null}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-balance hollow-font-primary" style={{ fontFamily: 'Times New Roman, serif' }}>{title}</h2>
+        {description ? <p className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed text-pretty" style={{ fontFamily: 'Poppins, sans-serif' }}>{description}</p> : null}
       </header>
       {children}
     </section>
@@ -36,7 +39,7 @@ function Section({
 
 function Chip({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-border/80 bg-card/60 px-3 py-1 text-sm text-muted-foreground">
+    <span className="inline-flex items-center rounded-full border border-border/80 bg-card/60 px-3 py-1 text-sm text-muted-foreground" style={{ fontFamily: 'Poppins, sans-serif' }}>
       {children}
     </span>
   )
@@ -59,8 +62,8 @@ function ProjectCard({
 }) {
   return (
     <article className={`group rounded-xl border bg-card p-5 transition-colors hover:border-primary/40 ${className}`}>
-      <h3 className="text-xl font-medium hollow-font-accent">{title}</h3>
-      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{blurb}</p>
+      <h3 className="text-xl font-medium hollow-font-accent" style={{ fontFamily: 'Times New Roman, serif' }}>{title}</h3>
+      <p className="mt-2 text-sm text-muted-foreground leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>{blurb}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {tags.map((t) => (
           <Chip key={t}>{t}</Chip>
@@ -92,111 +95,132 @@ function ProjectCard({
   )
 }
 
-export default function Page() {
+const Page = memo(function Page() {
   const responsiveResolution = useResponsiveResolution();
 
   return (
-    <main className="min-h-dvh">
+    <main className="min-h-dvh relative">
       {/* HERO - Liquid Ether background with content overlay */}
-      <section className="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] overflow-hidden">
+      <section className="hero-section relative w-full min-h-[900px] sm:min-h-[1000px] lg:min-h-[1100px] xl:min-h-[1200px] overflow-visible z-10">
         <LiquidEther
           colors={[ '#5227FF', '#FF9FFC', '#B19EEF', '#3a2e6e', '#2a2250' ]}
-          mouseForce={15}
-          cursorSize={80}
+          mouseForce={8}
+          cursorSize={50}
           isViscous={false}
-          viscous={25}
-          iterationsViscous={24}
-          iterationsPoisson={24}
+          viscous={10}
+          iterationsViscous={8}
+          iterationsPoisson={8}
           resolution={responsiveResolution}
           isBounce={false}
           autoDemo={true}
-          autoSpeed={0.3}
-          autoIntensity={1.8}
-          takeoverDuration={0.2}
-          autoResumeDelay={2000}
-          autoRampDuration={0.4}
+          autoSpeed={0.15}
+          autoIntensity={1.0}
+          takeoverDuration={0.4}
+          autoResumeDelay={4000}
+          autoRampDuration={0.8}
           style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
         />
         
         {/* Hero Content Overlay */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center px-4">
-          <div className="hero-content text-center max-w-4xl mx-auto">
-            <h1 className="hero-title text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
-              <span className="block hollow-font-animated">Aditya Srivastava</span>
-              <span className="hero-subtitle block text-base sm:text-lg md:text-xl lg:text-2xl font-normal mt-2 hollow-font-secondary">
-                Computer Science Engineer
-              </span>
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 sci-fi-muted leading-relaxed max-w-2xl mx-auto">
-              Building functional, user‑centered applications across the stack
-            </p>
-            <div className="hero-buttons flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8">
-              <Button 
-                size="lg" 
-                className="glow bg-[#5227FF] text-white hover:bg-[#5227FF]/90 px-6 sm:px-8 py-2 sm:py-3 w-full sm:w-auto"
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                View My Work
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="glow border-[#5227FF] text-[#5227FF] hover:bg-[#5227FF]/10 px-6 sm:px-8 py-2 sm:py-3 w-full sm:w-auto"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Get In Touch
-              </Button>
+        <div className="absolute inset-0 z-10 flex items-center justify-center px-4 pt-40 sm:pt-44 md:pt-48 lg:pt-52 xl:pt-56 pb-4">
+          <div className="hero-content text-center max-w-6xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center min-h-full">
+            {/* Profile Photo - Now above the name */}
+            <div className="order-1 flex justify-center lg:justify-center">
+              <ProfilePhotoSection />
             </div>
             
-            {/* Social Links */}
-            <div className="flex justify-center gap-4 sm:gap-6">
-              <a 
-                href="mailto:Adisrivastav23@gmail.com" 
-                className="glow p-2 sm:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
-              </a>
-              <a 
-                href="https://github.com/psyodrz" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="glow p-2 sm:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
-              </a>
-              <a 
-                href="https://linkedin.com/in/adisrivastav23" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="glow p-2 sm:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
-              </a>
+            {/* Text Content - Now below the profile photo */}
+            <div className="order-2 text-center lg:text-left px-2 sm:px-4">
+              <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-5 md:mb-6">
+                <span className="block hollow-font-animated" style={{ fontFamily: 'Times New Roman, serif', color: 'white' }}>
+                  <span className="block">ADITYA</span>
+                  <span className="block">SRIVASTAVA</span>
+                </span>
+                <span className="hero-subtitle block text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal mt-2 sm:mt-3">
+                  <span className="inline-block bg-[#5227FF] text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg text-sm sm:text-base md:text-lg">
+                    Computer Science Engineer
+                  </span>
+                </span>
+              </h1>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-5 sm:mb-6 md:mb-8 sci-fi-muted leading-relaxed max-w-2xl mx-auto lg:mx-0 px-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                Building functional, user‑centered applications across the stack
+              </p>
+              <div className="hero-buttons flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center lg:justify-start items-center mb-2 sm:mb-3 md:mb-4 px-2">
+                <Button 
+                  size="lg" 
+                  className="glow bg-[#5227FF] text-white hover:bg-[#5227FF]/90 px-4 sm:px-6 md:px-8 py-2 sm:py-3 w-full sm:w-auto text-sm sm:text-base"
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  View My Work
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="glow border-[#5227FF] text-[#5227FF] hover:bg-[#5227FF]/10 px-4 sm:px-6 md:px-8 py-2 sm:py-3 w-full sm:w-auto text-sm sm:text-base"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Get In Touch
+                </Button>
+              </div>
+              
+              {/* Social Links */}
+              <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6 px-2">
+                <a 
+                  href="mailto:Adisrivastav23@gmail.com" 
+                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors"
+                  aria-label="Email"
+                >
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
+                </a>
+                <a 
+                  href="https://github.com/psyodrz" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
+                </a>
+                <a 
+                  href="https://linkedin.com/in/adisrivastav23" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Cursor Particles Effect - Moved after hero section */}
+      <CursorParticles />
+      
+      {/* Gradient Blend between Hero and About sections */}
+      <div className="section-gradient-blend relative w-full h-16 sm:h-20 lg:h-24"></div>
+      
       {/* ABOUT */}
-      <Section
-        id="about"
-        title={<span className="sci-fi-text">About Me</span>}
-        description={<span className="sci-fi-muted">I'm a Computer Science Engineering student passionate about building functional, user‑centered applications across the stack.</span>}
-      >
+      <div className="relative z-10 mt-2">
+        <Section
+          id="about"
+          title={<span className="sci-fi-text" style={{ fontFamily: 'Times New Roman, serif' }}>About Me</span>}
+          description={<span className="sci-fi-muted" style={{ fontFamily: 'Poppins, sans-serif' }}>I'm a Computer Science Engineering student passionate about building functional, user‑centered applications across the stack.</span>}
+        >
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="space-y-4 leading-relaxed sci-fi-text">
+          <div className="space-y-4 leading-relaxed sci-fi-text" style={{ fontFamily: 'Poppins, sans-serif' }}>
             <p>
               With a strong foundation in frontend and backend technologies, I enjoy crafting experiences that are performant and accessible.
             </p>
             <p>
-              I’m constantly learning new tools and patterns across web and mobile, and I love exploring creative coding, games, and AI.
+              I'm constantly learning new tools and patterns across web and mobile, and I love exploring creative coding, games, and AI.
             </p>
           </div>
           <div className="sci-fi-card p-6">
             <h3 className="text-lg font-medium sci-fi-accent">Education</h3>
-            <ul className="mt-3 space-y-2 text-sm sci-fi-muted">
+            <ul className="mt-3 space-y-2 text-sm sci-fi-muted" style={{ fontFamily: 'Poppins, sans-serif' }}>
               <li>
                 <span className="font-medium sci-fi-text">
                   B.Tech CSE — Maharishi University of Information Technology
@@ -213,32 +237,43 @@ export default function Page() {
             </div>
           </div>
         </div>
-      </Section>
+        </Section>
+      </div>
 
       {/* SKILLS */}
-      <Section id="skills" title={<span className="sci-fi-text">Skills & Expertise</span>} description={<span className="sci-fi-muted">Interactive showcase of my technical skills and proficiency levels across different domains.</span>}>
-        <SkillsShowcase />
-      </Section>
+      <div className="relative z-10">
+        <Section id="skills" title={<span className="sci-fi-text" style={{ fontFamily: 'Times New Roman, serif' }}>Skills & Expertise</span>} description={<span className="sci-fi-muted" style={{ fontFamily: 'Poppins, sans-serif' }}>Interactive showcase of my technical skills and proficiency levels across different domains.</span>}>
+          <SkillsShowcase />
+        </Section>
+      </div>
 
       {/* EXPERIENCE */}
-      <Section id="experience" title={<span className="sci-fi-text">Experience & Education</span>} description={<span className="sci-fi-muted">My professional journey, education, and key achievements over the years.</span>}>
-        <TimelineSection />
-      </Section>
+      <div className="relative z-10">
+        <Section id="experience" title={<span className="sci-fi-text" style={{ fontFamily: 'Times New Roman, serif' }}>Experience & Education</span>} description={<span className="sci-fi-muted" style={{ fontFamily: 'Poppins, sans-serif' }}>My professional journey, education, and key achievements over the years.</span>}>
+          <TimelineSection />
+        </Section>
+      </div>
 
       {/* PROJECTS */}
-      <Section id="projects" title={<span className="sci-fi-text">Featured Projects</span>} description={<span className="sci-fi-muted">Interactive showcase of my best work across web development, AI, and game development.</span>}>
-        <ProjectsSection />
-      </Section>
+      <div className="relative z-10">
+        <Section id="projects" title={<span className="sci-fi-text" style={{ fontFamily: 'Times New Roman, serif' }}>Featured Projects</span>} description={<span className="sci-fi-muted" style={{ fontFamily: 'Poppins, sans-serif' }}>Interactive showcase of my best work across web development, AI, and game development.</span>}>
+          <ProjectsSection />
+        </Section>
+      </div>
 
       {/* CONTACT */}
-      <Section
-        id="contact"
-        title={<span className="sci-fi-text">Get In Touch</span>}
-        description={<span className="sci-fi-muted">Ready to work together? Let's discuss your next project or just say hello!</span>}
-      >
-        <EnhancedContact />
-        <footer className="mt-10 text-sm sci-fi-muted text-center">© 2025 Aditya Srivastava. All rights reserved.</footer>
-      </Section>
+      <div className="relative z-10">
+        <Section
+          id="contact"
+          title={<span className="sci-fi-text" style={{ fontFamily: 'Times New Roman, serif' }}>Get In Touch</span>}
+          description={<span className="sci-fi-muted" style={{ fontFamily: 'Poppins, sans-serif' }}>Ready to work together? Let's discuss your next project or just say hello!</span>}
+        >
+          <EnhancedContact />
+          <footer className="mt-10 text-sm sci-fi-muted text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>© 2025 Aditya Srivastava. All rights reserved.</footer>
+        </Section>
+      </div>
     </main>
   )
-}
+})
+
+export default Page
