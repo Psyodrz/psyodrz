@@ -161,12 +161,12 @@ const HeroSection = () => {
             <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gradient-br-blue-purple transform hover:scale-105 transition-transform shadow-neon-sm backdrop-blur-sm">
               {!imgError ? (
                 <Image
-                  src="/randi.png"
+                  src="./randi.png"
                   alt="Profile"
                   fill
-                  unoptimized={true}
                   style={{ objectFit: 'cover' }}
                   priority
+                  unoptimized
                   onError={() => setImgError(true)}
                 />
               ) : (

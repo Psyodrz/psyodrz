@@ -135,14 +135,14 @@ export function ProfilePhotoSection({ className = "" }: ProfilePhotoSectionProps
         <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary/40 transition-all duration-500">
           {!imageError ? (
             <Image
-              src="/randi.png"
+              src="./randi.png"
               alt="Aditya Srivastava - Computer Science Engineer"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
               priority
               sizes="(max-width: 768px) 192px, (max-width: 1024px) 256px, 320px"
-              quality={85}
-              unoptimized={true}
+              quality={90}
+              unoptimized
               onError={() => setImageError(true)}
             />
           ) : (

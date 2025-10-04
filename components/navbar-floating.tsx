@@ -145,7 +145,7 @@ export function NavbarFloating() {
                   Contact
                 </Link>
                 <Link 
-                  href="/Resume.pdf" 
+                  href="./Resume.pdf" 
                   className="flex-1 px-4 py-2 text-sm font-medium rounded-xl bg-gradient-to-r from-primary to-secondary text-white hover:from-primary/90 hover:to-secondary/90 transition-all duration-200 text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

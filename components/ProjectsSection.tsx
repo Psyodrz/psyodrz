@@ -111,7 +111,7 @@ export default function ProjectsSection() {
         let data = projectsData;
         
         try {
-          const response = await fetch('/data/projects.json');
+          const response = await fetch('./data/projects.json');
           if (response.ok) {
             const fetchedData = await response.json();
             data = fetchedData;
