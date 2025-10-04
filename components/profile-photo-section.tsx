@@ -1,9 +1,9 @@
 "use client"
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Camera, Download, Share2, Code, Cpu, Database, Globe, Zap, GitBranch, Layers } from 'lucide-react'
+import { Camera, Download, Share2, Code, Cpu, Database, Globe, Zap, GitBranch, Layers, User } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 interface ProfilePhotoSectionProps {
@@ -11,6 +11,8 @@ interface ProfilePhotoSectionProps {
 }
 
 export function ProfilePhotoSection({ className = "" }: ProfilePhotoSectionProps) {
+  const [imageError, setImageError] = useState(false)
+  
   // Define floating bubble data with proper spacing to avoid overlaps
   const floatingBubbles = [
     {
@@ -131,15 +133,23 @@ export function ProfilePhotoSection({ className = "" }: ProfilePhotoSectionProps
         
         {/* Main photo container */}
         <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary/40 transition-all duration-500">
-          <Image
-            src="/profile.jpg"
-            alt="Aditya Srivastava - Computer Science Engineer"
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-            priority
-            sizes="(max-width: 768px) 192px, (max-width: 1024px) 256px, 320px"
-            quality={85}
-          />
+          {!imageError ? (
+            <Image
+              src={process.env.NODE_ENV === 'production' ? '/psyodrz/profile.jpg' : '/profile.jpg'}
+              alt="Aditya Srivastava - Computer Science Engineer"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              priority
+              sizes="(max-width: 768px) 192px, (max-width: 1024px) 256px, 320px"
+              quality={85}
+              unoptimized={true}
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-[#5227FF] to-[#FF9FFC] flex items-center justify-center">
+              <User className="w-16 h-16 sm:w-20 sm:h-20 text-white opacity-80" />
+            </div>
+          )}
           
           {/* Overlay effects */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

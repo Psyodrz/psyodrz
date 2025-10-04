@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "3D Maze Game",
     description: "Procedurally generated maze with interactive elements and pathfinding algorithms. Built with Three.js and WebGL for immersive 3D experience.",
     tags: ["JavaScript", "Three.js", "WebGL", "Algorithms"],
-    image: "/projects/3d-maze.jpg",
+    image: process.env.NODE_ENV === 'production' ? '/psyodrz/projects/3d-maze.jpg' : '/projects/3d-maze.jpg',
     code: "https://github.com/psyodrz/3d-maze-game",
     demo: "https://maze-game-demo.vercel.app",
     featured: true
@@ -31,7 +31,7 @@ const projects: Project[] = [
     title: "AI Face Detection",
     description: "Real-time face detection system using computer vision and machine learning. Tracks facial features and emotions with high accuracy.",
     tags: ["Python", "OpenCV", "TensorFlow", "Machine Learning"],
-    image: "/projects/face-detection.jpg",
+    image: process.env.NODE_ENV === 'production' ? '/psyodrz/projects/face-detection.jpg' : '/projects/face-detection.jpg',
     code: "https://github.com/psyodrz/face-detection-ai",
     demo: "https://face-detection-demo.vercel.app",
     featured: true
@@ -41,7 +41,7 @@ const projects: Project[] = [
     title: "Flippy Floppy",
     description: "Casual arcade game with innovative flipping mechanics and progressive difficulty. Features smooth animations and engaging gameplay.",
     tags: ["JavaScript", "CSS", "Game Dev", "UI/UX"],
-    image: "/placeholder.jpg",
+    image: process.env.NODE_ENV === 'production' ? '/psyodrz/placeholder.jpg' : '/placeholder.jpg',
     code: "https://github.com/psyodrz/flippy-floppy",
     demo: "https://flippy-floppy-game.vercel.app"
   },
@@ -50,7 +50,7 @@ const projects: Project[] = [
     title: "Haunted Hunter Arena",
     description: "Multiplayer arena game where players hunt supernatural creatures. Features real-time multiplayer and dynamic environments.",
     tags: ["Unity", "C#", "Multiplayer", "Game Design"],
-    image: "/placeholder.jpg",
+    image: process.env.NODE_ENV === 'production' ? '/psyodrz/placeholder.jpg' : '/placeholder.jpg',
     code: "https://github.com/psyodrz/haunted-hunter",
     demo: "https://haunted-hunter-demo.vercel.app"
   },
@@ -59,7 +59,7 @@ const projects: Project[] = [
     title: "Portfolio Website",
     description: "Responsive portfolio built with Next.js showcasing projects and skills. Features modern design and smooth animations.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    image: "/placeholder.jpg",
+    image: process.env.NODE_ENV === 'production' ? '/psyodrz/placeholder.jpg' : '/placeholder.jpg',
     code: "https://github.com/psyodrz/portfolio",
     demo: "https://aditya-srivastava.vercel.app",
     featured: true
