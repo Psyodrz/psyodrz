@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 import { getAssetUrl } from "@/lib/utils-client"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, Code2, Terminal, Zap } from "lucide-react"
 
 export function NavbarFloating() {
   const [elevated, setElevated] = useState(false)
@@ -65,11 +65,11 @@ export function NavbarFloating() {
             className="flex items-center gap-2 rounded-xl px-3 py-2 transition-all duration-200 hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary group"
           >
             <div className="relative">
-              <span
+              <Code2 
+                className="w-5 h-5 text-primary group-hover:text-secondary transition-colors duration-200 group-hover:scale-110 transition-transform duration-200" 
                 aria-hidden
-                className="inline-block h-3 w-3 rounded-full bg-gradient-to-r from-primary to-secondary group-hover:scale-110 transition-transform duration-200"
               />
-              <span className="absolute inset-0 h-3 w-3 rounded-full bg-primary/30 animate-ping" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-sm blur-sm group-hover:blur-md transition-all duration-200" />
             </div>
             <span className="text-sm font-bold tracking-wide sci-fi-text group-hover:text-primary transition-colors duration-200">
               Adi.Dev

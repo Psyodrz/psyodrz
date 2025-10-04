@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Camera, Download, Share2, Code, Cpu, Database, Globe, Zap, GitBranch, Layers, User } from 'lucide-react'
+import { Download, Share2, Code, Cpu, Database, Globe, Zap, GitBranch, Layers, User } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 interface ProfilePhotoSectionProps {
@@ -153,13 +153,6 @@ export function ProfilePhotoSection({ className = "" }: ProfilePhotoSectionProps
           
           {/* Overlay effects */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          {/* Camera icon overlay */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="bg-black/50 backdrop-blur-sm rounded-full p-4">
-              <Camera className="w-8 h-8 text-white" />
-            </div>
-          </div>
         </div>
 
         {/* Floating bubbles - positioned around the profile picture with proper spacing */}
