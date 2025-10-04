@@ -705,6 +705,15 @@ body {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+
+/* Ensure body allows scrolling on mobile */
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 /* Optimize hero section loading */
@@ -830,6 +839,22 @@ html {
   #cursor-particles {
     transform: translateZ(0);
     backface-visibility: hidden;
+  }
+  
+  /* Ensure touch scrolling works properly */
+  * {
+    touch-action: manipulation;
+  }
+  
+  /* Allow vertical scrolling on main content */
+  main {
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix any potential scroll blocking */
+  .custom-cursor {
+    pointer-events: none;
   }
 }
 

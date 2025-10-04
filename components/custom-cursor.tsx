@@ -101,9 +101,11 @@ export function CustomCursor() {
 
   const handleTouchMove = useCallback((e: TouchEvent) => {
     if (isHoverSupported()) return
-    e.preventDefault()
+    // Don't prevent default to allow normal scrolling
     const touch = e.touches[0]
-    updatePosition(touch.clientX, touch.clientY)
+    if (touch) {
+      updatePosition(touch.clientX, touch.clientY)
+    }
   }, [updatePosition, isHoverSupported])
 
   const handleTouchEnd = useCallback(() => {
@@ -123,9 +125,9 @@ export function CustomCursor() {
     document.addEventListener('mousedown', handleMouseDown)
     document.addEventListener('mouseup', handleMouseUp)
     document.addEventListener('mouseleave', handleMouseLeave)
-    document.addEventListener('touchstart', handleTouchStart, { passive: false })
-    document.addEventListener('touchmove', handleTouchMove, { passive: false })
-    document.addEventListener('touchend', handleTouchEnd)
+    document.addEventListener('touchstart', handleTouchStart, { passive: true })
+    document.addEventListener('touchmove', handleTouchMove, { passive: true })
+    document.addEventListener('touchend', handleTouchEnd, { passive: true })
 
     // Add hover listeners to interactive elements
     const interactiveElements = document.querySelectorAll(
