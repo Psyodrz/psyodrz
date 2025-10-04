@@ -30,6 +30,7 @@ export function CustomCursor() {
 
   // Check if device supports hover (desktop)
   const isHoverSupported = useCallback(() => {
+    if (typeof window === 'undefined') return false
     return window.matchMedia('(hover: hover) and (pointer: fine)').matches
   }, [])
 
@@ -154,7 +155,14 @@ export function CustomCursor() {
   }, [handleMouseMove, handleMouseDown, handleMouseUp, handleMouseLeave, handleTouchStart, handleTouchMove, handleTouchEnd, handleElementHover])
 
   // Don't render on mobile devices that don't support hover
-  if (!isHoverSupported() && !isMobile.current) {
+  // Only check after component has mounted to avoid SSR issues
+  const [isMounted, setIsMounted] = useState(false)
+  
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+  
+  if (!isMounted || (!isHoverSupported() && !isMobile.current)) {
     return null
   }
 

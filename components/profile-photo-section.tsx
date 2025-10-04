@@ -135,7 +135,7 @@ export function ProfilePhotoSection({ className = "" }: ProfilePhotoSectionProps
         <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary/40 transition-all duration-500">
           {!imageError ? (
             <Image
-              src={process.env.NODE_ENV === 'production' ? '/psyodrz/randi.png' : '/randi.png'}
+              src="/randi.png"
               alt="Aditya Srivastava - Computer Science Engineer"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"

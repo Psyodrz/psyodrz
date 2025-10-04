@@ -27,10 +27,10 @@ function Section({
   children?: React.ReactNode
 }) {
   return (
-    <section id={id} className="mx-auto max-w-6xl px-4 py-12 sm:py-16 md:py-20 lg:py-24">
-      <header className="mb-6 sm:mb-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-balance hollow-font-primary" style={{ fontFamily: 'Times New Roman, serif' }}>{title}</h2>
-        {description ? <p className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed text-pretty" style={{ fontFamily: 'Poppins, sans-serif' }}>{description}</p> : null}
+    <section id={id} className="mx-auto max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28">
+      <header className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+        <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-balance hollow-font-primary leading-tight" style={{ fontFamily: 'Times New Roman, serif' }}>{title}</h2>
+        {description ? <p className="mt-2 sm:mt-3 md:mt-4 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-pretty max-w-4xl" style={{ fontFamily: 'Poppins, sans-serif' }}>{description}</p> : null}
       </header>
       {children}
     </section>
@@ -39,7 +39,7 @@ function Section({
 
 function Chip({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-border/80 bg-card/60 px-3 py-1 text-sm text-muted-foreground" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <span className="inline-flex items-center rounded-full border border-border/80 bg-card/60 px-2 py-1 xs:px-3 xs:py-1.5 sm:px-4 sm:py-2 text-xs xs:text-sm sm:text-base text-muted-foreground" style={{ fontFamily: 'Poppins, sans-serif' }}>
       {children}
     </span>
   )
@@ -61,19 +61,19 @@ function ProjectCard({
   className?: string
 }) {
   return (
-    <article className={`group rounded-xl border bg-card p-5 transition-colors hover:border-primary/40 ${className}`}>
-      <h3 className="text-xl font-medium hollow-font-accent" style={{ fontFamily: 'Times New Roman, serif' }}>{title}</h3>
-      <p className="mt-2 text-sm text-muted-foreground leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>{blurb}</p>
-      <div className="mt-4 flex flex-wrap gap-2">
+    <article className={`group rounded-xl border bg-card p-3 sm:p-4 md:p-5 lg:p-6 transition-colors hover:border-primary/40 ${className}`}>
+      <h3 className="text-lg sm:text-xl md:text-2xl font-medium hollow-font-accent leading-tight" style={{ fontFamily: 'Times New Roman, serif' }}>{title}</h3>
+      <p className="mt-2 sm:mt-3 text-xs xs:text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>{blurb}</p>
+      <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2">
         {tags.map((t) => (
           <Chip key={t}>{t}</Chip>
         ))}
       </div>
-      <div className="mt-5 flex gap-3">
+      <div className="mt-4 sm:mt-5 flex flex-col xs:flex-row gap-2 sm:gap-3">
         {code ? (
           <a
             href={code}
-            className="glow inline-flex items-center rounded-md bg-secondary/40 px-3 py-1.5 text-sm hover:bg-secondary/60"
+            className="glow inline-flex items-center justify-center rounded-md bg-secondary/40 px-3 py-2 xs:px-4 xs:py-2.5 sm:px-5 sm:py-3 text-xs xs:text-sm sm:text-base hover:bg-secondary/60 min-h-[44px]"
             target="_blank"
             rel="noreferrer"
           >
@@ -83,7 +83,7 @@ function ProjectCard({
         {demo ? (
           <a
             href={demo}
-            className="glow inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-sm text-primary-foreground hover:opacity-90"
+            className="glow inline-flex items-center justify-center rounded-md bg-primary px-3 py-2 xs:px-4 xs:py-2.5 sm:px-5 sm:py-3 text-xs xs:text-sm sm:text-base text-primary-foreground hover:opacity-90 min-h-[44px]"
             target="_blank"
             rel="noreferrer"
           >
@@ -101,7 +101,7 @@ const Page = memo(function Page() {
   return (
     <main className="min-h-dvh relative">
       {/* HERO - Liquid Ether background with content overlay */}
-      <section className="hero-section relative w-full min-h-[900px] sm:min-h-[1000px] lg:min-h-[1100px] xl:min-h-[1200px] overflow-visible z-10">
+      <section className="hero-section relative w-full min-h-[100vh] sm:min-h-[100vh] md:min-h-[100vh] lg:min-h-[100vh] xl:min-h-[100vh] 2xl:min-h-[100vh] overflow-visible z-10">
         <LiquidEther
           colors={[ '#5227FF', '#FF9FFC', '#B19EEF', '#3a2e6e', '#2a2250' ]}
           mouseForce={8}
@@ -122,33 +122,33 @@ const Page = memo(function Page() {
         />
         
         {/* Hero Content Overlay */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center px-4 pt-40 sm:pt-44 md:pt-48 lg:pt-52 xl:pt-56 pb-4">
-          <div className="hero-content text-center max-w-6xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center min-h-full">
+        <div className="absolute inset-0 z-10 flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 pt-32 sm:pt-36 md:pt-40 lg:pt-44 xl:pt-48 2xl:pt-52 pb-4 sm:pb-6 md:pb-8">
+          <div className="hero-content text-center max-w-7xl mx-auto flex flex-col xl:grid xl:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16 items-center min-h-full w-full">
             {/* Profile Photo - Now above the name */}
-            <div className="order-1 flex justify-center lg:justify-center">
+            <div className="order-1 flex justify-center xl:justify-center w-full xl:w-auto">
               <ProfilePhotoSection />
             </div>
             
             {/* Text Content - Now below the profile photo */}
-            <div className="order-2 text-center lg:text-left px-2 sm:px-4">
-              <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-5 md:mb-6">
-                <span className="block hollow-font-animated" style={{ fontFamily: 'Times New Roman, serif', color: 'white' }}>
-                  <span className="block">ADITYA</span>
-                  <span className="block">SRIVASTAVA</span>
+            <div className="order-2 text-center xl:text-left px-1 sm:px-2 md:px-3 lg:px-4 w-full xl:w-auto">
+              <h1 className="hero-title text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                <span className="block hollow-font-primary" style={{ fontFamily: 'Times New Roman, serif', color: 'white' }}>
+                  <span className="block leading-tight">ADITYA</span>
+                  <span className="block leading-tight">SRIVASTAVA</span>
                 </span>
-                <span className="hero-subtitle block text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal mt-2 sm:mt-3">
-                  <span className="inline-block bg-[#5227FF] text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg text-sm sm:text-base md:text-lg">
+                <span className="hero-subtitle block text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-normal mt-1 sm:mt-2 md:mt-3">
+                  <span className="inline-block bg-[#5227FF] text-white px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-lg text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl">
                     Computer Science Engineer
                   </span>
                 </span>
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-5 sm:mb-6 md:mb-8 sci-fi-muted leading-relaxed max-w-2xl mx-auto lg:mx-0 px-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl mb-4 sm:mb-5 md:mb-6 lg:mb-8 sci-fi-muted leading-relaxed max-w-3xl mx-auto xl:mx-0 px-1 sm:px-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 Building functional, user‑centered applications across the stack
               </p>
-              <div className="hero-buttons flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center lg:justify-start items-center mb-2 sm:mb-3 md:mb-4 px-2">
+              <div className="hero-buttons flex flex-col xs:flex-row gap-2 xs:gap-3 sm:gap-4 md:gap-5 lg:gap-6 justify-center xl:justify-start items-center mb-3 sm:mb-4 md:mb-5 lg:mb-6 px-1 sm:px-2">
                 <Button 
                   size="lg" 
-                  className="glow bg-[#5227FF] text-white hover:bg-[#5227FF]/90 px-4 sm:px-6 md:px-8 py-2 sm:py-3 w-full sm:w-auto text-sm sm:text-base interactive"
+                  className="glow bg-[#5227FF] text-white hover:bg-[#5227FF]/90 px-3 py-2 xs:px-4 xs:py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 w-full xs:w-auto text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl interactive min-h-[44px]"
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   View My Work
@@ -156,7 +156,7 @@ const Page = memo(function Page() {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="glow border-[#5227FF] text-[#5227FF] hover:bg-[#5227FF]/10 px-4 sm:px-6 md:px-8 py-2 sm:py-3 w-full sm:w-auto text-sm sm:text-base interactive"
+                  className="glow border-[#5227FF] text-[#5227FF] hover:bg-[#5227FF]/10 px-3 py-2 xs:px-4 xs:py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 w-full xs:w-auto text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl interactive min-h-[44px]"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Get In Touch
@@ -164,31 +164,31 @@ const Page = memo(function Page() {
               </div>
               
               {/* Social Links */}
-              <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6 px-2">
+              <div className="flex justify-center xl:justify-start gap-2 xs:gap-3 sm:gap-4 md:gap-5 lg:gap-6 px-1 sm:px-2">
                 <a 
                   href="mailto:Adisrivastav23@gmail.com" 
-                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors interactive"
+                  className="glow p-2 xs:p-2.5 sm:p-3 md:p-4 rounded-full bg-card/60 hover:bg-card/80 transition-colors interactive min-w-[44px] min-h-[44px] flex items-center justify-center"
                   aria-label="Email"
                 >
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
+                  <Mail className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 sci-fi-accent" />
                 </a>
                 <a 
                   href="https://github.com/psyodrz" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors interactive"
+                  className="glow p-2 xs:p-2.5 sm:p-3 md:p-4 rounded-full bg-card/60 hover:bg-card/80 transition-colors interactive min-w-[44px] min-h-[44px] flex items-center justify-center"
                   aria-label="GitHub"
                 >
-                  <Github className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
+                  <Github className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 sci-fi-accent" />
                 </a>
                 <a 
                   href="https://linkedin.com/in/adisrivastav23" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors interactive"
+                  className="glow p-2 xs:p-2.5 sm:p-3 md:p-4 rounded-full bg-card/60 hover:bg-card/80 transition-colors interactive min-w-[44px] min-h-[44px] flex items-center justify-center"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
+                  <Linkedin className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 sci-fi-accent" />
                 </a>
               </div>
             </div>

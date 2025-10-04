@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
-  distDir: 'out',
-  basePath: process.env.NODE_ENV === 'production' ? '/psyodrz' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/psyodrz/' : '',
+  // Only use static export for production builds
+  ...(process.env.NODE_ENV === 'production' && {
+    output: 'export',
+    distDir: 'out',
+    basePath: '/psyodrz',
+    assetPrefix: '/psyodrz/',
+  }),
   images: {
     unoptimized: true,
     domains: ['localhost'],
