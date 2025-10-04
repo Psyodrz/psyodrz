@@ -286,7 +286,7 @@
     scroll-behavior: smooth; /* add smooth in-page navigation for a snappier feel */
   }
   
-  /* Custom cursor with subtle glow effect */
+  /* Enhanced Custom Cursor System */
   * {
     cursor: none;
   }
@@ -295,30 +295,122 @@
     cursor: none;
   }
   
-  /* Custom cursor element */
+  /* Main cursor element */
   .custom-cursor {
     position: fixed;
     width: 20px;
     height: 20px;
-    background: radial-gradient(circle, rgba(82, 39, 255, 0.8) 0%, rgba(255, 159, 252, 0.6) 50%, rgba(177, 158, 239, 0.4) 100%);
+    background: radial-gradient(circle, rgba(82, 39, 255, 0.9) 0%, rgba(255, 159, 252, 0.7) 50%, rgba(177, 158, 239, 0.5) 100%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
     mix-blend-mode: difference;
-    transition: transform 0.1s ease-out;
+    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 
-      0 0 20px rgba(82, 39, 255, 0.5),
-      0 0 40px rgba(255, 159, 252, 0.3),
-      0 0 60px rgba(177, 158, 239, 0.2);
+      0 0 20px rgba(82, 39, 255, 0.6),
+      0 0 40px rgba(255, 159, 252, 0.4),
+      0 0 60px rgba(177, 158, 239, 0.3),
+      inset 0 0 10px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    will-change: transform, opacity;
   }
   
   .custom-cursor.hover {
-    transform: scale(1.5);
-    background: radial-gradient(circle, rgba(82, 39, 255, 1) 0%, rgba(255, 159, 252, 0.8) 50%, rgba(177, 158, 239, 0.6) 100%);
+    transform: scale(1.8);
+    background: radial-gradient(circle, rgba(82, 39, 255, 1) 0%, rgba(255, 159, 252, 0.9) 50%, rgba(177, 158, 239, 0.7) 100%);
     box-shadow: 
-      0 0 30px rgba(82, 39, 255, 0.8),
-      0 0 60px rgba(255, 159, 252, 0.5),
-      0 0 90px rgba(177, 158, 239, 0.3);
+      0 0 30px rgba(82, 39, 255, 0.9),
+      0 0 60px rgba(255, 159, 252, 0.6),
+      0 0 90px rgba(177, 158, 239, 0.4),
+      inset 0 0 15px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+  }
+  
+  .custom-cursor.clicking {
+    transform: scale(0.6);
+    background: radial-gradient(circle, rgba(255, 159, 252, 1) 0%, rgba(82, 39, 255, 0.9) 50%, rgba(177, 158, 239, 0.7) 100%);
+    box-shadow: 
+      0 0 15px rgba(255, 159, 252, 0.8),
+      0 0 30px rgba(82, 39, 255, 0.6),
+      0 0 45px rgba(177, 158, 239, 0.4);
+  }
+  
+  .custom-cursor.hidden {
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  /* Cursor trail effect */
+  .cursor-trail {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(82, 39, 255, 0.6) 0%, rgba(255, 159, 252, 0.4) 50%, rgba(177, 158, 239, 0.2) 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    mix-blend-mode: difference;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    will-change: opacity, transform;
+  }
+  
+  /* Velocity-based particle effect */
+  .velocity-particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, rgba(255, 159, 252, 0.8) 0%, rgba(82, 39, 255, 0.6) 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9997;
+    mix-blend-mode: difference;
+    animation: velocityParticle 0.6s ease-out forwards;
+    will-change: transform, opacity;
+  }
+  
+  @keyframes velocityParticle {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.2);
+    }
+  }
+  
+  /* Interactive element hover effects */
+  .interactive, .hover-target {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .interactive:hover, .hover-target:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Cursor ripple effect on click */
+  .cursor-ripple {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(82, 39, 255, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9996;
+    animation: ripple 0.6s ease-out forwards;
+    will-change: transform, opacity;
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
   }
   
   /* Hide cursor on interactive elements */
@@ -326,14 +418,50 @@
     cursor: none;
   }
   
+  /* Mobile touch effects */
+  @media (hover: none) and (pointer: coarse) {
+    .custom-cursor {
+      width: 30px;
+      height: 30px;
+      background: radial-gradient(circle, rgba(82, 39, 255, 0.7) 0%, rgba(255, 159, 252, 0.5) 50%, rgba(177, 158, 239, 0.3) 100%);
+      box-shadow: 
+        0 0 25px rgba(82, 39, 255, 0.5),
+        0 0 50px rgba(255, 159, 252, 0.3),
+        0 0 75px rgba(177, 158, 239, 0.2);
+    }
+    
+    .custom-cursor.clicking {
+      transform: scale(1.2);
+      background: radial-gradient(circle, rgba(255, 159, 252, 0.9) 0%, rgba(82, 39, 255, 0.7) 50%, rgba(177, 158, 239, 0.5) 100%);
+    }
+  }
+  
+  /* Performance optimizations */
+  .custom-cursor, .cursor-trail, .velocity-particle {
+    contain: layout style paint;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  
   /* Fallback for users who prefer reduced motion */
   @media (prefers-reduced-motion: reduce) {
-    .custom-cursor {
+    .custom-cursor, .cursor-trail, .velocity-particle {
       display: none;
     }
     
     * {
       cursor: auto;
+    }
+    
+    .interactive, .hover-target {
+      transition: none;
+    }
+  }
+  
+  /* High refresh rate support */
+  @media (min-resolution: 120dpi) {
+    .custom-cursor {
+      transition: all 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
   }
 

@@ -8,6 +8,7 @@ import { NavbarFloating } from "@/components/navbar-floating"
 import { MobileOptimizer } from "@/components/mobile-optimizer"
 import { PerformanceMonitor } from "@/components/performance-monitor"
 import { CustomCursor } from "@/components/custom-cursor"
+import { CursorEffects } from "@/components/cursor-effects"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en" className="dark antialiased">
       <body className={`font-sans ${poppins.variable}`}>
         <CustomCursor />
+        <CursorEffects />
         <PerformanceMonitor />
         <MobileOptimizer />
         <NavbarFloating />

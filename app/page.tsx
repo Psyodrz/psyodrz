@@ -148,7 +148,7 @@ const Page = memo(function Page() {
               <div className="hero-buttons flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center lg:justify-start items-center mb-2 sm:mb-3 md:mb-4 px-2">
                 <Button 
                   size="lg" 
-                  className="glow bg-[#5227FF] text-white hover:bg-[#5227FF]/90 px-4 sm:px-6 md:px-8 py-2 sm:py-3 w-full sm:w-auto text-sm sm:text-base"
+                  className="glow bg-[#5227FF] text-white hover:bg-[#5227FF]/90 px-4 sm:px-6 md:px-8 py-2 sm:py-3 w-full sm:w-auto text-sm sm:text-base interactive"
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   View My Work
@@ -156,7 +156,7 @@ const Page = memo(function Page() {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="glow border-[#5227FF] text-[#5227FF] hover:bg-[#5227FF]/10 px-4 sm:px-6 md:px-8 py-2 sm:py-3 w-full sm:w-auto text-sm sm:text-base"
+                  className="glow border-[#5227FF] text-[#5227FF] hover:bg-[#5227FF]/10 px-4 sm:px-6 md:px-8 py-2 sm:py-3 w-full sm:w-auto text-sm sm:text-base interactive"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Get In Touch
@@ -167,7 +167,7 @@ const Page = memo(function Page() {
               <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6 px-2">
                 <a 
                   href="mailto:Adisrivastav23@gmail.com" 
-                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors"
+                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors interactive"
                   aria-label="Email"
                 >
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
@@ -176,7 +176,7 @@ const Page = memo(function Page() {
                   href="https://github.com/psyodrz" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors"
+                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors interactive"
                   aria-label="GitHub"
                 >
                   <Github className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
@@ -185,7 +185,7 @@ const Page = memo(function Page() {
                   href="https://linkedin.com/in/adisrivastav23" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors"
+                  className="glow p-2 sm:p-2.5 md:p-3 rounded-full bg-card/60 hover:bg-card/80 transition-colors interactive"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 sci-fi-accent" />
