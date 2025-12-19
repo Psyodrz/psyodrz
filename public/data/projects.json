@@ -1,5 +1,15 @@
 [
   {
+    "title": "Dreamscape Maze",
+    "description": "Global multiplayer 3D horror maze game. Features real-time player synchronization, random maze generation, and Android mobile support.",
+    "color": "from-orange-500 to-red-600",
+    "tags": ["Three.js", "Socket.IO", "Capacitor", "Multiplayer"],
+    "github": "https://github.com/Psyodrz/maze-server",
+    "demo": "https://maze-server-fa5o.onrender.com",
+    "featured": true,
+    "order": 0
+  },
+  {
     "title": "3D Maze Game",
     "description": "A 3D maze game built with Node.js featuring procedural generation, interactive elements and pathfinding algorithms.",
     "color": "from-blue-500 to-purple-600",
