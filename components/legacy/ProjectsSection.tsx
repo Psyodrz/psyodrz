@@ -59,108 +59,65 @@ const ProjectsSection = () => {
       setLoading(true);
       setError(null);
       
-      // Add a timestamp to avoid caching issues
+      // Try local API first
       const timestamp = new Date().getTime();
       const response = await fetch(`/api/projects?t=${timestamp}`);
       
-      if (!response.ok) {
-        throw new Error(`Failed to fetch projects: ${response.status}`);
+      if (response.ok) {
+        const data = await response.json();
+        if (Array.isArray(data) && data.length > 0) {
+          setProjects(data);
+          return;
+        }
       }
       
-      const data = await response.json();
+      // Fallback to GitHub API
+      console.log('Fetching from GitHub API...');
+      const githubResponse = await fetch('https://api.github.com/users/Psyodrz/repos?sort=updated&per_page=100');
       
-      if (Array.isArray(data) && data.length > 0) {
-        console.log(`Loaded ${data.length} projects successfully`);
-        setProjects(data);
-      } else {
-        console.error('API returned empty array or invalid data:', data);
-        setProjects([]);
-        setError('No projects found. Please add some projects through the admin panel.');
+      if (!githubResponse.ok) {
+        throw new Error(`GitHub API failed: ${githubResponse.status}`);
       }
+      
+      const repos = await githubResponse.json();
+      
+      const colors = [
+        'from-blue-500 to-purple-600',
+        'from-green-500 to-teal-600',
+        'from-red-500 to-orange-600',
+        'from-purple-500 to-indigo-600',
+        'from-green-400 to-emerald-600',
+        'from-pink-500 to-rose-600',
+        'from-teal-400 to-blue-500',
+        'from-indigo-500 to-purple-500'
+      ];
+
+      const mappedProjects: Project[] = repos
+        .filter((repo: any) => !repo.fork)
+        .map((repo: any, index: number) => ({
+          _id: repo.id.toString(),
+          title: repo.name.split('-').map((s: string) => s.charAt(0).toUpperCase() + s.slice(1)).join(' '),
+          description: repo.description || 'No description provided.',
+          color: colors[index % colors.length],
+          tags: repo.topics && repo.topics.length > 0 ? repo.topics : [repo.language].filter(Boolean),
+          github: repo.html_url,
+          demo: repo.homepage || repo.html_url,
+          featured: true,
+          order: index + 1,
+          createdAt: repo.created_at,
+          updatedAt: repo.updated_at
+        }));
+
+      setProjects(mappedProjects);
     } catch (error) {
       console.error('Error fetching projects:', error);
-      setError('Failed to load projects. Please try again later.');
+      setError('Failed to load projects from GitHub. Please check your connection.');
     } finally {
       setLoading(false);
     }
   };
 
-  // Fallback projects in case the API call fails
-  const fallbackProjects = [
-    {
-      _id: '1',
-      title: '3D Maze',
-      description:
-        'A 3D maze game with procedural generation, interactive elements and pathfinding algorithms.',
-      color: 'from-blue-500 to-purple-600',
-      tags: ['JavaScript', 'Three.js', 'WebGL', 'Algorithms'],
-      github: 'https://github.com/username/3d-maze',
-      demo: 'https://3d-maze-demo.com',
-      featured: true,
-      order: 1,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    },
-    {
-      _id: '2',
-      title: 'Face Detection',
-      description:
-        'A real-time face detection application using computer vision algorithms that can identify facial features and track expressions.',
-      color: 'from-green-500 to-teal-600',
-      tags: ['Python', 'OpenCV', 'TensorFlow', 'Machine Learning'],
-      github: 'https://github.com/username/face-detection',
-      demo: 'https://face-detection-demo.com',
-      featured: true,
-      order: 2,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    },
-    {
-      _id: '3',
-      title: 'Flippy Floppy',
-      description:
-        'A casual arcade game with flipping mechanics, colorful aesthetics and increasing difficulty levels.',
-      color: 'from-red-500 to-orange-600',
-      tags: ['JavaScript', 'CSS', 'Game Development', 'UI/UX'],
-      github: 'https://github.com/psyodrz/flippy-floppy',
-      demo: 'https://psyodrz.github.io/flippy-Floppy/',
-      featured: true,
-      order: 3,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    },
-    {
-      _id: '4',
-      title: 'Haunted Hunter Arena',
-      description:
-        'A thrilling multiplayer arena game where players hunt supernatural creatures in a haunted environment.',
-      color: 'from-purple-500 to-indigo-600',
-      tags: ['Unity', 'C#', 'Game Development', 'Multiplayer'],
-      github: 'https://github.com/username/haunted-hunter',
-      demo: 'https://haunted-hunter-demo.com',
-      featured: true,
-      order: 4,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    },
-    {
-      _id: '5',
-      title: 'Portfolio Website',
-      description:
-        'A responsive personal portfolio website built with Next.js, showcasing projects and skills with a modern design.',
-      color: 'from-green-400 to-emerald-600',
-      tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-      github: 'https://github.com/username/portfolio',
-      demo: 'https://portfolio-demo.com',
-      featured: true,
-      order: 5,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    }
-  ];
-
-  // Use fallback projects if there's an error or no projects loaded
-  const displayProjects = projects.length > 0 ? projects : error ? fallbackProjects : [];
+  const displayProjects = projects;
 
   // Create project card components for mobile grid view
   const ProjectCard = ({ project, index }: { project: Project, index: number }) => (

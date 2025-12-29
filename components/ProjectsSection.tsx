@@ -115,17 +115,61 @@ export default function ProjectsSection() {
   useEffect(() => {
     const loadProjects = async () => {
       try {
-        // Try to fetch from JSON first, fallback to static data
+        setLoading(true);
+        // Try to fetch from JSON first
         let data = projectsData;
+        let isFallbackNeeded = false;
 
         try {
           const response = await fetch("./data/projects.json");
           if (response.ok) {
             const fetchedData = await response.json();
-            data = fetchedData;
+            if (Array.isArray(fetchedData) && fetchedData.length > 0) {
+              data = fetchedData;
+            } else {
+              isFallbackNeeded = true;
+            }
+          } else {
+            isFallbackNeeded = true;
           }
         } catch (fetchError) {
           console.log("Using static projects data (fetch failed):", fetchError);
+          isFallbackNeeded = true;
+        }
+
+        if (isFallbackNeeded) {
+          try {
+            console.log("Fetching from GitHub API...");
+            const githubResponse = await fetch("https://api.github.com/users/Psyodrz/repos?sort=updated&per_page=100");
+            if (githubResponse.ok) {
+              const repos = await githubResponse.json();
+              const colors = [
+                'from-blue-500 to-purple-600',
+                'from-green-500 to-teal-600',
+                'from-red-500 to-orange-600',
+                'from-purple-500 to-indigo-600',
+                'from-green-400 to-emerald-600',
+                'from-pink-500 to-rose-600',
+                'from-teal-400 to-blue-500',
+                'from-indigo-500 to-purple-500'
+              ];
+
+              data = repos
+                .filter((repo: any) => !repo.fork)
+                .map((repo: any, index: number) => ({
+                  title: repo.name.split('-').map((s: string) => s.charAt(0).toUpperCase() + s.slice(1)).join(' '),
+                  description: repo.description || 'No description provided.',
+                  color: colors[index % colors.length],
+                  tags: repo.topics && repo.topics.length > 0 ? repo.topics : [repo.language].filter(Boolean),
+                  github: repo.html_url,
+                  demo: repo.homepage || repo.html_url,
+                  featured: true,
+                  order: index + 1
+                }));
+            }
+          } catch (ghError) {
+            console.error("GitHub fetch failed, using static data:", ghError);
+          }
         }
 
         // Sort by order and filter featured projects
