@@ -121,7 +121,8 @@ export default function ProjectsSection() {
         let isFallbackNeeded = false;
 
         try {
-          const response = await fetch("./data/projects.json");
+          const timestamp = new Date().getTime();
+          const response = await fetch(`./data/projects.json?t=${timestamp}`);
           if (response.ok) {
             const fetchedData = await response.json();
             if (Array.isArray(fetchedData) && fetchedData.length > 0) {
