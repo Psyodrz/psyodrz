@@ -46,9 +46,9 @@ export interface AutoReplyData {
 /**
  * Initialize EmailJS
  */
-export function initializeEmailJS() {
+export async function initializeEmailJS() {
   if (typeof window !== 'undefined') {
-    const emailjs = require('@emailjs/browser')
+    const emailjs = await import('@emailjs/browser')
     emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY)
     return emailjs
   }
