@@ -101,7 +101,12 @@
 ### Recent Engineering Activity
 
 <!-- REPOS:START -->
-<p><i>Repository list refreshes daily via GitHub Actions.</i></p>
+- **[mdms-production-main](https://github.com/Psyodrz/mdms-production-main)**
+- **[astro-chahat-platform](https://github.com/Psyodrz/astro-chahat-platform)**
+- **[SkillSynergy](https://github.com/Psyodrz/SkillSynergy)**
+- **[mp-production-final](https://github.com/Psyodrz/mp-production-final)**
+- **[aurele-cafe](https://github.com/Psyodrz/aurele-cafe)**
+- **[PortfolioV2](https://github.com/Psyodrz/PortfolioV2)**
 <!-- REPOS:END -->
 
 <img src="./assets/ui/divider.svg" alt="" width="100%" />
