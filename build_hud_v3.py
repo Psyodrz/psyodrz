@@ -228,7 +228,7 @@ def build_tech():
         <g transform="translate({bx}, {by})">
             <rect width="205" height="30" rx="6" fill="#030509" stroke="{BORDER}" stroke-width="1"/>
             <circle cx="15" cy="15" r="3" fill="{CYAN}"/>
-            <text x="28" y="19" font-family="{MONO}" font-size="11" font-weight="600" fill="{WHITE}">{html.escape(t)}</text>
+            <text x="28" y="19" font-family="{FONT}" font-size="11" font-weight="500" fill="{WHITE}">{html.escape(t)}</text>
         </g>"""
 
     svg = f"""<svg width="1000" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
