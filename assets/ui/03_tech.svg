@@ -1,0 +1,134 @@
+<svg width="1000" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
+<defs><style>
+    .glow-cyan { filter: drop-shadow(0 0 4px #00f0ff60); }
+    .glow-violet { filter: drop-shadow(0 0 4px #8a2be260); }
+    .pulse { animation: pulse 3s ease-in-out infinite alternate; }
+    .pulse-fast { animation: pulse 1.5s ease-in-out infinite alternate; }
+    .blink { animation: blink 1s step-end infinite; }
+    .scanline { animation: scan 8s linear infinite; }
+    .float { animation: float 4s ease-in-out infinite; }
+    .rotate-slow { animation: rotate 20s linear infinite; }
+    @keyframes pulse { 0% { opacity: 0.3; } 100% { opacity: 0.9; } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+</style></defs>
+
+<rect width="1000" height="300" rx="10" fill="#0a0e17" stroke="#161f30" stroke-width="1"/><rect width="998" height="298" x="1" y="1" rx="9" fill="none" stroke="#00f0ff40" stroke-width="0.5"/>
+        <polyline points="14,2 2,2 2,14" fill="none" stroke="#00f0ff" stroke-width="1.5" class="glow-cyan"/>
+        <polyline points="986,2 998,2 998,14" fill="none" stroke="#00f0ff" stroke-width="1.5" class="glow-cyan"/>
+        <polyline points="2,286 2,298 14,298" fill="none" stroke="#00f0ff" stroke-width="1.5" class="glow-cyan"/>
+        <polyline points="998,286 998,298 986,298" fill="none" stroke="#00f0ff" stroke-width="1.5" class="glow-cyan"/>
+        
+<rect width="1000" height="4" fill="#00f0ff" opacity="0.04" class="scanline"/>
+
+<!-- Header -->
+<rect x="25" y="18" width="220" height="22" rx="4" fill="#00f0ff" fill-opacity="0.1" stroke="#00f0ff" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="35" y="32" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff" font-weight="700" letter-spacing="1.5">🛠 TECH MATRIX &amp; SKILLS</text>
+
+<!-- Left Side: Skill Bars -->
+<g transform="translate(25, 25)">
+    
+        <g transform="translate(0, 55)">
+            <text x="0" y="0" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#f0f6fc">Frontend Engineering (React / Next.js / Tailwind)</text>
+            <text x="440" y="0" text-anchor="end" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="700" fill="#00f0ff">94%</text>
+            <rect x="0" y="10" width="440" height="8" rx="4" fill="#161f30"/>
+            <rect x="0" y="10" width="394" height="8" rx="4" fill="#00f0ff">
+                <animate attributeName="width" from="0" to="394" dur="1.5s" fill="freeze"/>
+            </rect>
+        </g>
+        <g transform="translate(0, 103)">
+            <text x="0" y="0" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#f0f6fc">Backend Development (Node.js / Express / Python)</text>
+            <text x="440" y="0" text-anchor="end" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="700" fill="#8a2be2">88%</text>
+            <rect x="0" y="10" width="440" height="8" rx="4" fill="#161f30"/>
+            <rect x="0" y="10" width="369" height="8" rx="4" fill="#8a2be2">
+                <animate attributeName="width" from="0" to="369" dur="1.5s" fill="freeze"/>
+            </rect>
+        </g>
+        <g transform="translate(0, 151)">
+            <text x="0" y="0" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#f0f6fc">Database & Storage (PostgreSQL / Redis / MongoDB)</text>
+            <text x="440" y="0" text-anchor="end" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="700" fill="#ffb700">82%</text>
+            <rect x="0" y="10" width="440" height="8" rx="4" fill="#161f30"/>
+            <rect x="0" y="10" width="344" height="8" rx="4" fill="#ffb700">
+                <animate attributeName="width" from="0" to="344" dur="1.5s" fill="freeze"/>
+            </rect>
+        </g>
+        <g transform="translate(0, 199)">
+            <text x="0" y="0" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#f0f6fc">System Architecture & DevOps (Docker / CI/CD / Linux)</text>
+            <text x="440" y="0" text-anchor="end" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="700" fill="#00ff66">78%</text>
+            <rect x="0" y="10" width="440" height="8" rx="4" fill="#161f30"/>
+            <rect x="0" y="10" width="327" height="8" rx="4" fill="#00ff66">
+                <animate attributeName="width" from="0" to="327" dur="1.5s" fill="freeze"/>
+            </rect>
+        </g>
+</g>
+
+<!-- Divider Line -->
+<line x1="500" y1="50" x2="500" y2="260" stroke="#161f30" stroke-width="1" stroke-dasharray="4 4"/>
+
+<!-- Right Side: Tech Stack Badges -->
+<g transform="translate(535, 60)">
+    
+        <g transform="translate(0, 0)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">TypeScript</text>
+        </g>
+        <g transform="translate(220, 0)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">JavaScript</text>
+        </g>
+        <g transform="translate(0, 38)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">React.js</text>
+        </g>
+        <g transform="translate(220, 38)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">Next.js</text>
+        </g>
+        <g transform="translate(0, 76)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">Node.js</text>
+        </g>
+        <g transform="translate(220, 76)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">Python</text>
+        </g>
+        <g transform="translate(0, 114)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">TailwindCSS</text>
+        </g>
+        <g transform="translate(220, 114)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">PostgreSQL</text>
+        </g>
+        <g transform="translate(0, 152)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">Docker</text>
+        </g>
+        <g transform="translate(220, 152)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">Git / GitHub</text>
+        </g>
+        <g transform="translate(0, 190)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">REST APIs</text>
+        </g>
+        <g transform="translate(220, 190)">
+            <rect width="205" height="30" rx="6" fill="#030509" stroke="#161f30" stroke-width="1"/>
+            <circle cx="15" cy="15" r="3" fill="#00f0ff"/>
+            <text x="28" y="19" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" font-weight="600" fill="#f0f6fc">WebSockets</text>
+        </g>
+</g>
+</svg>

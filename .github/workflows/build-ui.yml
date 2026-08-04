@@ -1,19 +1,15 @@
-name: Build Profile UI
+name: Build Single-Column HUD Profile
 
 on:
   schedule:
-    - cron: "0 1 * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
   push:
     paths:
-      - "build_ui.py"
+      - 'build_hud_v3.py'
 
 permissions:
   contents: write
-
-concurrency:
-  group: build-ui
-  cancel-in-progress: true
 
 jobs:
   build:
@@ -25,59 +21,14 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.12'
 
-      - name: Generate SVG components
-        run: python build_ui.py
+      - name: Generate HUD SVGs
+        run: python build_hud_v3.py
 
-      - name: Patch recent repos into README
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python3 <<'PY'
-          import json, os, re, urllib.request
-          from pathlib import Path
-
-          readme = Path("README.md")
-          text = readme.read_text(encoding="utf-8")
-
-          headers = {
-              "Accept": "application/vnd.github+json",
-              "Authorization": f"Bearer {os.environ.get('GH_TOKEN', '')}",
-              "User-Agent": "Psyodrz-profile",
-          }
-          req = urllib.request.Request(
-              "https://api.github.com/users/Psyodrz/repos?sort=updated&per_page=10&type=owner",
-              headers=headers,
-          )
-          try:
-              with urllib.request.urlopen(req, timeout=20) as resp:
-                  repos = json.load(resp)
-          except Exception:
-              repos = []
-
-          lines = []
-          for r in repos:
-              if r.get("fork") or r.get("name") == "Psyodrz":
-                  continue
-              name = r["name"]
-              url = r["html_url"]
-              desc = (r.get("description") or "").strip()
-              if len(desc) > 80:
-                  desc = desc[:77] + "..."
-              lines.append(f"- **[{name}]({url})** — {desc}" if desc else f"- **[{name}]({url})**")
-              if len(lines) >= 6:
-                  break
-
-          block = "\n".join(lines) if lines else "_No recent repos._"
-          pat = re.compile(r"<!-- REPOS:START -->.*?<!-- REPOS:END -->", re.DOTALL)
-          text = pat.sub(f"<!-- REPOS:START -->\n{block}\n<!-- REPOS:END -->", text)
-          readme.write_text(text, encoding="utf-8")
-          PY
-
-      - name: Commit
+      - name: Commit & Push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(ui): rebuild JARVIS HUD components"
-          file_pattern: "assets/ui/*.svg README.md"
+          commit_message: "chore(ui): regenerate single-column HUD SVGs"
+          file_pattern: "assets/ui/*.svg"
           branch: main

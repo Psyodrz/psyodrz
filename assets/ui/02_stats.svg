@@ -1,0 +1,64 @@
+<svg width="1000" height="220" viewBox="0 0 1000 220" xmlns="http://www.w3.org/2000/svg">
+<defs><style>
+    .glow-cyan { filter: drop-shadow(0 0 4px #00f0ff60); }
+    .glow-violet { filter: drop-shadow(0 0 4px #8a2be260); }
+    .pulse { animation: pulse 3s ease-in-out infinite alternate; }
+    .pulse-fast { animation: pulse 1.5s ease-in-out infinite alternate; }
+    .blink { animation: blink 1s step-end infinite; }
+    .scanline { animation: scan 8s linear infinite; }
+    .float { animation: float 4s ease-in-out infinite; }
+    .rotate-slow { animation: rotate 20s linear infinite; }
+    @keyframes pulse { 0% { opacity: 0.3; } 100% { opacity: 0.9; } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+</style></defs>
+
+<rect width="1000" height="220" rx="10" fill="#0a0e17" stroke="#161f30" stroke-width="1"/><rect width="998" height="218" x="1" y="1" rx="9" fill="none" stroke="#00f0ff40" stroke-width="0.5"/>
+        <polyline points="14,2 2,2 2,14" fill="none" stroke="#8a2be2" stroke-width="1.5" class="glow-cyan"/>
+        <polyline points="986,2 998,2 998,14" fill="none" stroke="#8a2be2" stroke-width="1.5" class="glow-cyan"/>
+        <polyline points="2,206 2,218 14,218" fill="none" stroke="#8a2be2" stroke-width="1.5" class="glow-cyan"/>
+        <polyline points="998,206 998,218 986,218" fill="none" stroke="#8a2be2" stroke-width="1.5" class="glow-cyan"/>
+        
+<rect width="1000" height="4" fill="#00f0ff" opacity="0.04" class="scanline"/>
+
+<!-- Section Header -->
+<rect x="25" y="18" width="200" height="22" rx="4" fill="#8a2be2" fill-opacity="0.15" stroke="#8a2be2" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="35" y="32" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#8a2be2" font-weight="700" letter-spacing="1.5">⚡ SYSTEM METRICS &amp; STATS</text>
+
+<g transform="translate(25, 55)">
+    <!-- Card 1: Commits -->
+    <g transform="translate(0, 0)">
+        <rect width="220" height="135" rx="8" fill="#030509" stroke="#161f30" stroke-width="1"/>
+        <text x="20" y="30" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" fill="#8b949e">TOTAL CONTRIBUTIONS</text>
+        <text x="20" y="75" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#00f0ff">500+</text>
+        <text x="20" y="105" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00ff66">▲ Active Contributor</text>
+    </g>
+
+    <!-- Card 2: Repos -->
+    <g transform="translate(243, 0)">
+        <rect width="220" height="135" rx="8" fill="#030509" stroke="#161f30" stroke-width="1"/>
+        <text x="20" y="30" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" fill="#8b949e">PUBLIC PROJECTS</text>
+        <text x="20" y="75" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#8a2be2">25+</text>
+        <text x="20" y="105" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff">★ Open Source Core</text>
+    </g>
+
+    <!-- Card 3: Architecture -->
+    <g transform="translate(486, 0)">
+        <rect width="220" height="135" rx="8" fill="#030509" stroke="#161f30" stroke-width="1"/>
+        <text x="20" y="30" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" fill="#8b949e">SPECIALIZATION</text>
+        <text x="20" y="70" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#ffb700">Full Stack</text>
+        <text x="20" y="92" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#f0f6fc">System Design</text>
+        <text x="20" y="112" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#8b949e">Clean Architecture</text>
+    </g>
+
+    <!-- Card 4: Code Quality -->
+    <g transform="translate(730, 0)">
+        <rect width="220" height="135" rx="8" fill="#030509" stroke="#161f30" stroke-width="1"/>
+        <text x="20" y="30" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" fill="#8b949e">ENGINEERING BAR</text>
+        <text x="20" y="75" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#00ff66">100%</text>
+        <text x="20" y="105" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00ff66">✓ Type Safe &amp; Tested</text>
+    </g>
+</g>
+</svg>
