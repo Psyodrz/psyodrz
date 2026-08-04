@@ -1,11 +1,18 @@
 """
-Cyberpunk / Sci-Fi Single-Column HUD Engine v3
-100% Self-Contained Local SVGs - Bulletproof Rendering - No Flaky External APIs
+Cyberpunk / Sci-Fi Single-Column HUD Engine v3.1 (100% XML Valid)
+Self-Contained Local SVGs - Bulletproof Rendering - Verified with XML Parser
 """
-import base64
+import base64, html
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 OUT = Path("assets/ui")
+if OUT.exists():
+    for f in OUT.glob("*.svg"):
+        try:
+            f.unlink()
+        except Exception:
+            pass
 OUT.mkdir(parents=True, exist_ok=True)
 
 # Cyberpunk Palette
@@ -65,12 +72,10 @@ def build_hero():
         photo_markup = f"""
         <g transform="translate(730, 70)">
             <clipPath id="avatarClip"><circle cx="110" cy="110" r="100"/></clipPath>
-            <!-- Circular HUD ring assembly -->
             <circle cx="110" cy="110" r="118" fill="none" stroke="{CYAN}" stroke-width="1" stroke-dasharray="6 6" opacity="0.4" class="rotate-slow" transform-origin="110 110"/>
             <circle cx="110" cy="110" r="110" fill="none" stroke="{CYAN}" stroke-width="2" opacity="0.8" class="pulse"/>
             <circle cx="110" cy="110" r="104" fill="none" stroke="{VIOLET}" stroke-width="1" opacity="0.5"/>
             <image href="data:image/png;base64,{b64}" x="10" y="10" width="200" height="200" clip-path="url(#avatarClip)" preserveAspectRatio="xMidYMid slice"/>
-            <!-- Target crosshairs -->
             <line x1="110" y1="-5" x2="110" y2="10" stroke="{CYAN}" stroke-width="1.5" opacity="0.6"/>
             <line x1="110" y1="210" x2="110" y2="225" stroke="{CYAN}" stroke-width="1.5" opacity="0.6"/>
             <line x1="-5" y1="110" x2="10" y2="110" stroke="{CYAN}" stroke-width="1.5" opacity="0.6"/>
@@ -83,24 +88,20 @@ def build_hero():
     svg = f"""<svg width="1000" height="420" viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg">
 <defs><style>{STYLES}</style></defs>
 
-<!-- Main background panel -->
 {hud_border(1000, 420, CYAN)}
 {scan_overlay(1000, 420)}
 
-<!-- Background Grid -->
 <g opacity="0.05">
     <path d="M0 60 H1000 M0 120 H1000 M0 180 H1000 M0 240 H1000 M0 300 H1000 M0 360 H1000" stroke="{CYAN}" stroke-width="1"/>
     <path d="M100 0 V420 M200 0 V420 M300 0 V420 M400 0 V420 M500 0 V420 M600 0 V420 M700 0 V420 M800 0 V420 M900 0 V420" stroke="{CYAN}" stroke-width="1"/>
 </g>
 
-<!-- Top telemetry header -->
 <rect x="25" y="20" width="220" height="22" rx="4" fill="{CYAN}" fill-opacity="0.08" stroke="{CYAN}" stroke-opacity="0.3" stroke-width="0.5"/>
-<text x="35" y="34" font-family="{MONO}" font-size="10" fill="{CYAN}" font-weight="700" letter-spacing="1.5">● COMMAND CENTER v3.0</text>
+<text x="35" y="34" font-family="{MONO}" font-size="10" fill="{CYAN}" font-weight="700" letter-spacing="1.5">[SYS] COMMAND CENTER v3.0</text>
 
 <text x="760" y="34" font-family="{MONO}" font-size="10" fill="{DIM}">LOC: INDIA [UTC+5:30]</text>
 <circle cx="950" cy="30" r="4" fill="{GREEN}" class="pulse-fast"/>
 
-<!-- Main Identity Section -->
 <g transform="translate(45, 80)">
     <text x="0" y="35" font-family="{FONT}" font-size="54" font-weight="800" fill="{WHITE}" letter-spacing="-1.5">Aditya Srivastava</text>
     
@@ -112,7 +113,6 @@ def build_hero():
         <text x="345" y="17" text-anchor="middle" font-family="{MONO}" font-size="11" font-weight="600" fill="{WHITE}" letter-spacing="0.5">SYSTEMS ARCHITECT</text>
     </g>
 
-    <!-- Terminal Output -->
     <g transform="translate(0, 100)">
         <rect width="620" height="90" rx="8" fill="#030509" stroke="{BORDER}" stroke-width="1"/>
         <circle cx="16" cy="16" r="4" fill="#ff5f56"/>
@@ -124,7 +124,6 @@ def build_hero():
         <text x="16" y="68" font-family="{MONO}" font-size="12" fill="{CYAN}">&gt; <tspan fill="{DIM}">Architecting high-throughput applications with clean boundaries</tspan><tspan fill="{CYAN}" class="blink">_</tspan></text>
     </g>
 
-    <!-- Status Badges -->
     <g transform="translate(0, 210)">
         <rect width="180" height="30" rx="6" fill="{GREEN}" fill-opacity="0.1" stroke="{GREEN}" stroke-opacity="0.4" stroke-width="0.8"/>
         <circle cx="15" cy="15" r="4" fill="{GREEN}" class="pulse-fast"/>
@@ -150,28 +149,24 @@ def build_stats():
 {hud_border(1000, 220, VIOLET)}
 {scan_overlay(1000, 220)}
 
-<!-- Section Header -->
 <rect x="25" y="18" width="200" height="22" rx="4" fill="{VIOLET}" fill-opacity="0.15" stroke="{VIOLET}" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="35" y="32" font-family="{MONO}" font-size="10" fill="{VIOLET}" font-weight="700" letter-spacing="1.5">⚡ SYSTEM METRICS &amp; STATS</text>
+<text x="35" y="32" font-family="{MONO}" font-size="10" fill="{VIOLET}" font-weight="700" letter-spacing="1.5">[SYS] METRICS &amp; STATS</text>
 
 <g transform="translate(25, 55)">
-    <!-- Card 1: Commits -->
     <g transform="translate(0, 0)">
         <rect width="220" height="135" rx="8" fill="#030509" stroke="{BORDER}" stroke-width="1"/>
         <text x="20" y="30" font-family="{MONO}" font-size="11" fill="{DIM}">TOTAL CONTRIBUTIONS</text>
         <text x="20" y="75" font-family="{FONT}" font-size="38" font-weight="800" fill="{CYAN}">500+</text>
-        <text x="20" y="105" font-family="{MONO}" font-size="10" fill="{GREEN}">▲ Active Contributor</text>
+        <text x="20" y="105" font-family="{MONO}" font-size="10" fill="{GREEN}">Active Contributor</text>
     </g>
 
-    <!-- Card 2: Repos -->
     <g transform="translate(243, 0)">
         <rect width="220" height="135" rx="8" fill="#030509" stroke="{BORDER}" stroke-width="1"/>
         <text x="20" y="30" font-family="{MONO}" font-size="11" fill="{DIM}">PUBLIC PROJECTS</text>
         <text x="20" y="75" font-family="{FONT}" font-size="38" font-weight="800" fill="{VIOLET}">25+</text>
-        <text x="20" y="105" font-family="{MONO}" font-size="10" fill="{CYAN}">★ Open Source Core</text>
+        <text x="20" y="105" font-family="{MONO}" font-size="10" fill="{CYAN}">Open Source Core</text>
     </g>
 
-    <!-- Card 3: Architecture -->
     <g transform="translate(486, 0)">
         <rect width="220" height="135" rx="8" fill="#030509" stroke="{BORDER}" stroke-width="1"/>
         <text x="20" y="30" font-family="{MONO}" font-size="11" fill="{DIM}">SPECIALIZATION</text>
@@ -180,12 +175,11 @@ def build_stats():
         <text x="20" y="112" font-family="{MONO}" font-size="10" fill="{DIM}">Clean Architecture</text>
     </g>
 
-    <!-- Card 4: Code Quality -->
     <g transform="translate(730, 0)">
         <rect width="220" height="135" rx="8" fill="#030509" stroke="{BORDER}" stroke-width="1"/>
         <text x="20" y="30" font-family="{MONO}" font-size="11" fill="{DIM}">ENGINEERING BAR</text>
         <text x="20" y="75" font-family="{FONT}" font-size="38" font-weight="800" fill="{GREEN}">100%</text>
-        <text x="20" y="105" font-family="{MONO}" font-size="10" fill="{GREEN}">✓ Type Safe &amp; Tested</text>
+        <text x="20" y="105" font-family="{MONO}" font-size="10" fill="{GREEN}">Type Safe &amp; Tested</text>
     </g>
 </g>
 </svg>"""
@@ -209,7 +203,7 @@ def build_tech():
         w_bar = int(420 * pct / 100)
         bars_markup += f"""
         <g transform="translate(0, {y})">
-            <text x="0" y="0" font-family="{FONT}" font-size="12" font-weight="600" fill="{WHITE}">{name}</text>
+            <text x="0" y="0" font-family="{FONT}" font-size="12" font-weight="600" fill="{WHITE}">{html.escape(name)}</text>
             <text x="440" y="0" text-anchor="end" font-family="{MONO}" font-size="11" font-weight="700" fill="{col}">{pct}%</text>
             <rect x="0" y="10" width="440" height="8" rx="4" fill="{BORDER}"/>
             <rect x="0" y="10" width="{w_bar}" height="8" rx="4" fill="{col}">
@@ -232,7 +226,7 @@ def build_tech():
         <g transform="translate({bx}, {by})">
             <rect width="205" height="30" rx="6" fill="#030509" stroke="{BORDER}" stroke-width="1"/>
             <circle cx="15" cy="15" r="3" fill="{CYAN}"/>
-            <text x="28" y="19" font-family="{MONO}" font-size="11" font-weight="600" fill="{WHITE}">{t}</text>
+            <text x="28" y="19" font-family="{MONO}" font-size="11" font-weight="600" fill="{WHITE}">{html.escape(t)}</text>
         </g>"""
 
     svg = f"""<svg width="1000" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
@@ -241,19 +235,15 @@ def build_tech():
 {hud_border(1000, 300, CYAN)}
 {scan_overlay(1000, 300)}
 
-<!-- Header -->
 <rect x="25" y="18" width="220" height="22" rx="4" fill="{CYAN}" fill-opacity="0.1" stroke="{CYAN}" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="35" y="32" font-family="{MONO}" font-size="10" fill="{CYAN}" font-weight="700" letter-spacing="1.5">🛠 TECH MATRIX &amp; SKILLS</text>
+<text x="35" y="32" font-family="{MONO}" font-size="10" fill="{CYAN}" font-weight="700" letter-spacing="1.5">[SYS] TECH MATRIX &amp; SKILLS</text>
 
-<!-- Left Side: Skill Bars -->
 <g transform="translate(25, 25)">
     {bars_markup}
 </g>
 
-<!-- Divider Line -->
 <line x1="500" y1="50" x2="500" y2="260" stroke="{BORDER}" stroke-width="1" stroke-dasharray="4 4"/>
 
-<!-- Right Side: Tech Stack Badges -->
 <g transform="translate(535, 60)">
     {badge_markup}
 </g>
@@ -271,7 +261,7 @@ def build_project_panel(filename, index_num, title, tagline, desc, tags, live_ur
         tw = len(tag) * 8 + 20
         tag_markup += f"""
         <rect x="{tx}" y="0" width="{tw}" height="24" rx="12" fill="{BORDER}" stroke="{CYAN}" stroke-opacity="0.2" stroke-width="0.5"/>
-        <text x="{tx + tw//2}" y="16" text-anchor="middle" font-family="{MONO}" font-size="10" fill="{CYAN}">{tag}</text>"""
+        <text x="{tx + tw//2}" y="16" text-anchor="middle" font-family="{MONO}" font-size="10" fill="{CYAN}">{html.escape(tag)}</text>"""
         tx += tw + 8
 
     live_btn = ""
@@ -279,7 +269,7 @@ def build_project_panel(filename, index_num, title, tagline, desc, tags, live_ur
         live_btn = f"""
         <g transform="translate(790, 150)">
             <rect width="140" height="32" rx="6" fill="{GREEN}" fill-opacity="0.15" stroke="{GREEN}" stroke-width="1" class="pulse-fast"/>
-            <text x="70" y="20" text-anchor="middle" font-family="{MONO}" font-size="11" font-weight="700" fill="{GREEN}">LIVE DEMO ↗</text>
+            <text x="70" y="20" text-anchor="middle" font-family="{MONO}" font-size="11" font-weight="700" fill="{GREEN}">LIVE DEMO</text>
         </g>"""
 
     svg = f"""<svg width="1000" height="210" viewBox="0 0 1000 210" xmlns="http://www.w3.org/2000/svg">
@@ -288,15 +278,13 @@ def build_project_panel(filename, index_num, title, tagline, desc, tags, live_ur
 {hud_border(1000, 210, CYAN)}
 {scan_overlay(1000, 210)}
 
-<!-- Project Wireframe Graphic (Left side) -->
 <g transform="translate(25, 25)">
     <rect width="220" height="160" rx="8" fill="#030509" stroke="{BORDER}" stroke-width="1"/>
-    <!-- Wireframe browser header -->
     <rect width="220" height="24" rx="8" fill="{BORDER}" opacity="0.6"/>
     <circle cx="15" cy="12" r="3" fill="#ff5f56"/>
     <circle cx="27" cy="12" r="3" fill="#ffbd2e"/>
     <circle cx="39" cy="12" r="3" fill="#27c93f"/>
-    <!-- Wireframe app elements -->
+    
     <rect x="15" y="40" width="120" height="10" rx="5" fill="{CYAN}" opacity="0.4"/>
     <rect x="15" y="60" width="190" height="6" rx="3" fill="{DIM}" opacity="0.3"/>
     <rect x="15" y="74" width="160" height="6" rx="3" fill="{DIM}" opacity="0.2"/>
@@ -306,18 +294,16 @@ def build_project_panel(filename, index_num, title, tagline, desc, tags, live_ur
     <rect x="105" y="110" width="100" height="30" rx="4" fill="{CYAN}" opacity="0.2"/>
 </g>
 
-<!-- Main Details (Right side) -->
 <g transform="translate(275, 30)">
     <text x="0" y="0" font-family="{MONO}" font-size="10" fill="{DIM}">PROJECT 0{index_num} // FEATURED BUILD</text>
-    <text x="0" y="32" font-family="{FONT}" font-size="28" font-weight="800" fill="{WHITE}">{title}</text>
-    <text x="0" y="52" font-family="{FONT}" font-size="13" font-weight="600" fill="{CYAN}">{tagline}</text>
+    <text x="0" y="32" font-family="{FONT}" font-size="28" font-weight="800" fill="{WHITE}">{html.escape(title)}</text>
+    <text x="0" y="52" font-family="{FONT}" font-size="13" font-weight="600" fill="{CYAN}">{html.escape(tagline)}</text>
 
     <text x="0" y="82" font-family="{FONT}" font-size="13" fill="{DIM}" width="650">
-        <tspan x="0" dy="0">{desc[:75]}</tspan>
-        <tspan x="0" dy="20">{desc[75:]}</tspan>
+        <tspan x="0" dy="0">{html.escape(desc[:75])}</tspan>
+        <tspan x="0" dy="20">{html.escape(desc[75:])}</tspan>
     </text>
 
-    <!-- Tech Stack Tags -->
     <g transform="translate(0, 125)">
         {tag_markup}
     </g>
@@ -352,7 +338,7 @@ def build_footer():
 
 
 if __name__ == "__main__":
-    print(">> Generating Cyberpunk Single-Column HUD Engine v3...")
+    print(">> Generating Cyberpunk Single-Column HUD Engine v3.1...")
     build_hero(); print("  [OK] 01_hero.svg")
     build_stats(); print("  [OK] 02_stats.svg")
     build_tech(); print("  [OK] 03_tech.svg")
@@ -364,4 +350,20 @@ if __name__ == "__main__":
     print("  [OK] 04_projects (4x)")
     
     build_footer(); print("  [OK] 05_footer.svg")
-    print("\n[SUCCESS] All single-column HUD components generated in assets/ui/")
+
+    # XML Validation Check
+    print("\n>> Running XML Validation on all output SVGs...")
+    all_valid = True
+    for svg_file in OUT.glob("*.svg"):
+        try:
+            ET.parse(svg_file)
+            print(f"  [OK] {svg_file.name}: 100% VALID XML")
+        except Exception as e:
+            print(f"  [FAIL] {svg_file.name}: INVALID XML -> {e}")
+            all_valid = False
+
+    if all_valid:
+        print("\n[SUCCESS] ALL SVGs pass 100% XML Validation!")
+    else:
+        raise RuntimeError("XML Validation failed for some SVGs!")
+

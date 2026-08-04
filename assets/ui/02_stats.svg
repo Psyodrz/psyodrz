@@ -23,28 +23,24 @@
         
 <rect width="1000" height="4" fill="#00f0ff" opacity="0.04" class="scanline"/>
 
-<!-- Section Header -->
 <rect x="25" y="18" width="200" height="22" rx="4" fill="#8a2be2" fill-opacity="0.15" stroke="#8a2be2" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="35" y="32" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#8a2be2" font-weight="700" letter-spacing="1.5">⚡ SYSTEM METRICS &amp; STATS</text>
+<text x="35" y="32" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#8a2be2" font-weight="700" letter-spacing="1.5">[SYS] METRICS &amp; STATS</text>
 
 <g transform="translate(25, 55)">
-    <!-- Card 1: Commits -->
     <g transform="translate(0, 0)">
         <rect width="220" height="135" rx="8" fill="#030509" stroke="#161f30" stroke-width="1"/>
         <text x="20" y="30" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" fill="#8b949e">TOTAL CONTRIBUTIONS</text>
         <text x="20" y="75" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#00f0ff">500+</text>
-        <text x="20" y="105" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00ff66">▲ Active Contributor</text>
+        <text x="20" y="105" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00ff66">Active Contributor</text>
     </g>
 
-    <!-- Card 2: Repos -->
     <g transform="translate(243, 0)">
         <rect width="220" height="135" rx="8" fill="#030509" stroke="#161f30" stroke-width="1"/>
         <text x="20" y="30" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" fill="#8b949e">PUBLIC PROJECTS</text>
         <text x="20" y="75" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#8a2be2">25+</text>
-        <text x="20" y="105" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff">★ Open Source Core</text>
+        <text x="20" y="105" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff">Open Source Core</text>
     </g>
 
-    <!-- Card 3: Architecture -->
     <g transform="translate(486, 0)">
         <rect width="220" height="135" rx="8" fill="#030509" stroke="#161f30" stroke-width="1"/>
         <text x="20" y="30" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" fill="#8b949e">SPECIALIZATION</text>
@@ -53,12 +49,11 @@
         <text x="20" y="112" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#8b949e">Clean Architecture</text>
     </g>
 
-    <!-- Card 4: Code Quality -->
     <g transform="translate(730, 0)">
         <rect width="220" height="135" rx="8" fill="#030509" stroke="#161f30" stroke-width="1"/>
         <text x="20" y="30" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="11" fill="#8b949e">ENGINEERING BAR</text>
         <text x="20" y="75" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#00ff66">100%</text>
-        <text x="20" y="105" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00ff66">✓ Type Safe &amp; Tested</text>
+        <text x="20" y="105" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00ff66">Type Safe &amp; Tested</text>
     </g>
 </g>
 </svg>
