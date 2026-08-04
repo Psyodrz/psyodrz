@@ -83,7 +83,7 @@
 <img src="./assets/ui/divider.svg" alt="" width="100%" />
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!--  SECTION 5 — FOOTER                                    -->
+<!--  SECTION 4 — FOOTER                                    -->
 <!-- ═══════════════════════════════════════════════════════ -->
 
 <img src="./assets/ui/footer.svg" alt="Footer" width="100%" />
@@ -99,4 +99,3 @@
 <img src="https://komarev.com/ghpvc/?username=Psyodrz&style=for-the-badge&color=0d1117&label=VISITORS&labelColor=0d1117" alt="Profile Views" />
 
 </div>
-
