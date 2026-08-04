@@ -33,8 +33,7 @@
 <!--  4. LIVE GITHUB STATS & STREAK                         -->
 <!-- ═══════════════════════════════════════════════════════ -->
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Psyodrz&show_icons=true&hide_border=true&bg_color=05070c&title_color=00f0ff&icon_color=00f0ff&text_color=8b949e&ring_color=00f0ff&include_all_commits=true&count_private=true" alt="GitHub Stats" width="49%" />
-  <img src="https://streak-stats.demolab.com?user=Psyodrz&theme=transparent&hide_border=true&background=05070C&ring=00f0ff&fire=ffb700&currStreakLabel=00f0ff&sideLabels=8b949e&sideNums=f0f6fc&dates=8b949e&currStreakNum=f0f6fc" alt="Streak Stats" width="49%" />
+  <img src="https://streak-stats.demolab.com?user=Psyodrz&theme=transparent&hide_border=true&background=05070C&ring=00f0ff&fire=ffb700&currStreakLabel=00f0ff&sideLabels=8b949e&sideNums=f0f6fc&dates=8b949e&currStreakNum=f0f6fc" alt="Streak Stats" width="100%" />
 </p>
 
 <br />
