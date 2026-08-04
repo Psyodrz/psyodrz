@@ -39,7 +39,7 @@
 <td width="33%" valign="top">
   <img src="https://github-readme-stats.vercel.app/api?username=Psyodrz&show_icons=true&hide_border=true&bg_color=0d1117&title_color=00e5ff&icon_color=00e5ff&text_color=8b949e&ring_color=00e5ff&include_all_commits=true&count_private=true" alt="GitHub Stats" width="100%" />
   <br /><br />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=Psyodrz&theme=transparent&hide_border=true&background=0D1117&ring=00e5ff&fire=ffab00&currStreakLabel=00e5ff&sideLabels=8b949e&sideNums=e6edf3&dates=8b949e&currStreakNum=e6edf3" alt="Streak Stats" width="100%" />
+  <img src="https://streak-stats.demolab.com?user=Psyodrz&theme=transparent&hide_border=true&background=0D1117&ring=00e5ff&fire=ffab00&currStreakLabel=00e5ff&sideLabels=8b949e&sideNums=e6edf3&dates=8b949e&currStreakNum=e6edf3" alt="Streak Stats" width="100%" />
   <br /><br />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Psyodrz&layout=compact&hide_border=true&bg_color=0d1117&title_color=00e5ff&text_color=8b949e&langs_count=6" alt="Top Languages" width="100%" />
 </td>
@@ -83,30 +83,6 @@
 <img src="./assets/ui/divider.svg" alt="" width="100%" />
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!--  SECTION 4 — LIVE DASHBOARD                            -->
-<!-- ═══════════════════════════════════════════════════════ -->
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Psyodrz/Psyodrz/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Psyodrz/Psyodrz/output/github-snake.svg" />
-  <img alt="Contribution Snake" src="https://raw.githubusercontent.com/Psyodrz/Psyodrz/output/github-snake-dark.svg" width="100%" />
-</picture>
-
-<br />
-
-<img src="./github-metrics.svg" alt="GitHub Metrics" width="100%" />
-
-<br />
-
-### Recent Engineering Activity
-
-<!-- REPOS:START -->
-<p><i>Repository list refreshes daily via GitHub Actions.</i></p>
-<!-- REPOS:END -->
-
-<img src="./assets/ui/divider.svg" alt="" width="100%" />
-
-<!-- ═══════════════════════════════════════════════════════ -->
 <!--  SECTION 5 — FOOTER                                    -->
 <!-- ═══════════════════════════════════════════════════════ -->
 
@@ -123,3 +99,4 @@
 <img src="https://komarev.com/ghpvc/?username=Psyodrz&style=for-the-badge&color=0d1117&label=VISITORS&labelColor=0d1117" alt="Profile Views" />
 
 </div>
+
