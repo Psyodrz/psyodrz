@@ -1,0 +1,37 @@
+<svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="180" rx="12" fill="#0d1117"/>
+<rect width="320" height="180" rx="12" fill="none" stroke="#1a1f2b" stroke-width="1"/>
+
+    <polyline points="14,1 1,1 1,14" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="306,1 319,1 319,14" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="1,166 1,179 14,179" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="319,166 319,179 306,179" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+
+        <rect x="16" y="8" width="104" height="22" rx="4" fill="#00e5ff" fill-opacity="0.12"/>
+        <text x="28" y="23" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11" font-weight="700" fill="#00e5ff" letter-spacing="1.5">TECH STACK</text>
+
+        <text x="42" y="54" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#e6edf3" font-weight="500">
+            <tspan fill="#00e5ff" font-size="8">▪</tspan> TypeScript
+        </text>
+        <text x="190" y="54" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#e6edf3" font-weight="500">
+            <tspan fill="#00e5ff" font-size="8">▪</tspan> React
+        </text>
+        <text x="42" y="84" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#e6edf3" font-weight="500">
+            <tspan fill="#00e5ff" font-size="8">▪</tspan> Next.js
+        </text>
+        <text x="190" y="84" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#e6edf3" font-weight="500">
+            <tspan fill="#00e5ff" font-size="8">▪</tspan> Node.js
+        </text>
+        <text x="42" y="114" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#e6edf3" font-weight="500">
+            <tspan fill="#00e5ff" font-size="8">▪</tspan> Python
+        </text>
+        <text x="190" y="114" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#e6edf3" font-weight="500">
+            <tspan fill="#00e5ff" font-size="8">▪</tspan> Tailwind
+        </text>
+        <text x="42" y="144" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#e6edf3" font-weight="500">
+            <tspan fill="#00e5ff" font-size="8">▪</tspan> Docker
+        </text>
+        <text x="190" y="144" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#e6edf3" font-weight="500">
+            <tspan fill="#00e5ff" font-size="8">▪</tspan> PostgreSQL
+        </text>
+</svg>

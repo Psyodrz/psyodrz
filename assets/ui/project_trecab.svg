@@ -1,0 +1,35 @@
+<svg width="490" height="225" viewBox="0 0 490 225" xmlns="http://www.w3.org/2000/svg">
+<rect width="490" height="225" rx="12" fill="#0d1117"/>
+<rect width="490" height="225" rx="12" fill="none" stroke="#1a1f2b" stroke-width="1"/>
+
+    <polyline points="14,1 1,1 1,14" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="476,1 489,1 489,14" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="1,211 1,224 14,224" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="489,211 489,224 476,224" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+
+        <rect x="16" y="8" width="72" height="22" rx="4" fill="#00e5ff" fill-opacity="0.12"/>
+        <text x="28" y="23" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11" font-weight="700" fill="#00e5ff" letter-spacing="1.5">TRECAB</text>
+
+    
+    <rect x="24" y="45" width="440" height="80" rx="8" fill="#0a0a0f" stroke="#1a1f2b" stroke-width="0.5"/>
+    <rect x="34" y="55" width="120" height="8" rx="4" fill="#1a1f2b"/>
+    <rect x="34" y="70" width="200" height="6" rx="3" fill="#1a1f2b" opacity="0.6"/>
+    <rect x="34" y="82" width="160" height="6" rx="3" fill="#1a1f2b" opacity="0.4"/>
+    <rect x="34" y="94" width="180" height="6" rx="3" fill="#1a1f2b" opacity="0.3"/>
+    <rect x="380" y="55" width="70" height="60" rx="6" fill="#00e5ff" fill-opacity="0.05" stroke="#00e5ff" stroke-opacity="0.15" stroke-width="0.5"/>
+    <text x="415" y="90" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="18" fill="#00e5ff" opacity="0.3">⟡</text>
+    
+        <rect x="24" y="140" width="51" height="22" rx="11" fill="#1a1f2b"/>
+        <text x="49" y="155" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" fill="#8b949e" font-weight="500">React</text>
+        <rect x="81" y="140" width="65" height="22" rx="11" fill="#1a1f2b"/>
+        <text x="113" y="155" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" fill="#8b949e" font-weight="500">Node.js</text>
+        <rect x="152" y="140" width="79" height="22" rx="11" fill="#1a1f2b"/>
+        <text x="191" y="155" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" fill="#8b949e" font-weight="500">WebSocket</text>
+        <rect x="237" y="140" width="44" height="22" rx="11" fill="#1a1f2b"/>
+        <text x="259" y="155" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" fill="#8b949e" font-weight="500">Maps</text>
+    
+    <text x="24" y="190" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#8b949e">
+        <tspan x="24" dy="0">Full-stack ride-hailing platform with real-time trackin</tspan>
+        <tspan x="24" dy="18">g, WebSocket integrations, and clean API boundaries.</tspan>
+    </text>
+</svg>

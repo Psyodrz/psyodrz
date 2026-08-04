@@ -1,0 +1,22 @@
+<svg width="320" height="165" viewBox="0 0 320 165" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="165" rx="12" fill="#0d1117"/>
+<rect width="320" height="165" rx="12" fill="none" stroke="#1a1f2b" stroke-width="1"/>
+
+    <polyline points="14,1 1,1 1,14" fill="none" stroke="#7c4dff" stroke-width="1.5"/>
+    <polyline points="306,1 319,1 319,14" fill="none" stroke="#7c4dff" stroke-width="1.5"/>
+    <polyline points="1,151 1,164 14,164" fill="none" stroke="#7c4dff" stroke-width="1.5"/>
+    <polyline points="319,151 319,164 306,164" fill="none" stroke="#7c4dff" stroke-width="1.5"/>
+
+        <rect x="16" y="8" width="88" height="22" rx="4" fill="#7c4dff" fill-opacity="0.12"/>
+        <text x="28" y="23" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11" font-weight="700" fill="#7c4dff" letter-spacing="1.5">LEARNING</text>
+
+        <text x="28" y="55" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#8b949e">Rust</text>
+        <rect x="28" y="61" width="264" height="6" rx="3" fill="#1a1f2b"/>
+        <rect x="28" y="61" width="184" height="6" rx="3" fill="#7c4dff"/>
+        <text x="28" y="87" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#8b949e">System Design</text>
+        <rect x="28" y="93" width="264" height="6" rx="3" fill="#1a1f2b"/>
+        <rect x="28" y="93" width="224" height="6" rx="3" fill="#7c4dff"/>
+        <text x="28" y="119" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#8b949e">DevOps</text>
+        <rect x="28" y="125" width="264" height="6" rx="3" fill="#1a1f2b"/>
+        <rect x="28" y="125" width="158" height="6" rx="3" fill="#7c4dff"/>
+</svg>

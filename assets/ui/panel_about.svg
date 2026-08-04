@@ -1,0 +1,22 @@
+<svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="180" rx="12" fill="#0d1117"/>
+<rect width="320" height="180" rx="12" fill="none" stroke="#1a1f2b" stroke-width="1"/>
+
+    <polyline points="14,1 1,1 1,14" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="306,1 319,1 319,14" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="1,166 1,179 14,179" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="319,166 319,179 306,179" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+
+        <rect x="16" y="8" width="88" height="22" rx="4" fill="#00e5ff" fill-opacity="0.12"/>
+        <text x="28" y="23" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11" font-weight="700" fill="#00e5ff" letter-spacing="1.5">ABOUT ME</text>
+
+    <text x="28" y="58" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14" fill="#e6edf3" font-weight="500">
+        <tspan x="28" dy="0">Full-stack engineer obsessed with</tspan>
+        <tspan x="28" dy="22">crafting performant systems and</tspan>
+        <tspan x="28" dy="22">interfaces that feel alive.</tspan>
+    </text>
+    <text x="28" y="135" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#8b949e">
+        <tspan x="28" dy="0">Based in India · Timezone UTC+5:30</tspan>
+        <tspan x="28" dy="20">Open to remote collaboration</tspan>
+    </text>
+</svg>

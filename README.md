@@ -1,145 +1,125 @@
-<!-- Psyodrz Enhanced GitHub Profile README -->
-<p align="center">
-<a href="https://github.com/Psyodrz">
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&pause=1000&color=5227FF&center=true&vCenter=true&width=700&lines=Hi+there%2C+I'm+Aditya+Srivastava+✨;Computer+Science+Engineer;Full+Stack+Developer;Game+Development+Enthusiast;AI+%26+Machine+Learning;Always+Building+Something+Cool+🚀" alt="Typing SVG" />
+<div align="center">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  SECTION 1 — HERO                                      -->
+<!-- ═══════════════════════════════════════════════════════ -->
+
+<a href="https://psyodrz.github.io/PortfolioV2/">
+  <img src="./assets/ui/hero.svg" alt="Aditya Srivastava — Full Stack Engineer" width="100%" />
 </a>
-</p>
 
-<p align="center">
-<a href="https://github.com/Psyodrz" target="_blank">
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-</a>
-<a href="mailto:Adisrivastav23@gmail.com">
-<img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-</a>
-<a href="https://linkedin.com/in/adisrivastav23" target="_blank">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-</a>
-<a href="https://psyodrz.github.io/psyodrz/" target="_blank">
-<img src="https://img.shields.io/badge/Portfolio-5227FF?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Portfolio" />
-</a>
-</p>
+<img src="./assets/ui/divider.svg" alt="" width="100%" />
 
-<p align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=Psyodrz&theme=onedark&row=1&column=7&no-frame=true&no-bg=false&margin-w=8" alt="Trophy" />
-</p>
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  SECTION 2 — THREE-COLUMN DASHBOARD                    -->
+<!-- ═══════════════════════════════════════════════════════ -->
 
-## 👨‍💻 About Me
+<table width="100%">
+<tr>
 
-I'm a passionate Computer Science Engineering student at Maharishi University of Information Technology who loves creating innovative digital experiences. My work spans across web development, AI applications, mobile apps, and game development. I thrive on solving complex problems and delivering high-quality, user-centered solutions.
+<!-- ── Column 1: Identity ──────────────────────────────── -->
+<td width="33%" valign="top">
+  <img src="./assets/ui/panel_about.svg" alt="About Me" width="100%" />
+  <br /><br />
+  <img src="./assets/ui/panel_mission.svg" alt="Current Mission" width="100%" />
+  <br /><br />
+  <img src="./assets/ui/panel_learning.svg" alt="Learning" width="100%" />
+</td>
 
-- 🎓 **B.Tech CSE Student** | Maharishi University of Information Technology (2023-2027)
-- 🌐 **Full Stack Development**: Building modern web applications with React, Next.js, TypeScript, and Node.js
-- 🎮 **Game Development**: Creating immersive experiences with Unity, Three.js, and WebGL
-- 🤖 **AI & Machine Learning**: Developing intelligent applications with TensorFlow and computer vision
-- 📱 **Mobile Development**: Cross-platform apps using Ionic, Capacitor, and React Native
-- 🎯 **Current Focus**: Building a diverse portfolio showcasing skills across multiple domains
+<!-- ── Column 2: Engineering ───────────────────────────── -->
+<td width="33%" valign="top">
+  <img src="./assets/ui/panel_stack.svg" alt="Tech Stack" width="100%" />
+  <br /><br />
+  <img src="./assets/ui/panel_skills.svg" alt="Skills" width="100%" />
+  <br /><br />
+  <img src="./assets/ui/panel_architecture.svg" alt="Architecture" width="100%" />
+</td>
 
-## 🛠️ My Tech Arsenal
+<!-- ── Column 3: GitHub Dashboard ──────────────────────── -->
+<td width="33%" valign="top">
+  <img src="https://github-readme-stats.vercel.app/api?username=Psyodrz&show_icons=true&hide_border=true&bg_color=0d1117&title_color=00e5ff&icon_color=00e5ff&text_color=8b949e&ring_color=00e5ff&include_all_commits=true&count_private=true" alt="GitHub Stats" width="100%" />
+  <br /><br />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=Psyodrz&theme=transparent&hide_border=true&background=0D1117&ring=00e5ff&fire=ffab00&currStreakLabel=00e5ff&sideLabels=8b949e&sideNums=e6edf3&dates=8b949e&currStreakNum=e6edf3" alt="Streak Stats" width="100%" />
+  <br /><br />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Psyodrz&layout=compact&hide_border=true&bg_color=0d1117&title_color=00e5ff&text_color=8b949e&langs_count=6" alt="Top Languages" width="100%" />
+</td>
 
-<p align="center">
-<a href="https://skillicons.dev">
-<img src="https://skillicons.dev/icons?i=javascript,typescript,react,nextjs,nodejs,python,html,css,tailwind,unity,threejs,cs,cpp,ionic,git,github,vscode" />
-</a>
-</p>
+</tr>
+</table>
 
-## 🚀 Featured Projects
+<img src="./assets/ui/divider.svg" alt="" width="100%" />
 
-Here are some of the projects I'm most proud of:
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  SECTION 3 — FEATURED PROJECTS GRID                    -->
+<!-- ═══════════════════════════════════════════════════════ -->
 
-### 🎮 **Game Development**
+<table width="100%">
+<tr>
+  <td width="50%">
+    <a href="https://github.com/Psyodrz/trecab-app">
+      <img src="./assets/ui/project_trecab.svg" alt="TreCab" width="100%" />
+    </a>
+  </td>
+  <td width="50%">
+    <a href="https://github.com/Psyodrz/dreamscape-maze-frontend">
+      <img src="./assets/ui/project_dreamscape.svg" alt="Dreamscape Maze" width="100%" />
+    </a>
+  </td>
+</tr>
+<tr>
+  <td width="50%">
+    <a href="https://github.com/Psyodrz/SkillSynergy">
+      <img src="./assets/ui/project_skillsynergy.svg" alt="SkillSynergy" width="100%" />
+    </a>
+  </td>
+  <td width="50%">
+    <a href="https://github.com/Psyodrz/PortfolioV2">
+      <img src="./assets/ui/project_portfolio.svg" alt="Portfolio V2" width="100%" />
+    </a>
+  </td>
+</tr>
+</table>
 
-| Project | Description | Tech Stack | Status |
-|---------|-------------|------------|--------|
-| **[3D Maze Game](https://github.com/Psyodrz/3DMaze)** | Procedurally generated 3D maze with interactive elements and pathfinding algorithms | Node.js, JavaScript, 3D Graphics | 🚀 Live |
-| **[Flippy Floppy](https://github.com/Psyodrz/flippy-Floppy)** | Enhanced Flappy Bird-style game with smooth gameplay and responsive design | JavaScript, HTML5 Canvas, CSS3 | 🚀 Live |
-| **[Horror Hunter Arena](https://github.com/Psyodrz/horror-hunter-arena)** | Horror-themed arena game with immersive gameplay and atmospheric design | Game Development, Interactive Design | 🔨 In Progress |
+<img src="./assets/ui/divider.svg" alt="" width="100%" />
 
-### 🤖 **AI & Machine Learning**
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  SECTION 4 — LIVE DASHBOARD                            -->
+<!-- ═══════════════════════════════════════════════════════ -->
 
-| Project | Description | Tech Stack | Status |
-|---------|-------------|------------|--------|
-| **[AI Code Generator](https://github.com/Psyodrz/ai-code-generator)** | AI-powered browser extension for HackerRank problem solving with intelligent code generation | AI, Browser Extension, JavaScript, ML | 🚀 Live |
-| **[Face Detection Mobile](https://github.com/Psyodrz/face-detection-mobile)** | Real-time face detection mobile app with computer vision capabilities | Ionic, Capacitor, Computer Vision | 🚀 Live |
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Psyodrz/Psyodrz/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Psyodrz/Psyodrz/output/github-snake.svg" />
+  <img alt="Contribution Snake" src="https://raw.githubusercontent.com/Psyodrz/Psyodrz/output/github-snake-dark.svg" width="100%" />
+</picture>
 
-### 🌐 **Web Applications**
+<br />
 
-| Project | Description | Tech Stack | Status |
-|---------|-------------|------------|--------|
-| **[Sci-Fi Portfolio](https://psyodrz.github.io/psyodrz/)** | Modern portfolio with liquid ether background, interactive components, and smooth swipe functionality | Next.js, TypeScript, Tailwind CSS, Three.js | 🚀 Live |
-| **[Nature Explorer](https://github.com/Psyodrz/nature-explorer)** | Nature exploration app with interactive maps and educational content | React, TypeScript, Interactive Maps | 🔨 In Progress |
+<img src="./github-metrics.svg" alt="GitHub Metrics" width="100%" />
 
-## 📊 GitHub Analytics & Performance
+<br />
 
-<p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=Psyodrz&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=FF61F6&icon_color=79ff97&count_private=true" height="180" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Psyodrz&theme=tokyonight&hide_border=true&background=0d1117&fire=FF61F6&ring=79ff97" height="180" />
-</p>
+### Recent Engineering Activity
 
-<p align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Psyodrz&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=FF61F6&layout=compact&langs_count=8" alt="Top Languages" width="48%" />
-</p>
+<!-- REPOS:START -->
+<p><i>Repository list refreshes daily via GitHub Actions.</i></p>
+<!-- REPOS:END -->
 
-<p align="center">
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Psyodrz&theme=tokyonight" alt="Profile Details" />
-</p>
+<img src="./assets/ui/divider.svg" alt="" width="100%" />
 
-## 🏆 Achievements & Recognition
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  SECTION 5 — FOOTER                                    -->
+<!-- ═══════════════════════════════════════════════════════ -->
 
-<p align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=Psyodrz&theme=onedark&no-frame=true&no-bg=false&margin-w=10&row=2&column=6" />
-</p>
+<img src="./assets/ui/footer.svg" alt="Footer" width="100%" />
 
-## 🐍 Contribution Activity
+<br />
 
-<p align="center">
-<img src="https://github.com/Psyodrz/Psyodrz/blob/output/github-contribution-grid-snake.svg" alt="Snake animation" />
-</p>
+<a href="https://psyodrz.github.io/PortfolioV2/"><img src="https://img.shields.io/badge/Portfolio-0d1117?style=for-the-badge&logo=vercel&logoColor=00e5ff" alt="Portfolio" /></a>
+<a href="https://www.linkedin.com/in/adisrivastav23"><img src="https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=00e5ff" alt="LinkedIn" /></a>
+<a href="mailto:adisrivastav23@gmail.com"><img src="https://img.shields.io/badge/Email-0d1117?style=for-the-badge&logo=gmail&logoColor=00e5ff" alt="Email" /></a>
 
-## 📈 Activity Graph
+<br /><br />
 
-<p align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Psyodrz&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=FF61F6&line=79ff97&point=FF61F6" alt="GitHub Activity Graph" />
-</p>
+<img src="https://komarev.com/ghpvc/?username=Psyodrz&style=for-the-badge&color=0d1117&label=VISITORS&labelColor=0d1117" alt="Profile Views" />
 
-## 🌟 Profile Insights
-
-<p align="center">
-<img src="https://komarev.com/ghpvc/?username=Psyodrz&label=Profile%20Views&color=FF61F6&style=for-the-badge&logo=eye" />
-<img src="https://img.shields.io/github/followers/Psyodrz?style=for-the-badge&color=79ff97&logo=github" />
-<img src="https://img.shields.io/github/stars/Psyodrz?style=for-the-badge&color=FFD700&logo=star" />
-<img src="https://img.shields.io/badge/Focus-Full%20Stack%20Development-FF61F6?style=for-the-badge" />
-</p>
-
-## 🤝 Let's Build Something Amazing Together
-
-I'm always excited to collaborate on innovative projects, contribute to open-source initiatives, or discuss the latest in tech and development. Whether you're looking for a passionate developer, want to collaborate on a project, or just want to chat about technology, I'd love to connect!
-
-<p align="center">
-<a href="https://github.com/Psyodrz">
-<img src="https://img.icons8.com/fluency/48/github.png" alt="GitHub" />
-</a>
-<a href="mailto:Adisrivastav23@gmail.com">
-<img src="https://img.icons8.com/fluency/48/gmail.png" alt="Email" />
-</a>
-<a href="https://linkedin.com/in/adisrivastav23">
-<img src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn" />
-</a>
-<a href="https://psyodrz.github.io/psyodrz/">
-<img src="https://img.icons8.com/fluency/48/domain.png" alt="Portfolio" />
-</a>
-</p>
-
----
-
-<p align="center">
-<i>"Building functional, user-centered applications across the stack - one project at a time."</i>
-</p>
-
-<p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=5227FF&height=100&section=footer&text=Thanks%20for%20visiting!&fontSize=24&fontColor=ffffff&animation=twinkling" />
-</p>
-
-<p align="center">
-<img src="https://komarev.com/ghpvc/?username=Psyodrz&color=5227FF&style=for-the-badge" alt="Profile Views" />
-</p>
+</div>

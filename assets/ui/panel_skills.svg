@@ -1,0 +1,25 @@
+<svg width="320" height="190" viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="190" rx="12" fill="#0d1117"/>
+<rect width="320" height="190" rx="12" fill="none" stroke="#1a1f2b" stroke-width="1"/>
+
+    <polyline points="14,1 1,1 1,14" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="306,1 319,1 319,14" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="1,176 1,189 14,189" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <polyline points="319,176 319,189 306,189" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+
+        <rect x="16" y="8" width="72" height="22" rx="4" fill="#00e5ff" fill-opacity="0.12"/>
+        <text x="28" y="23" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11" font-weight="700" fill="#00e5ff" letter-spacing="1.5">SKILLS</text>
+
+        <text x="28" y="55" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#8b949e">Frontend <tspan fill="#00e5ff">92%</tspan></text>
+        <rect x="28" y="61" width="264" height="5" rx="2.5" fill="#1a1f2b"/>
+        <rect x="28" y="61" width="242" height="5" rx="2.5" fill="#00e5ff"/>
+        <text x="28" y="85" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#8b949e">Backend <tspan fill="#00e5ff">85%</tspan></text>
+        <rect x="28" y="91" width="264" height="5" rx="2.5" fill="#1a1f2b"/>
+        <rect x="28" y="91" width="224" height="5" rx="2.5" fill="#00e5ff"/>
+        <text x="28" y="115" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#8b949e">DevOps <tspan fill="#00e5ff">70%</tspan></text>
+        <rect x="28" y="121" width="264" height="5" rx="2.5" fill="#1a1f2b"/>
+        <rect x="28" y="121" width="184" height="5" rx="2.5" fill="#00e5ff"/>
+        <text x="28" y="145" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" fill="#8b949e">UI/UX <tspan fill="#00e5ff">80%</tspan></text>
+        <rect x="28" y="151" width="264" height="5" rx="2.5" fill="#1a1f2b"/>
+        <rect x="28" y="151" width="211" height="5" rx="2.5" fill="#00e5ff"/>
+</svg>

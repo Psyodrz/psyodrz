@@ -1,0 +1,15 @@
+<svg width="1000" height="80" viewBox="0 0 1000 80" xmlns="http://www.w3.org/2000/svg">
+<defs>
+    <style>
+        .footPulse { animation: fp 5s ease-in-out infinite alternate; }
+        @keyframes fp { from { opacity:0.5; } to { opacity:1; } }
+    </style>
+</defs>
+<rect width="1000" height="80" fill="#0a0a0f"/>
+<text x="500" y="35" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="13" fill="#8b949e" font-style="italic" class="footPulse">
+    "Any sufficiently advanced technology is indistinguishable from magic." — Arthur C. Clarke
+</text>
+<text x="500" y="60" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11" fill="#1a1f2b">
+    Designed with precision · Built with obsession · Maintained from Asia/Kolkata
+</text>
+</svg>
