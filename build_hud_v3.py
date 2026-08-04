@@ -326,7 +326,62 @@ def build_project_panel(filename, index_num, title, tagline, desc, tags, live_ur
 
 
 # ══════════════════════════════════════════════════════════
-#  5. FOOTER (1000x120)
+#  5. SPOTIFY MUSIC PLAYER PANEL (1000x140)
+# ══════════════════════════════════════════════════════════
+def build_spotify():
+    soundwaves = ""
+    for i in range(12):
+        h_dur = 0.6 + (i % 5) * 0.2
+        soundwaves += f"""
+        <rect x="{i*8}" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="{h_dur:.1f}s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="{h_dur:.1f}s" repeatCount="indefinite"/>
+        </rect>"""
+
+    svg = f"""<svg width="1000" height="140" viewBox="0 0 1000 140" xmlns="http://www.w3.org/2000/svg">
+<defs><style>{STYLES}</style></defs>
+
+{hud_border(1000, 140, GREEN)}
+{scan_overlay(1000, 140)}
+
+<!-- Header -->
+<rect x="25" y="15" width="200" height="22" rx="4" fill="#1db954" fill-opacity="0.12" stroke="#1db954" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="35" y="29" font-family="{MONO}" font-size="10" fill="#1db954" font-weight="700" letter-spacing="1.5">[SYS] SPOTIFY PLAYER</text>
+
+<!-- Main Player Card -->
+<g transform="translate(25, 48)">
+    <!-- Vinyl Disc Graphic -->
+    <g transform="translate(10, 5)">
+        <circle cx="35" cy="35" r="35" fill="#030509" stroke="#1db954" stroke-width="1.5" opacity="0.8"/>
+        <circle cx="35" cy="35" r="28" fill="none" stroke="{BORDER}" stroke-width="1" stroke-dasharray="4 4" class="rotate-slow" transform-origin="35 35"/>
+        <circle cx="35" cy="35" r="18" fill="none" stroke="#1db954" stroke-width="0.8" opacity="0.4"/>
+        <circle cx="35" cy="35" r="10" fill="#1db954"/>
+        <circle cx="35" cy="35" r="3" fill="#030509"/>
+    </g>
+
+    <!-- Track Details -->
+    <g transform="translate(100, 15)">
+        <g transform="translate(0, 0)">
+            <rect width="90" height="18" rx="4" fill="#1db954" fill-opacity="0.15"/>
+            <circle cx="10" cy="9" r="3" fill="#1db954" class="pulse-fast"/>
+            <text x="18" y="12" font-family="{MONO}" font-size="9" fill="#1db954" font-weight="700">NOW PLAYING</text>
+        </g>
+        
+        <text x="0" y="38" font-family="{FONT}" font-size="18" font-weight="800" fill="{WHITE}">Midnight Coding Session // Lo-Fi Synthwave</text>
+        <text x="0" y="56" font-family="{FONT}" font-size="12" font-weight="500" fill="{DIM}">Aditya Srivastava  •  Cyberpunk Ambient Beats</text>
+    </g>
+
+    <!-- Animated Soundwaves Equalizer (Right side) -->
+    <g transform="translate(850, 30)">
+        {soundwaves}
+    </g>
+</g>
+</svg>"""
+    (OUT / "05_spotify.svg").write_text(svg, encoding="utf-8")
+
+
+# ══════════════════════════════════════════════════════════
+#  6. FOOTER (1000x120)
 # ══════════════════════════════════════════════════════════
 def build_footer():
     svg = f"""<svg width="1000" height="120" viewBox="0 0 1000 120" xmlns="http://www.w3.org/2000/svg">
@@ -345,7 +400,7 @@ def build_footer():
     DESIGNED &amp; ENGINEERED BY ADITYA SRIVASTAVA // BUILT WITH PRECISION &amp; OBSESSION
 </text>
 </svg>"""
-    (OUT / "05_footer.svg").write_text(svg, encoding="utf-8")
+    (OUT / "06_footer.svg").write_text(svg, encoding="utf-8")
 
 
 if __name__ == "__main__":
@@ -360,7 +415,8 @@ if __name__ == "__main__":
     build_project_panel("04_project_portfolio.svg", 4, "Portfolio V2", "High-Performance Portfolio Site", "Personal web portfolio featuring modern glassmorphism, responsive design, and smooth animations.", ["Next.js", "TypeScript", "TailwindCSS"], "https://psyodrz.github.io/PortfolioV2/")
     print("  [OK] 04_projects (4x)")
     
-    build_footer(); print("  [OK] 05_footer.svg")
+    build_spotify(); print("  [OK] 05_spotify.svg")
+    build_footer(); print("  [OK] 06_footer.svg")
 
     # XML Validation Check
     print("\n>> Running XML Validation on all output SVGs...")

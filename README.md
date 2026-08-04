@@ -30,7 +30,7 @@
 <br />
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!--  4. LIVE GITHUB STATS & STREAK                         -->
+<!--  4. LIVE GITHUB STREAK STATS                            -->
 <!-- ═══════════════════════════════════════════════════════ -->
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=Psyodrz&theme=transparent&hide_border=true&background=05070C&ring=00f0ff&fire=ffb700&currStreakLabel=00f0ff&sideLabels=8b949e&sideNums=f0f6fc&dates=8b949e&currStreakNum=f0f6fc" alt="Streak Stats" width="100%" />
@@ -73,9 +73,9 @@
 <br /><br />
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!--  7. LIVE SPOTIFY & RECENT ACTIVITY                     -->
+<!--  7. LIVE SPOTIFY PLAYER & RECENT ACTIVITY              -->
 <!-- ═══════════════════════════════════════════════════════ -->
-<img src="./github-metrics.svg" alt="GitHub Metrics &amp; Live Spotify" width="100%" />
+<img src="./assets/ui/05_spotify.svg" alt="Spotify Player Widget" width="100%" />
 
 <br /><br />
 
@@ -90,7 +90,7 @@
 <!-- ═══════════════════════════════════════════════════════ -->
 <!--  8. FOOTER & SOCIAL CONTACTS                           -->
 <!-- ═══════════════════════════════════════════════════════ -->
-<img src="./assets/ui/05_footer.svg" alt="Footer" width="100%" />
+<img src="./assets/ui/06_footer.svg" alt="Footer" width="100%" />
 
 <br /><br />
 

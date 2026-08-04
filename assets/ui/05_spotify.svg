@@ -1,0 +1,108 @@
+<svg width="1000" height="140" viewBox="0 0 1000 140" xmlns="http://www.w3.org/2000/svg">
+<defs><style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap');
+
+    .glow-cyan { filter: drop-shadow(0 0 4px #00f0ff60); }
+    .glow-violet { filter: drop-shadow(0 0 4px #8a2be260); }
+    .pulse { animation: pulse 3s ease-in-out infinite alternate; }
+    .pulse-fast { animation: pulse 1.5s ease-in-out infinite alternate; }
+    .blink { animation: blink 1s step-end infinite; }
+    .scanline { animation: scan 8s linear infinite; }
+    .float { animation: float 4s ease-in-out infinite; }
+    .rotate-slow { animation: rotate 20s linear infinite; }
+    @keyframes pulse { 0% { opacity: 0.3; } 100% { opacity: 0.9; } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+</style></defs>
+
+<rect width="1000" height="140" rx="10" fill="#0a0e17" stroke="#161f30" stroke-width="1"/><rect width="998" height="138" x="1" y="1" rx="9" fill="none" stroke="#00f0ff40" stroke-width="0.5"/>
+        <polyline points="14,2 2,2 2,14" fill="none" stroke="#00ff66" stroke-width="1.5" class="glow-cyan"/>
+        <polyline points="986,2 998,2 998,14" fill="none" stroke="#00ff66" stroke-width="1.5" class="glow-cyan"/>
+        <polyline points="2,126 2,138 14,138" fill="none" stroke="#00ff66" stroke-width="1.5" class="glow-cyan"/>
+        <polyline points="998,126 998,138 986,138" fill="none" stroke="#00ff66" stroke-width="1.5" class="glow-cyan"/>
+        
+<rect width="1000" height="4" fill="#00f0ff" opacity="0.04" class="scanline"/>
+
+<!-- Header -->
+<rect x="25" y="15" width="200" height="22" rx="4" fill="#1db954" fill-opacity="0.12" stroke="#1db954" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="35" y="29" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="10" fill="#1db954" font-weight="700" letter-spacing="1.5">[SYS] SPOTIFY PLAYER</text>
+
+<!-- Main Player Card -->
+<g transform="translate(25, 48)">
+    <!-- Vinyl Disc Graphic -->
+    <g transform="translate(10, 5)">
+        <circle cx="35" cy="35" r="35" fill="#030509" stroke="#1db954" stroke-width="1.5" opacity="0.8"/>
+        <circle cx="35" cy="35" r="28" fill="none" stroke="#161f30" stroke-width="1" stroke-dasharray="4 4" class="rotate-slow" transform-origin="35 35"/>
+        <circle cx="35" cy="35" r="18" fill="none" stroke="#1db954" stroke-width="0.8" opacity="0.4"/>
+        <circle cx="35" cy="35" r="10" fill="#1db954"/>
+        <circle cx="35" cy="35" r="3" fill="#030509"/>
+    </g>
+
+    <!-- Track Details -->
+    <g transform="translate(100, 15)">
+        <g transform="translate(0, 0)">
+            <rect width="90" height="18" rx="4" fill="#1db954" fill-opacity="0.15"/>
+            <circle cx="10" cy="9" r="3" fill="#1db954" class="pulse-fast"/>
+            <text x="18" y="12" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="9" fill="#1db954" font-weight="700">NOW PLAYING</text>
+        </g>
+        
+        <text x="0" y="38" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#f0f6fc">Midnight Coding Session // Lo-Fi Synthwave</text>
+        <text x="0" y="56" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#8b949e">Aditya Srivastava  •  Cyberpunk Ambient Beats</text>
+    </g>
+
+    <!-- Animated Soundwaves Equalizer (Right side) -->
+    <g transform="translate(850, 30)">
+        
+        <rect x="0" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="0.6s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="0.6s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="8" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="0.8s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="0.8s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="16" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="1.0s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="1.0s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="24" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="1.2s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="1.2s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="32" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="1.4s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="1.4s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="40" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="0.6s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="0.6s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="48" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="0.8s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="0.8s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="56" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="1.0s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="1.0s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="64" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="1.2s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="1.2s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="72" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="1.4s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="1.4s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="80" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="0.6s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="0.6s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="88" y="0" width="4" height="24" rx="2" fill="#1db954">
+            <animate attributeName="height" values="6;24;10;28;8;20;6" dur="0.8s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="18;0;14;0;16;4;18" dur="0.8s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+</g>
+</svg>
