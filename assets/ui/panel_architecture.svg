@@ -1,26 +1,59 @@
 <svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
-<rect width="320" height="180" rx="12" fill="#0d1117"/>
-<rect width="320" height="180" rx="12" fill="none" stroke="#1a1f2b" stroke-width="1"/>
+<defs>
+    <filter id="pg"><feGaussianBlur stdDeviation="2"/></filter>
+    <style>
+    .pulse { animation: pulse 3s ease-in-out infinite alternate; }
+    .pulse2 { animation: pulse 2s ease-in-out infinite alternate; }
+    .blink { animation: blink 1s step-end infinite; }
+    .scan { animation: scan 6s linear infinite; }
+    .float { animation: float 4s ease-in-out infinite; }
+    .rotate { animation: rotate 12s linear infinite; }
+    .slideIn { animation: slideIn 1.5s ease-out forwards; }
+    .glow { animation: glow 2s ease-in-out infinite alternate; }
+    .dataScroll { animation: dataScroll 8s linear infinite; }
+    .fadeInUp { animation: fadeInUp 1s ease-out forwards; }
+    .sweep { animation: sweep 3s ease-in-out infinite; }
+    @keyframes pulse { 0%{opacity:.3} 100%{opacity:.9} }
+    @keyframes blink { 50%{opacity:0} }
+    @keyframes scan { 0%{transform:translateY(-100%)} 100%{transform:translateY(100%)} }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+    @keyframes rotate { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+    @keyframes slideIn { 0%{opacity:0;transform:translateX(-20px)} 100%{opacity:1;transform:translateX(0)} }
+    @keyframes glow { 0%{filter:drop-shadow(0 0 2px #00e5ff40)} 100%{filter:drop-shadow(0 0 8px #00e5ff80)} }
+    @keyframes dataScroll { 0%{transform:translateY(0)} 100%{transform:translateY(-50%)} }
+    @keyframes fadeInUp { 0%{opacity:0;transform:translateY(10px)} 100%{opacity:1;transform:translateY(0)} }
+    @keyframes sweep { 0%,100%{opacity:.2} 50%{opacity:.6} }
+</style>
+</defs>
+<rect width="320" height="180" rx="10" fill="#0d1117"/>
+<rect width="320" height="180" rx="10" fill="none" stroke="#1a1f2b" stroke-width="1"/>
 
-    <polyline points="14,1 1,1 1,14" fill="none" stroke="#ffab00" stroke-width="1.5"/>
-    <polyline points="306,1 319,1 319,14" fill="none" stroke="#ffab00" stroke-width="1.5"/>
-    <polyline points="1,166 1,179 14,179" fill="none" stroke="#ffab00" stroke-width="1.5"/>
-    <polyline points="319,166 319,179 306,179" fill="none" stroke="#ffab00" stroke-width="1.5"/>
+    <polyline points="12,1 1,1 1,12" fill="none" stroke="#ffab00" stroke-width="1.5" class="glow"/>
+    <polyline points="308,1 319,1 319,12" fill="none" stroke="#ffab00" stroke-width="1.5" class="glow"/>
+    <polyline points="1,168 1,179 12,179" fill="none" stroke="#ffab00" stroke-width="1.5" class="glow"/>
+    <polyline points="319,168 319,179 308,179" fill="none" stroke="#ffab00" stroke-width="1.5" class="glow"/>
+<rect x="0" y="0" width="320" height="3" fill="#00e5ff" opacity="0.04" class="scan"/>
+<!-- Title -->
+<rect x="14" y="8" width="114" height="20" rx="4" fill="#ffab00" fill-opacity="0.1" stroke="#ffab00" stroke-opacity="0.3" stroke-width="0.5"/>
+<text x="24" y="22" font-family="'Courier New',Consolas,monospace" font-size="9" font-weight="700" fill="#ffab00" letter-spacing="1.5">ARCHITECTURE</text>
+<!-- Status dot -->
+<circle cx="302" cy="18" r="3" fill="#ffab00" opacity="0.5" class="pulse2"/>
 
-        <rect x="16" y="8" width="120" height="22" rx="4" fill="#ffab00" fill-opacity="0.12"/>
-        <text x="28" y="23" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11" font-weight="700" fill="#ffab00" letter-spacing="1.5">ARCHITECTURE</text>
-
-    <text x="28" y="58" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="13" fill="#e6edf3" font-weight="500">
-        <tspan x="28" dy="0">Clean boundaries between layers.</tspan>
-        <tspan x="28" dy="22">Type-safety from DB to UI.</tspan>
-        <tspan x="28" dy="22">Ship fast, observe everything.</tspan>
+    <text x="20" y="52" font-family="'Courier New',Consolas,monospace" font-size="11" fill="#e6edf3">
+        <tspan x="20" dy="0" fill="#00e5ff">//</tspan> Clean boundaries between layers</tspan>
+        <tspan x="20" dy="18" fill="#00e5ff">//</tspan> Type-safety from DB to UI</tspan>
+        <tspan x="20" dy="18" fill="#00e5ff">//</tspan> Ship fast, observe everything</tspan>
+        <tspan x="20" dy="18" fill="#00e5ff">//</tspan> Automate the boring parts</tspan>
     </text>
-    <g transform="translate(28, 130)">
-        <rect width="80" height="24" rx="4" fill="#00e5ff" fill-opacity="0.1" stroke="#00e5ff" stroke-opacity="0.3" stroke-width="0.5"/>
-        <text x="40" y="16" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" fill="#00e5ff" font-weight="600">MONOREPO</text>
-        <rect x="95" width="80" height="24" rx="4" fill="#7c4dff" fill-opacity="0.1" stroke="#7c4dff" stroke-opacity="0.3" stroke-width="0.5"/>
-        <text x="135" y="16" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" fill="#7c4dff" font-weight="600">CI/CD</text>
-        <rect x="190" width="80" height="24" rx="4" fill="#3fb950" fill-opacity="0.1" stroke="#3fb950" stroke-opacity="0.3" stroke-width="0.5"/>
-        <text x="230" y="16" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" fill="#3fb950" font-weight="600">TESTING</text>
+    <line x1="20" y1="125" x2="300" y2="125" stroke="#1a1f2b" stroke-width="0.5"/>
+    <g transform="translate(20, 138)">
+        <rect width="65" height="22" rx="4" fill="#00e5ff" fill-opacity="0.08" stroke="#00e5ff" stroke-opacity="0.25" stroke-width="0.5" class="glow"/>
+        <text x="32" y="15" text-anchor="middle" font-family="'Courier New',Consolas,monospace" font-size="8" fill="#00e5ff" font-weight="700">MONOREPO</text>
+        <rect x="75" width="50" height="22" rx="4" fill="#7c4dff" fill-opacity="0.08" stroke="#7c4dff" stroke-opacity="0.25" stroke-width="0.5" class="glow"/>
+        <text x="100" y="15" text-anchor="middle" font-family="'Courier New',Consolas,monospace" font-size="8" fill="#7c4dff" font-weight="700">CI/CD</text>
+        <rect x="135" width="55" height="22" rx="4" fill="#3fb950" fill-opacity="0.08" stroke="#3fb950" stroke-opacity="0.25" stroke-width="0.5" class="glow"/>
+        <text x="162" y="15" text-anchor="middle" font-family="'Courier New',Consolas,monospace" font-size="8" fill="#3fb950" font-weight="700">TESTED</text>
+        <rect x="200" width="60" height="22" rx="4" fill="#ffab00" fill-opacity="0.08" stroke="#ffab00" stroke-opacity="0.25" stroke-width="0.5" class="glow"/>
+        <text x="230" y="15" text-anchor="middle" font-family="'Courier New',Consolas,monospace" font-size="8" fill="#ffab00" font-weight="700">DOCKER</text>
     </g>
 </svg>
