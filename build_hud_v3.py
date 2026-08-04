@@ -213,22 +213,31 @@ def build_tech():
             </rect>
         </g>"""
 
-    tech_badges = [
-        "TypeScript", "JavaScript", "React.js", "Next.js",
-        "Node.js", "Python", "TailwindCSS", "PostgreSQL",
-        "Docker", "Git / GitHub", "REST APIs", "WebSockets"
-    ]
-    
+    tech_icons = {
+        "TypeScript": f'<g transform="translate(8, 7)"><rect width="16" height="16" rx="3" fill="#3178c6"/><text x="8" y="12" font-family="{FONT}" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">TS</text></g>',
+        "JavaScript": f'<g transform="translate(8, 7)"><rect width="16" height="16" rx="3" fill="#f7df1e"/><text x="8" y="12" font-family="{FONT}" font-size="9" font-weight="800" fill="#000000" text-anchor="middle">JS</text></g>',
+        "React.js": f'<g transform="translate(8, 7) scale(0.67)"><ellipse cx="12" cy="12" rx="11" ry="4.5" fill="none" stroke="#61dafb" stroke-width="1.5"/><ellipse cx="12" cy="12" rx="11" ry="4.5" fill="none" stroke="#61dafb" stroke-width="1.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="11" ry="4.5" fill="none" stroke="#61dafb" stroke-width="1.5" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="2.5" fill="#61dafb"/></g>',
+        "Next.js": f'<g transform="translate(8, 7)"><circle cx="8" cy="8" r="8" fill="#000000" stroke="#ffffff" stroke-width="1"/><path d="M5 12 V4 L12 13.5 M11 4 V9" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></g>',
+        "Node.js": f'<g transform="translate(8, 7)"><polygon points="8,1 15,5 15,11 8,15 1,11 1,5" fill="#339933"/><text x="8" y="11.5" font-family="{FONT}" font-size="7" font-weight="800" fill="#ffffff" text-anchor="middle">N</text></g>',
+        "Python": f'<g transform="translate(8, 7) scale(0.67)"><path d="M12 2 C7 2 7 4 7 4 L7 7 L12 7 L12 8 L5 8 C5 8 2 8 2 13 C2 18 4.5 18 4.5 18 L6 18 L6 16.5 C6 14 8 14 8 14 L12 14 C14.5 14 14.5 12 14.5 12 L14.5 9 C14.5 9 14.5 7 12.5 7 L11 7 L11 8.5 C11 10 9.5 10 9.5 10 L6 10 L6 4 C6 2 12 2 12 2 Z" fill="#3776ab"/><path d="M12 22 C17 22 17 20 17 20 L17 17 L12 17 L12 16 L19 16 C19 16 22 16 22 11 C22 6 19.5 6 19.5 6 L18 6 L18 7.5 C18 10 16 10 16 10 L12 10 C9.5 10 9.5 12 9.5 12 L9.5 15 C9.5 15 9.5 17 11.5 17 L13 17 L13 15.5 C13 14 14.5 14 14.5 14 L18 14 L18 20 C18 22 12 22 12 22 Z" fill="#ffd43b"/></g>',
+        "TailwindCSS": f'<g transform="translate(8, 7) scale(0.67)"><path d="M6 6 C8 3 11 3 13 5 C11 7 10.5 8.5 12 10 C14 12 17.5 10 18.5 15 C16.5 18 13.5 18 11.5 16 C13.5 14 14 12.5 12.5 11 C10.5 9 7 11 6 6 Z" fill="#06b6d4"/><path d="M1 13 C3 10 6 10 8 12 C6 14 5.5 15.5 7 17 C9 19 12.5 17 13.5 22 C11.5 25 8.5 25 6.5 23 C8.5 21 9 19.5 7.5 18 C5.5 16 2 18 1 13 Z" fill="#06b6d4"/></g>',
+        "PostgreSQL": f'<g transform="translate(8, 7)"><ellipse cx="8" cy="5" rx="7" ry="3" fill="#4169e1" opacity="0.9"/><path d="M1 5 V11 C1 13 15 13 15 11 V5" fill="none" stroke="#4169e1" stroke-width="1.5"/><path d="M1 8 C1 10 15 10 15 8" fill="none" stroke="#4169e1" stroke-width="1"/></g>',
+        "Docker": f'<g transform="translate(8, 7)"><rect x="1" y="8" width="4" height="3" fill="#2496ed"/><rect x="6" y="8" width="4" height="3" fill="#2496ed"/><rect x="11" y="8" width="4" height="3" fill="#2496ed"/><rect x="6" y="4" width="4" height="3" fill="#2496ed"/><rect x="11" y="4" width="4" height="3" fill="#2496ed"/><path d="M0 12 C3 12 4 14 8 14 C12 14 14 12 16 12 C16 14 14 16 8 16 C3 16 0 14 0 12 Z" fill="#2496ed"/></g>',
+        "Git / GitHub": f'<g transform="translate(8, 7)"><rect x="2" y="2" width="12" height="12" rx="2" fill="#f05032" transform="rotate(45 8 8)"/><circle cx="8" cy="5" r="1.5" fill="#ffffff"/><circle cx="5" cy="11" r="1.5" fill="#ffffff"/><circle cx="11" cy="11" r="1.5" fill="#ffffff"/><line x1="8" y1="5" x2="8" y2="11" stroke="#ffffff" stroke-width="1"/><line x1="8" y1="8" x2="11" y2="11" stroke="#ffffff" stroke-width="1"/></g>',
+        "REST APIs": f'<g transform="translate(8, 7)"><rect x="1" y="2" width="14" height="12" rx="3" fill="none" stroke="#00f0ff" stroke-width="1.2"/><text x="8" y="11" font-family="{MONO}" font-size="7" font-weight="800" fill="#00f0ff" text-anchor="middle">API</text></g>',
+        "WebSockets": f'<g transform="translate(8, 7)"><polygon points="9,1 2,9 7,9 5,15 14,7 9,7" fill="#8a2be2"/></g>'
+    }
+
     badge_markup = ""
-    for i, t in enumerate(tech_badges):
+    for i, (t, icon_svg) in enumerate(tech_icons.items()):
         row, col = divmod(i, 2)
         bx = col * 220
         by = row * 38
         badge_markup += f"""
         <g transform="translate({bx}, {by})">
             <rect width="205" height="30" rx="6" fill="#030509" stroke="{BORDER}" stroke-width="1"/>
-            <circle cx="15" cy="15" r="3" fill="{CYAN}"/>
-            <text x="28" y="19" font-family="{FONT}" font-size="11" font-weight="500" fill="{WHITE}">{html.escape(t)}</text>
+            {icon_svg}
+            <text x="32" y="19" font-family="{FONT}" font-size="11" font-weight="500" fill="{WHITE}">{html.escape(t)}</text>
         </g>"""
 
     svg = f"""<svg width="1000" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
