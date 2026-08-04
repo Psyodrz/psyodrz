@@ -26,10 +26,12 @@ WHITE     = "#f0f6fc"
 DIM       = "#8b949e"
 BORDER    = "#161f30"
 BORDER_HI = "#00f0ff40"
-FONT      = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-MONO      = "'Fira Code', 'Courier New', Consolas, monospace"
+FONT      = "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+MONO      = "'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace"
 
 STYLES = f"""
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap');
+
     .glow-cyan {{ filter: drop-shadow(0 0 4px {CYAN}60); }}
     .glow-violet {{ filter: drop-shadow(0 0 4px {VIOLET}60); }}
     .pulse {{ animation: pulse 3s ease-in-out infinite alternate; }}

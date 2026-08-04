@@ -1,5 +1,7 @@
 <svg width="1000" height="210" viewBox="0 0 1000 210" xmlns="http://www.w3.org/2000/svg">
 <defs><style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap');
+
     .glow-cyan { filter: drop-shadow(0 0 4px #00f0ff60); }
     .glow-violet { filter: drop-shadow(0 0 4px #8a2be260); }
     .pulse { animation: pulse 3s ease-in-out infinite alternate; }
@@ -40,11 +42,11 @@
 </g>
 
 <g transform="translate(275, 30)">
-    <text x="0" y="0" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#8b949e">PROJECT 02 // FEATURED BUILD</text>
-    <text x="0" y="32" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#f0f6fc">Dreamscape Maze</text>
-    <text x="0" y="52" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#00f0ff">Immersive 3D WebGL Experience</text>
+    <text x="0" y="0" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="10" fill="#8b949e">PROJECT 02 // FEATURED BUILD</text>
+    <text x="0" y="32" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#f0f6fc">Dreamscape Maze</text>
+    <text x="0" y="52" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#00f0ff">Immersive 3D WebGL Experience</text>
 
-    <text x="0" y="82" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#8b949e" width="650">
+    <text x="0" y="82" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#8b949e" width="650">
         <tspan x="0" dy="0">Interactive 3D maze environment leveraging WebGL &amp; Three.js. Optimized for </tspan>
         <tspan x="0" dy="20">cross-device fluidity.</tspan>
     </text>
@@ -52,13 +54,13 @@
     <g transform="translate(0, 125)">
         
         <rect x="0" y="0" width="84" height="24" rx="12" fill="#161f30" stroke="#00f0ff" stroke-opacity="0.2" stroke-width="0.5"/>
-        <text x="42" y="16" text-anchor="middle" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff">Three.js</text>
+        <text x="42" y="16" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="10" fill="#00f0ff">Three.js</text>
         <rect x="92" y="0" width="60" height="24" rx="12" fill="#161f30" stroke="#00f0ff" stroke-opacity="0.2" stroke-width="0.5"/>
-        <text x="122" y="16" text-anchor="middle" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff">WebGL</text>
+        <text x="122" y="16" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="10" fill="#00f0ff">WebGL</text>
         <rect x="160" y="0" width="52" height="24" rx="12" fill="#161f30" stroke="#00f0ff" stroke-opacity="0.2" stroke-width="0.5"/>
-        <text x="186" y="16" text-anchor="middle" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff">GLSL</text>
+        <text x="186" y="16" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="10" fill="#00f0ff">GLSL</text>
         <rect x="220" y="0" width="100" height="24" rx="12" fill="#161f30" stroke="#00f0ff" stroke-opacity="0.2" stroke-width="0.5"/>
-        <text x="270" y="16" text-anchor="middle" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff">JavaScript</text>
+        <text x="270" y="16" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="10" fill="#00f0ff">JavaScript</text>
     </g>
 </g>
 

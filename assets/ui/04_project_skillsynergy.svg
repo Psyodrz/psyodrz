@@ -1,5 +1,7 @@
 <svg width="1000" height="210" viewBox="0 0 1000 210" xmlns="http://www.w3.org/2000/svg">
 <defs><style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap');
+
     .glow-cyan { filter: drop-shadow(0 0 4px #00f0ff60); }
     .glow-violet { filter: drop-shadow(0 0 4px #8a2be260); }
     .pulse { animation: pulse 3s ease-in-out infinite alternate; }
@@ -40,11 +42,11 @@
 </g>
 
 <g transform="translate(275, 30)">
-    <text x="0" y="0" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#8b949e">PROJECT 03 // FEATURED BUILD</text>
-    <text x="0" y="32" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#f0f6fc">SkillSynergy</text>
-    <text x="0" y="52" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#00f0ff">AI-Assisted Learning Platform</text>
+    <text x="0" y="0" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="10" fill="#8b949e">PROJECT 03 // FEATURED BUILD</text>
+    <text x="0" y="32" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#f0f6fc">SkillSynergy</text>
+    <text x="0" y="52" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#00f0ff">AI-Assisted Learning Platform</text>
 
-    <text x="0" y="82" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#8b949e" width="650">
+    <text x="0" y="82" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#8b949e" width="650">
         <tspan x="0" dy="0">Collaborative system matching developers with personalized AI learning path</tspan>
         <tspan x="0" dy="20">s at scale.</tspan>
     </text>
@@ -52,13 +54,13 @@
     <g transform="translate(0, 125)">
         
         <rect x="0" y="0" width="60" height="24" rx="12" fill="#161f30" stroke="#00f0ff" stroke-opacity="0.2" stroke-width="0.5"/>
-        <text x="30" y="16" text-anchor="middle" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff">React</text>
+        <text x="30" y="16" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="10" fill="#00f0ff">React</text>
         <rect x="68" y="0" width="100" height="24" rx="12" fill="#161f30" stroke="#00f0ff" stroke-opacity="0.2" stroke-width="0.5"/>
-        <text x="118" y="16" text-anchor="middle" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff">TypeScript</text>
+        <text x="118" y="16" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="10" fill="#00f0ff">TypeScript</text>
         <rect x="176" y="0" width="84" height="24" rx="12" fill="#161f30" stroke="#00f0ff" stroke-opacity="0.2" stroke-width="0.5"/>
-        <text x="218" y="16" text-anchor="middle" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff">REST API</text>
+        <text x="218" y="16" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="10" fill="#00f0ff">REST API</text>
         <rect x="268" y="0" width="36" height="24" rx="12" fill="#161f30" stroke="#00f0ff" stroke-opacity="0.2" stroke-width="0.5"/>
-        <text x="286" y="16" text-anchor="middle" font-family="'Fira Code', 'Courier New', Consolas, monospace" font-size="10" fill="#00f0ff">AI</text>
+        <text x="286" y="16" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', Consolas, 'ui-monospace', 'Liberation Mono', monospace" font-size="10" fill="#00f0ff">AI</text>
     </g>
 </g>
 
