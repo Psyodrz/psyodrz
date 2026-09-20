@@ -30,6 +30,7 @@ jobs:
 
       - name: Generate Metrics
         if: steps.token_check.outputs.has_token == 'true'
+        continue-on-error: true
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
