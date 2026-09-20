@@ -16,7 +16,21 @@ jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
+      - name: Check metrics token availability
+        id: token_check
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          if [ -z "$METRICS_TOKEN" ]; then
+            echo "has_token=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::METRICS_TOKEN secret is missing; skipping metrics generation."
+          else
+            echo "has_token=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Generate Metrics
+        if: steps.token_check.outputs.has_token == 'true'
+        continue-on-error: true
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
